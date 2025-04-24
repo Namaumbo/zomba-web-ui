@@ -86,7 +86,7 @@ export default function LandingPage() {
             <CarouselContent>
               {slides.map((slide, index) => (
                 <CarouselItem key={index}>
-                  <div className="relative h-[100vh] w-full overflow-hidden">
+                  <div className="relative h-[80vh] w-full overflow-hidden">
                     <img
                       src={slide.img}
                       alt={slide.title}

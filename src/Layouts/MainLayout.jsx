@@ -8,7 +8,9 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <>
-      <NavBarComponent />
+      <div className="">
+        <NavBarComponent />
+      </div>
       <Outlet />
       <div className="mt-10">
         <FooterComponent />
