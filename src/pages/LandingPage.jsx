@@ -96,7 +96,7 @@ export default function LandingPage() {
                     />
                     <div className="absolute inset-0 bg-primary/40 flex items-center justify-center">
                       <div className="text-center text-white p-4 max-w-7xl">
-                        <h1 className="text-3xl md:text-4xl lg:text-8xl font-bold mb-4">
+                        <h1 className="text-3xl md:text-4xl lg:text-8xl font-bold mb-4 font-heading"> 
                           {slide.title}
                         </h1>
                         <p className="text-lg md:text-xl  max-w-4xl m-auto mb-3">
@@ -138,16 +138,16 @@ export default function LandingPage() {
                   fill
                   className="object-cover"
                 />
-                <p>hedfdsfs</p>
+              
               </div>
               <div className="space-y-4 order-1 lg:order-2 md:mt-10">
-                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                <div className=" font-paragraph inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   A Message from Our Pastor
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                   Hello in Jesus Name!
                 </h2>
-                <div className="space-y-4 text-muted-foreground p-4 sm:p-6 bg-white rounded-smn shadow-sm mx-4 sm:mx-0">
+                <div className=" font-paragraph space-y-4 text-muted-foreground p-4 sm:p-6 bg-white rounded-smn shadow-sm mx-4 sm:mx-0">
                   <p>
                     " I am so excited to welcome you to our ZBC website. We are
                     looking forward to keep interacting with you. Our goal is to
