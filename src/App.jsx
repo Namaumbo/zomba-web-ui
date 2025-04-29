@@ -14,7 +14,7 @@ import ServicePage from "./pages/ServicesPage";
 import EventsPage from "./pages/EventsPage";
 import ContactPage from "./pages/ContactusPage";
 import MinistryPage from "./pages/MinistryPage";
-
+import '@fontsource/inter';
 function App() {
   return (
     <>
