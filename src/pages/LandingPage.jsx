@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { Heart, MapPin, Clock, Check, ChevronRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function LandingPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -91,24 +92,49 @@ export default function LandingPage() {
                       src={slide.img}
                       alt={slide.title}
                       fill
-                      className=" w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                       priority={index === 0}
                     />
                     <div className="absolute inset-0 bg-primary/40 flex items-center justify-center">
-                      <div className="text-center text-white p-4 max-w-7xl">
-                        <h1 className=" font-inter  text-3xl md:text-4xl lg:text-8xl font-bold mb-4 ">
-                          {slide.title}
-                        </h1>
-                        <p className="font-inter text-lg md:text-xl  max-w-4xl m-auto mb-3">
-                          {slide.description}
-                        </p>
-                        <p className="text-lg md:text-xl">{slide.verses}</p>
-                      </div>
+                      {index === currentSlide ? (
+                        <motion.div className="text-center text-white p-4 max-w-7xl">
+                          <motion.h1
+                            key={slide.title}
+                            initial={{ opacity: 0, y: -70 }}
+                            animate={{ opacity: [1], y: 0 }}
+                            transition={{ duration: 1 }}
+                            className="text-3xl md:text-4xl lg:text-8xl font-bold mb-4 font-heading"
+                          >
+                            {slide.title}
+                          </motion.h1>
+                          <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: [1], y: 0 }}
+                            transition={{ duration: 1 }}
+                            className="text-lg md:text-xl max-w-4xl m-auto mb-3"
+                          >
+                            {slide.description}
+                            <p className="text-lg md:text-xl">{slide.verses}</p>
+
+                          </motion.p>
+                        </motion.div>
+                      ) : (
+                        <div className="text-center text-white p-4 max-w-7xl opacity-0 pointer-events-none select-none">
+                          <h1 className="text-3xl md:text-4xl lg:text-8xl font-bold mb-4 font-heading">
+                            {slide.title}
+                          </h1>
+                          <p className="text-lg md:text-xl max-w-4xl m-auto mb-3">
+                            {slide.description}
+                          </p>
+                          <p className="text-lg md:text-xl">{slide.verses}</p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
+
             <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
               {slides.map((_, index) => (
                 <button
@@ -140,13 +166,13 @@ export default function LandingPage() {
                 />
               </div>
               <div className="space-y-4 order-1 lg:order-2 md:mt-10">
-                <div className=" font-inter inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                <div className="  inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   A Message from Our Pastor
                 </div>
-                <h2 className="text-3xl font-bold font-inter tracking-tighter sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                   Hello in Jesus Name!
                 </h2>
-                <div className=" font-inter space-y-4 text-muted-foreground p-4 sm:p-6 bg-white rounded-smn shadow-md mx-4 sm:mx-0">
+                <div className=" space-y-4 text-muted-foreground p-4 sm:p-6 bg-white rounded-smn shadow-sm mx-4 sm:mx-0">
                   <p>
                     " I am so excited to welcome you to our ZBC website. We are
                     looking forward to keep interacting with you. Our goal is to
@@ -176,13 +202,13 @@ export default function LandingPage() {
           <div className="container px-4 md:px-6 m-auto">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
-                <div className="font-inter inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   Our Identity & Purpose
                 </div>
-                <h2 className="font-inter text-3xl font-bold tracking-tighter sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                   Who We Are & Our Mission
                 </h2>
-                <p className="font-inter max-w-[700px] text-muted-foreground md:text-lg">
+                <p className="max-w-[700px] text-muted-foreground md:text-lg">
                   Learn about our church community and how we're making a
                   difference.
                 </p>
@@ -201,14 +227,14 @@ export default function LandingPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 flex items-end">
                     <div className="p-4">
-                      <h3 className="font-inter text-2xl font-bold text-white">
+                      <h3 className="text-2xl font-bold text-white">
                         Who Are We?
                       </h3>
                     </div>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <p className="font-inter text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-4">
                     We are a Christ-centred church growing in the Word of God.
                   </p>
 
@@ -228,18 +254,18 @@ export default function LandingPage() {
                     fill
                     className="object-cover"
                   />
-                  <div className="font-inter absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 flex items-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 flex items-end">
                     <div className="p-4">
-                      <h3 className="font-inter text-2xl font-bold text-white">
+                      <h3 className="text-2xl font-bold text-white">
                         What is Our Mission?
                       </h3>
                     </div>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <p className="font-inter text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-4">
                     Our mission is to{" "}
-                    <span className=" font-inter font-medium">
+                    <span className="font-medium">
                       love God, love people, and make disciples
                     </span>{" "}
                     As a body of Christ, we let the Holy Spirit guide us to
@@ -266,14 +292,14 @@ export default function LandingPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 flex items-end">
                     <div className="p-4">
-                      <h3 className=" font-inter text-2xl font-bold text-white">
+                      <h3 className="text-2xl font-bold text-white">
                         How Do We Carry Out Our Mission?
                       </h3>
                     </div>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <p className=" font-inter ">We are guided by the fruits of the Spirit:</p>
+                  <p>We are guided by the fruits of the Spirit:</p>
 
                   <ul className="space-y-2 text-muted-foreground mb-4">
                     <li className="flex items-start gap-2">
@@ -281,7 +307,7 @@ export default function LandingPage() {
                         <Check className="h-3 w-3 text-primary" />
                       </div>
                       <span>
-                        <span className=" font-inter font-medium">Love • Joy • Peace</span>
+                        <span className="font-medium">Love • Joy • Peace</span>
                       </span>
                     </li>
 
@@ -290,7 +316,7 @@ export default function LandingPage() {
                         <Check className="h-3 w-3 text-primary" />
                       </div>
                       <span>
-                        <span className=" font-inter font-medium">
+                        <span className="font-medium">
                           Patience • Kindness • Goodness
                         </span>
                       </span>
@@ -300,7 +326,7 @@ export default function LandingPage() {
                         <Check className="h-3 w-3 text-primary" />
                       </div>
                       <span>
-                        <span className=" font-inter font-medium">
+                        <span className="font-medium">
                           Faithfulness • Gentleness • Self-control
                         </span>
                       </span>
@@ -322,24 +348,24 @@ export default function LandingPage() {
 
         {/* Service Times & Location */}
         <section className="py-12 md:py-16  bg-white  flex flex-col justify-center  items-center">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-7xl px-4 md:px-6">
             <div className="grid lg:grid-cols-2 items-center">
               <div className="space-y-4">
-                <div className=" font-inter inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   Join Us
                 </div>
-                <h2 className=" font-inter text-3xl font-bold tracking-tighter">
+                <h2 className="text-3xl font-bold tracking-tighter">
                   Service Times & Location
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-3">
                     <Clock className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <h3 className=" font-inter font-bold">Sunday Services</h3>
-                      <p className=" font-inter text-muted-foreground">
+                      <h3 className="font-bold">Sunday Services</h3>
+                      <p className="text-muted-foreground">
                         9:00 AM - Chichewa Service
                       </p>
-                      <p className=" font-inter text-muted-foreground">
+                      <p className="text-muted-foreground">
                         11:00 AM - International Service
                       </p>
                     </div>
@@ -347,8 +373,8 @@ export default function LandingPage() {
                   <div className="flex items-start gap-3">
                     <Clock className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <h3 className=" font-inter font-bold">Wednesday Night</h3>
-                      <p className=" font-inter text-muted-foreground">
+                      <h3 className="font-bold">Wednesday Night</h3>
+                      <p className="text-muted-foreground">
                         6:30 PM - Bible Study & Youth Groups
                       </p>
                     </div>
@@ -356,9 +382,9 @@ export default function LandingPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <h3 className=" font-inter font-bold">Our Location</h3>
-                      <p className=" font-inter text-muted-foreground">123 Faith Avenue</p>
-                      <p className=" font-inter text-muted-foreground">Anytown, ST 12345</p>
+                      <h3 className="font-bold">Our Location</h3>
+                      <p className="text-muted-foreground">123 Faith Avenue</p>
+                      <p className="text-muted-foreground">Anytown, ST 12345</p>
                     </div>
                   </div>
                 </div>
@@ -380,13 +406,13 @@ export default function LandingPage() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
-                <div className=" font-inter inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   Get Involved
                 </div>
-                <h2 className=" font-inter text-3xl font-bold tracking-tighter sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                   Our Ministries
                 </h2>
-                <p className=" font-inter max-w-[700px] text-muted-foreground md:text-lg">
+                <p className="max-w-[700px] text-muted-foreground md:text-lg">
                   We offer a variety of ministries to help you connect, grow,
                   and serve.
                 </p>
@@ -402,10 +428,10 @@ export default function LandingPage() {
                   className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
-                  <h3 className=" font-inter text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-white">
                     Children's Ministry
                   </h3>
-                  <p className=" font-inter text-white/80 mt-2">
+                  <p className="text-white/80 mt-2">
                     Nurturing faith in our youngest members
                   </p>
                   <Button variant="link" className="p-0 text-white mt-2 w-fit">
@@ -422,10 +448,10 @@ export default function LandingPage() {
                   className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
-                  <h3 className=" font-inter text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-white">
                     Youth Ministry
                   </h3>
-                  <p className=" font-inter text-white/80 mt-2">
+                  <p className="text-white/80 mt-2">
                     Building strong foundations for teens
                   </p>
                   <Button variant="link" className="p-0 text-white mt-2 w-fit">
@@ -442,10 +468,10 @@ export default function LandingPage() {
                   className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
-                  <h3 className=" font-inter text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-white">
                     Adult Ministry
                   </h3>
-                  <p className=" font-inter text-white/80 mt-2">
+                  <p className="text-white/80 mt-2">
                     Growing together in faith and community
                   </p>
                   <Button variant="link" className="p-0 text-white mt-2 w-fit">
@@ -464,10 +490,10 @@ export default function LandingPage() {
         <section className="py-12 md:py-16 bg-primary text-primary-foreground flex flex-col justify-center items-center">
           <div className="container px-4 md:px-6 text-center">
             <div className="mx-auto max-w-3xl space-y-4">
-              <h2 className=" font-inter text-3xl font-bold tracking-tighter sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                 New Here? We'd Love to Meet You
               </h2>
-              <p className=" font-inter text-primary-foreground/90 md:text-lg">
+              <p className="text-primary-foreground/90 md:text-lg">
                 We invite you to join us this Sunday and experience the warmth
                 and welcome of our church family. No matter where you are on
                 your spiritual journey, there's a place for you here.
