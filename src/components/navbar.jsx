@@ -39,7 +39,7 @@ function NavBarComponent() {
                   currentPath === path ? "text-primary border-b-2 border-primary" : ""
                 }`}
               >
-                <span id="link" className="p-2">
+                <span id="link" className="p-2 font-inter">
                   {label}
                 </span>
               </Link>
