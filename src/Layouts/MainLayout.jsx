@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <>
-      <div className="">
+      <div className="sticky top-0 z-50">
         <NavBarComponent />
       </div>
       <Outlet />

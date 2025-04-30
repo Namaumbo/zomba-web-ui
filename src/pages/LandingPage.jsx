@@ -75,11 +75,11 @@ export default function LandingPage() {
         <section className="relative">
           <Carousel
             className="w-full"
-            // plugins={[
-            //   Autoplay({
-            //     delay: 7000,
-            //   }),
-            // ]}
+            plugins={[
+              Autoplay({
+                delay: 7000,
+              }),
+            ]}
             setApi={(api) => {
               api.on("select", () => setCurrentSlide(api.selectedScrollSnap()));
             }}
