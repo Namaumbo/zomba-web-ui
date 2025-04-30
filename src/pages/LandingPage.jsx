@@ -115,7 +115,6 @@ export default function LandingPage() {
                           >
                             {slide.description}
                             <p className="text-lg md:text-xl">{slide.verses}</p>
-
                           </motion.p>
                         </motion.div>
                       ) : (
@@ -341,7 +340,7 @@ export default function LandingPage() {
             </div>
 
             <div className="flex justify-center mt-8">
-              <Button size="lg">Get Involved</Button>
+              <Button size="lg">Get Involved -{">"}</Button>
             </div>
           </div>
         </section>
@@ -389,14 +388,15 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-              <div className="relative overflow-hidden rounded-xl mt-4">
+              <div className="relative overflow-hidden rounded-xl mt-4 border border-[20px] bg-gradient-to-r from-primary/70 to-primary/40">
                 <img
                   src="/inchurch.jpg"
                   alt="Church building"
                   fill
-                  className="object-cover"
+                  className="object-cover "
                 />
               </div>
+ 
             </div>
           </div>
         </section>
