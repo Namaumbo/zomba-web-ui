@@ -35,11 +35,13 @@ function NavBarComponent() {
               <Link
                 key={path}
                 to={path}
-                className={`text-sm font-medium hover:text-primary ${
-                  currentPath === path ? "text-primary font-semibold border px-4 rounded-md" : ""
+                className={`text-sm font-medium hover:text-primary pb-2 ${
+                  currentPath === path ? "text-primary border-b-2 border-primary" : ""
                 }`}
               >
-                <span  id="link">{label}</span>
+                <span id="link" className="p-2">
+                  {label}
+                </span>
               </Link>
             ))}
           </nav>
