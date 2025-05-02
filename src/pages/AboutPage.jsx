@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion } from "framer-motion"; // Import framer-motion
 
 import {
   Heart,
@@ -17,39 +18,27 @@ function AboutPage() {
   return (
     <>
       <main className="">
-        {/* Hero Section
-        <section className="relative">
-          <div className="relative h-[300px] md:h-[400px] lg:h-[500px] w-full ">
-            <img
-              src="/congregation1.jpg"
-              alt="Church congregation"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <div className="text-center text-white p-4">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                  About Our Church
-                </h1>
-                <p className="text-lg md:text-xl max-w-2xl mx-auto">
-                  A welcoming community of faith, hope, and love
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
+        {/* Hero Section with Framer Motion animations */}
         <section className="relative h-[50vh] w-full overflow-hidden">
           <div className="absolute inset-0 bg-primary/40 z-10"></div>
           <div className="absolute inset-0 flex items-center justify-center z-20">
             <div className="text-center text-white">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <motion.h1 
+                className="text-4xl md:text-5xl font-bold mb-4"
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 About Our Church
-              </h1>
-              <p className="text-lg md:text-xl">
+              </motion.h1>
+              <motion.p 
+                className="text-lg md:text-xl"
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              >
                 A Community of Faith and Love
-              </p>
+              </motion.p>
             </div>
           </div>
           <img
@@ -64,7 +53,13 @@ function AboutPage() {
         <section className="py-12 md:py-16 bg-white flex flex-col items-center justify-center">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4">
+              <motion.div 
+                className="space-y-4"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   Our Story
                 </div>
@@ -83,15 +78,21 @@ function AboutPage() {
                   <Button>Join Us Sunday</Button>
                   <Button variant="outline">Our Beliefs</Button>
                 </div>
-              </div>
-              <div className="relative h-[300px] overflow-hidden rounded-xl">
+              </motion.div>
+              <motion.div 
+                className="relative h-[300px] overflow-hidden rounded-xl"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 <img
                   src="/congregation1.jpg"
                   alt="Church community event"
                   fill
                   className="object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -107,7 +108,13 @@ function AboutPage() {
                 </TabsList>
               </div>
               <TabsContent value="history" className="space-y-6">
-                <div className="text-center max-w-3xl mx-auto mb-8">
+                <motion.div 
+                  className="text-center max-w-3xl mx-auto mb-8"
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
                   <h2 className="text-3xl font-bold tracking-tighter mb-4">
                     Our Journey of Faith
                   </h2>
@@ -115,9 +122,15 @@ function AboutPage() {
                     Grace Community Church has been serving our community for
                     over 30 years.
                   </p>
-                </div>
+                </motion.div>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  <div className="space-y-3">
+                  <motion.div 
+                    className="space-y-3"
+                    initial={{ y: 30, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                  >
                     <div className="text-primary font-bold">1990</div>
                     <h3 className="text-xl font-bold">Our Founding</h3>
                     <p className="text-muted-foreground">
@@ -125,8 +138,14 @@ function AboutPage() {
                       families committed to establishing a welcoming place of
                       worship in our community.
                     </p>
-                  </div>
-                  <div className="space-y-3">
+                  </motion.div>
+                  <motion.div 
+                    className="space-y-3"
+                    initial={{ y: 30, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
                     <div className="text-primary font-bold">2005</div>
                     <h3 className="text-xl font-bold">Building Expansion</h3>
                     <p className="text-muted-foreground">
@@ -134,19 +153,31 @@ function AboutPage() {
                       include a larger sanctuary, educational wing, and
                       community center.
                     </p>
-                  </div>
-                  <div className="space-y-3">
+                  </motion.div>
+                  <motion.div 
+                    className="space-y-3"
+                    initial={{ y: 30, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
                     <div className="text-primary font-bold">2020</div>
                     <h3 className="text-xl font-bold">Community Outreach</h3>
                     <p className="text-muted-foreground">
                       We launched several new outreach programs to better serve
                       our local community and expanded our global missions work.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
               </TabsContent>
               <TabsContent value="leadership" className="space-y-6">
-                <div className="text-center max-w-3xl mx-auto mb-8">
+                <motion.div 
+                  className="text-center max-w-3xl mx-auto mb-8"
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
                   <h2 className="text-3xl font-bold tracking-tighter mb-4">
                     Our Leadership Team
                   </h2>
@@ -154,9 +185,9 @@ function AboutPage() {
                     Meet the dedicated individuals who guide our church
                     community.
                   </p>
-                </div>
+                </motion.div>
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="flex flex-col items-center text-center">
+                <div className="flex flex-col items-center text-center">
                     <div className="relative h-40 w-40 overflow-hidden rounded-full mb-4">
                       <img
                         src="/placeholder.svg?height=160&width=160"
@@ -209,8 +240,8 @@ function AboutPage() {
             </Tabs>
           </div>
         </section>
-        {/* Our Values */}
-        <section className="py-12 md:py-16 bg-white flex flex-col items-center justify-center">
+  {/* Our Values */}
+  <section className="py-12 md:py-16 bg-white flex flex-col items-center justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
