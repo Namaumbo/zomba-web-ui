@@ -103,7 +103,7 @@ export default function LandingPage() {
                             initial={{ opacity: 0, y: -70 }}
                             animate={{ opacity: [1], y: 0 }}
                             transition={{ duration: 1 }}
-                            className="text-2xl md:text-4xl lg:text-7xl font-bold mb-4 font-heading"
+                            className="text-5xl md:text-6xl font-bold mb-4 font-heading"
                           >
                             {slide.title}
                           </motion.h1>
