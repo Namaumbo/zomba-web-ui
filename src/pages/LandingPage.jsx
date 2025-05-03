@@ -97,13 +97,13 @@ export default function LandingPage() {
                     />
                     <div className="absolute inset-0 bg-primary/40 flex items-center justify-center">
                       {index === currentSlide ? (
-                        <motion.div className="text-center text-white p-4 max-w-7xl">
+                        <motion.div className="text-center text-white p-4 max-w-6xl">
                           <motion.h1
                             key={slide.title}
                             initial={{ opacity: 0, y: -70 }}
                             animate={{ opacity: [1], y: 0 }}
                             transition={{ duration: 1 }}
-                            className="text-3xl md:text-4xl lg:text-8xl font-bold mb-4 font-heading"
+                            className="text-2xl md:text-4xl lg:text-7xl font-bold mb-4 font-heading"
                           >
                             {slide.title}
                           </motion.h1>
@@ -111,7 +111,7 @@ export default function LandingPage() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: [1], y: 0 }}
                             transition={{ duration: 1 }}
-                            className="text-lg md:text-xl max-w-4xl m-auto mb-3"
+                            className="text-lg md:text-xl max-w-3xl m-auto mb-3"
                           >
                             {slide.description}
                             <p className="text-lg md:text-xl">{slide.verses}</p>
