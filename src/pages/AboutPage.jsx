@@ -35,6 +35,8 @@ const styles = {
     "absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-40",
   glow: "absolute -top-3 -z-10 h-72 w-72 bg-primary/17 blur-3xl lg:top-[-10%] lg:right-[20%]",
   spotlight: "absolute right-0 top-0 -z-10 h-96 w-96 bg-primary/5 blur-3xl",
+  headerTitle:
+    "mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl",
 };
 
 function AboutPage() {
@@ -83,7 +85,7 @@ function AboutPage() {
           </div>
         </div>
 
-        <section className="py-12 sm:py-20 flex flex-col items-center justify-center bg-primary/20 mt-8 sm:mt-0">
+        <section className="py-12 sm:py-20 flex flex-col items-center justify-center bg-primary/30 mt-8 sm:mt-0">
           <div className=" mx-auto container px-4 md:px-6">
             <Tabs defaultValue="history" className="w-full">
               <div className="flex justify-center mb-8">
@@ -117,8 +119,10 @@ function AboutPage() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                   >
                     <div className="text-primary font-bold">1990</div>
-                    <h3 className="text-xl font-bold">Our Founding</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold pb-3 pt-3 pr-3 pl-2 rounded-4xl max-w-fit">
+                      Our Founding
+                    </h3>
+                    <p className="text-black font-medium">
                       Zomba Baptist Church was founded by a small group of
                       families committed to establishing a welcoming place of
                       worship in our community.
@@ -133,8 +137,10 @@ function AboutPage() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
                     <div className="text-primary font-bold">2005</div>
-                    <h3 className="text-xl font-bold">Building Expansion</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold pb-3 pt-3 pr-3 pl-2 rounded-4xl max-w-fit">
+                      Building Expansion
+                    </h3>
+                    <p className="text-black font-medium">
                       As our congregation grew, we expanded our facilities to
                       include a larger sanctuary, educational wing, and
                       community center.
@@ -149,8 +155,10 @@ function AboutPage() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <div className="text-primary font-bold">2020</div>
-                    <h3 className="text-xl font-bold">Community Outreach</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold  pb-3 pt-3 pr-3 pl-2 rounded-4xl max-w-fit">
+                      Community Outreach
+                    </h3>
+                    <p className="text-black font-medium">
                       We launched several new outreach programs to better serve
                       our local community and expanded our global missions work.
                     </p>
@@ -227,186 +235,188 @@ function AboutPage() {
             </Tabs>
           </div>
         </section>
+
+        <section className="py-12 md:py-16 bg-white flex flex-col items-center justify-center">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                  Our Values
+                </div>
+                <h2 className={styles.headerTitle}>What We Stand For</h2>
+                <p className="max-w-[700px] text-muted-foreground md:text-lg">
+                  These core values guide everything we do as a church
+                  community.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid  gap-6 py-8 md:grid-cols-3">
+              <Card>
+                <CardContent className="p-6 ">
+                  <div className=" mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                    <Heart className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold">Love</h3>
+                  <p className="text-muted-foreground">
+                    We believe in showing Christ&apos;s love to everyone,
+                    regardless of background or circumstance.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-8 w-8 text-primary"
+                    >
+                      <path d="M18 6H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h13l4-3.5L18 6Z" />
+                      <path d="M12 13v8" />
+                      <path d="M5 13v6a2 2 0 0 0 2 2h8" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold">Faith</h3>
+                  <p className="text-muted-foreground">
+                    We are committed to growing in our faith through worship,
+                    prayer, and studying God&apos;s Word.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6 ">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-8 w-8 text-primary"
+                    >
+                      <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
+                      <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold">Community</h3>
+                  <p className="text-muted-foreground">
+                    We foster authentic relationships and support one another
+                    through life&apos;s journey.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 bg-muted flex flex-col items-center justify-center">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+              <div className="space-y-4 flex-1/4 border p-8">
+                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                  Join Us
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter">
+                  Service Times & Location
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary">
+                      <Clock className="h-5 w-5 text-white" />
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold">Sunday Services</h3>
+                      <p className="text-muted-foreground">
+                        9:00 AM - International Service
+                      </p>
+
+                      <p className="text-muted-foreground">
+                        11:00 AM - Chichewa Service
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary">
+                      <Clock className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold">Wednesday Night</h3>
+
+                      <p className="text-muted-foreground">
+                        6:30 PM - Bible Study & Youth Groups
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary">
+                      <MapPin className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold">Our Location</h3>
+                      <p className="text-muted-foreground">123 Faith Avenue</p>
+                      <p className="text-muted-foreground">Anytown, ST 12345</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Button variant="outline">Contact Us</Button>
+                </div>
+              </div>
+              <div className="relative overflow-hidden rounded-xl flex-3/4">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.809933638927!2d35.32057426530683!3d-15.385905218177017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d904bedc35d9a7%3A0x7e8ed903188523b7!2sZomba%20Baptist%20Church!5e0!3m2!1sen!2smw!4v1746456701614!5m2!1sen!2smw"
+                  width="800"
+                  height="600"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 bg-primary text-primary-foreground flex flex-col items-center justify-center">
+          <div className="container px-4 md:px-6 text-center">
+            <div className="mx-auto max-w-3xl space-y-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                Come Grow With Us
+              </h2>
+              <p className="text-primary-foreground/90 md:text-lg">
+                We invite you to join us this Sunday and experience the warmth
+                and welcome of our church family. No matter where you are on
+                your spiritual journey, there&apos;s a place for you here.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4">
+                <Button variant="secondary">Plan Your Visit</Button>
+                <Button
+                  variant="outline"
+                  className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10"
+                >
+                  Contact Us
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
 }
 
 export default AboutPage;
-
-{
-  /*
-//   {/* Our History & Leadership 
-//   
-//   {/* Our Values */
-}
-//   <section className="py-12 md:py-16 bg-white flex flex-col items-center justify-center">
-//     <div className="container px-4 md:px-6">
-//       <div className="flex flex-col items-center justify-center space-y-4 text-center">
-//         <div className="space-y-2">
-//           <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
-//             Our Values
-//           </div>
-//           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-//             What We Stand For
-//           </h2>
-//           <p className="max-w-[700px] text-muted-foreground md:text-lg">
-//             These core values guide everything we do as a church
-//             community.
-//           </p>
-//         </div>
-//       </div>
-//       <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-3">
-//         <Card>
-//           <CardContent className="p-6 text-center">
-//             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-//               <Heart className="h-6 w-6 text-primary" />
-//             </div>
-//             <h3 className="text-xl font-bold">Love</h3>
-//             <p className="text-muted-foreground">
-//               We believe in showing Christ&apos;s love to everyone,
-//               regardless of background or circumstance.
-//             </p>
-//           </CardContent>
-//         </Card>
-//         <Card>
-//           <CardContent className="p-6 text-center">
-//             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-//               <svg
-//                 xmlns="http://www.w3.org/2000/svg"
-//                 width="24"
-//                 height="24"
-//                 viewBox="0 0 24 24"
-//                 fill="none"
-//                 stroke="currentColor"
-//                 strokeWidth="2"
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 className="h-6 w-6 text-primary"
-//               >
-//                 <path d="M18 6H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h13l4-3.5L18 6Z" />
-//                 <path d="M12 13v8" />
-//                 <path d="M5 13v6a2 2 0 0 0 2 2h8" />
-//               </svg>
-//             </div>
-//             <h3 className="text-xl font-bold">Faith</h3>
-//             <p className="text-muted-foreground">
-//               We are committed to growing in our faith through worship,
-//               prayer, and studying God&apos;s Word.
-//             </p>
-//           </CardContent>
-//         </Card>
-//         <Card>
-//           <CardContent className="p-6 text-center">
-//             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-//               <svg
-//                 xmlns="http://www.w3.org/2000/svg"
-//                 width="24"
-//                 height="24"
-//                 viewBox="0 0 24 24"
-//                 fill="none"
-//                 stroke="currentColor"
-//                 strokeWidth="2"
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 className="h-6 w-6 text-primary"
-//               >
-//                 <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
-//                 <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
-//               </svg>
-//             </div>
-//             <h3 className="text-xl font-bold">Community</h3>
-//             <p className="text-muted-foreground">
-//               We foster authentic relationships and support one another
-//               through life&apos;s journey.
-//             </p>
-//           </CardContent>
-//         </Card>
-//       </div>
-//     </div>
-//   </section>
-
-//   {/* Service Times & Location */}
-//   <section className="py-12 md:py-16 bg-muted flex flex-col items-center justify-center">
-//     <div className="container px-4 md:px-6">
-//       <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-//         <div className="space-y-4">
-//           <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
-//             Join Us
-//           </div>
-//           <h2 className="text-3xl font-bold tracking-tighter">
-//             Service Times & Location
-//           </h2>
-//           <div className="space-y-4">
-//             <div className="flex items-start gap-3">
-//               <Clock className="h-5 w-5 text-primary mt-0.5" />
-//               <div>
-//                 <h3 className="font-bold">Sunday Services</h3>
-//                 <p className="text-muted-foreground">
-//                   9:00 AM - Traditional Service
-//                 </p>
-//                 <p className="text-muted-foreground">
-//                   11:00 AM - Contemporary Service
-//                 </p>
-//               </div>
-//             </div>
-//             <div className="flex items-start gap-3">
-//               <Clock className="h-5 w-5 text-primary mt-0.5" />
-//               <div>
-//                 <h3 className="font-bold">Wednesday Night</h3>
-//                 <p className="text-muted-foreground">
-//                   6:30 PM - Bible Study & Youth Groups
-//                 </p>
-//               </div>
-//             </div>
-//             <div className="flex items-start gap-3">
-//               <MapPin className="h-5 w-5 text-primary mt-0.5" />
-//               <div>
-//                 <h3 className="font-bold">Our Location</h3>
-//                 <p className="text-muted-foreground">123 Faith Avenue</p>
-//                 <p className="text-muted-foreground">Anytown, ST 12345</p>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="flex flex-col sm:flex-row gap-3 pt-2">
-//             <Button>Get Directions</Button>
-//             <Button variant="outline">Contact Us</Button>
-//           </div>
-//         </div>
-//         <div className="relative h-[300px] overflow-hidden rounded-xl">
-//           <img
-//             src="/placeholder.svg?height=600&width=800"
-//             alt="Church building"
-//             fill
-//             className="object-cover"
-//           />
-//         </div>
-//       </div>
-//     </div>
-//   </section>
-
-//   {/* Call to Action */}
-//   <section className="py-12 md:py-16 bg-primary text-primary-foreground flex flex-col items-center justify-center">
-//     <div className="container px-4 md:px-6 text-center">
-//       <div className="mx-auto max-w-3xl space-y-4">
-//         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-//           Come Grow With Us
-//         </h2>
-//         <p className="text-primary-foreground/90 md:text-lg">
-//           We invite you to join us this Sunday and experience the warmth
-//           and welcome of our church family. No matter where you are on
-//           your spiritual journey, there&apos;s a place for you here.
-//         </p>
-//         <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4">
-//           <Button variant="secondary">Plan Your Visit</Button>
-//           <Button
-//             variant="outline"
-//             className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10"
-//           >
-//             Contact Us
-//           </Button>
-//         </div>
-//       </div>
-//     </div>
-//   </section>
-// </main>}

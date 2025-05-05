@@ -121,7 +121,7 @@ export default function ServicePage() {
                 <div className="relative h-48">
                   <img
                     src="/placeholder.svg?height=400&width=600"
-                    alt="Traditional Service"
+                    alt="Chichewa Service"
                     fill
                     className="object-cover"
                   />
@@ -131,12 +131,10 @@ export default function ServicePage() {
                     <Clock className="h-5 w-5 text-primary" />
                     <h3 className="text-xl font-bold">Sunday 9:00 AM</h3>
                   </div>
-                  <p className="text-lg font-medium mb-2">
-                    Traditional Service
-                  </p>
+                  <p className="text-lg font-medium mb-2">Chichewa Service</p>
                   <p className="text-muted-foreground mb-4">
                     A classic worship experience featuring hymns, choir, and
-                    traditional liturgy.
+                    Chichewa liturgy.
                   </p>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <MapPin className="h-4 w-4" />
@@ -148,7 +146,7 @@ export default function ServicePage() {
                 <div className="relative h-48">
                   <img
                     src="/placeholder.svg?height=400&width=600"
-                    alt="Contemporary Service"
+                    alt="International Service"
                     fill
                     className="object-cover"
                   />
@@ -159,11 +157,11 @@ export default function ServicePage() {
                     <h3 className="text-xl font-bold">Sunday 11:00 AM</h3>
                   </div>
                   <p className="text-lg font-medium mb-2">
-                    Contemporary Service
+                    International Service
                   </p>
                   <p className="text-muted-foreground mb-4">
                     A modern worship experience with our praise band and
-                    contemporary music.
+                    International music.
                   </p>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <MapPin className="h-4 w-4" />
@@ -295,26 +293,24 @@ export default function ServicePage() {
                 </p>
               </div>
             </div>
-            <Tabs defaultValue="traditional" className="w-full">
+            <Tabs defaultValue="Chichewa" className="w-full">
               <div className="flex justify-center mb-8">
                 <TabsList>
-                  <TabsTrigger value="traditional">
-                    Traditional Service
-                  </TabsTrigger>
-                  <TabsTrigger value="contemporary">
-                    Contemporary Service
+                  <TabsTrigger value="Chichewa">Chichewa Service</TabsTrigger>
+                  <TabsTrigger value="International">
+                    International Service
                   </TabsTrigger>
                 </TabsList>
               </div>
-              <TabsContent value="traditional" className="space-y-6">
+              <TabsContent value="Chichewa" className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   <Card className="bg-muted/30">
                     <CardContent className="p-6">
                       <Music className="h-8 w-8 text-primary mb-4" />
                       <h3 className="text-xl font-bold mb-2">Hymns & Choir</h3>
                       <p className="text-muted-foreground">
-                        Our traditional service features beloved hymns led by
-                        our choir and organ accompaniment.
+                        Our Chichewa service features beloved hymns led by our
+                        choir and organ accompaniment.
                       </p>
                     </CardContent>
                   </Card>
@@ -379,7 +375,7 @@ export default function ServicePage() {
                       <h3 className="text-xl font-bold mb-2">Sermon</h3>
                       <p className="text-muted-foreground">
                         A thoughtful exposition of Scripture that connects
-                        ancient wisdom to contemporary life.
+                        ancient wisdom to International life.
                       </p>
                     </CardContent>
                   </Card>
@@ -441,14 +437,14 @@ export default function ServicePage() {
                   </Card>
                 </div>
               </TabsContent>
-              <TabsContent value="contemporary" className="space-y-6">
+              <TabsContent value="International" className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   <Card className="bg-muted/30">
                     <CardContent className="p-6">
                       <Music className="h-8 w-8 text-primary mb-4" />
                       <h3 className="text-xl font-bold mb-2">Praise Band</h3>
                       <p className="text-muted-foreground">
-                        Our contemporary service features modern worship music
+                        Our International service features modern worship music
                         led by our praise band.
                       </p>
                     </CardContent>
@@ -500,7 +496,7 @@ export default function ServicePage() {
                         Extended Worship
                       </h3>
                       <p className="text-muted-foreground">
-                        We spend 25-30 minutes in worship through contemporary
+                        We spend 25-30 minutes in worship through International
                         music and prayer.
                       </p>
                     </CardContent>
