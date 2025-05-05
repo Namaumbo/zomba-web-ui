@@ -83,7 +83,7 @@ function AboutPage() {
           </div>
         </div>
 
-        <section className="py-12 md:py-16 bg-muted/50 flex flex-col items-center justify-center">
+        <section className="py-12 sm:py-20 flex flex-col items-center justify-center bg-primary/20 mt-8 sm:mt-0">
           <div className=" mx-auto container px-4 md:px-6">
             <Tabs defaultValue="history" className="w-full">
               <div className="flex justify-center mb-8">
@@ -94,7 +94,7 @@ function AboutPage() {
               </div>
               <TabsContent value="history" className="space-y-6">
                 <motion.div
-                  className="text-center max-w-3xl mx-auto mb-8"
+                  className="text-center max-w-3xl mx-auto mb-8 "
                   initial={{ y: 30, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
@@ -108,9 +108,9 @@ function AboutPage() {
                     30 years.
                   </p>
                 </motion.div>
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
                   <motion.div
-                    className="space-y-3"
+                    className="space-y-3 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/15"
                     initial={{ y: 30, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -124,8 +124,9 @@ function AboutPage() {
                       worship in our community.
                     </p>
                   </motion.div>
+
                   <motion.div
-                    className="space-y-3"
+                    className="space-y-3 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/15"
                     initial={{ y: 30, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -139,8 +140,9 @@ function AboutPage() {
                       community center.
                     </p>
                   </motion.div>
+
                   <motion.div
-                    className="space-y-3"
+                    className="space-y-3 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/15"
                     initial={{ y: 30, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
