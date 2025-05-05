@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -74,8 +74,6 @@ export default function ServicePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-
- 
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative">
@@ -217,8 +215,8 @@ export default function ServicePage() {
                   What to Expect
                 </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  New to Grace Community Church? Here's what you can expect
-                  during your visit.
+                  New to Zomba Baptist Church? Here's what you can expect during
+                  your visit.
                 </p>
               </div>
             </div>
@@ -615,7 +613,6 @@ export default function ServicePage() {
           </div>
         </section>
 
-
         {/* FAQ Section */}
         <section className="py-12 md:py-16">
           <div className="mx-auto container px-4 md:px-6">
@@ -651,9 +648,7 @@ export default function ServicePage() {
             </div>
           </div>
         </section>
-
       </main>
-
     </div>
   );
 }

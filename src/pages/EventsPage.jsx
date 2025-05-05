@@ -1,15 +1,24 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import {Link} from "react-router-dom"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import { Heart, Calendar, Clock, MapPin, Users, Search, Filter, Share2 } from "lucide-react"
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import {
+  Heart,
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Search,
+  Filter,
+  Share2,
+} from "lucide-react";
 
 export default function EventsPage() {
-  const [searchQuery, setSearchQuery] = useState("")
+  const [searchQuery, setSearchQuery] = useState("");
 
   const featuredEvents = [
     {
@@ -18,7 +27,8 @@ export default function EventsPage() {
       date: "June 12, 2025",
       time: "11:00 AM - 3:00 PM",
       location: "City Park, Pavilion #3",
-      description: "Join us for our annual church picnic with food, games, and fellowship for the whole family.",
+      description:
+        "Join us for our annual church picnic with food, games, and fellowship for the whole family.",
       img: "/placeholder.svg?height=400&width=600",
       category: "fellowship",
     },
@@ -39,11 +49,12 @@ export default function EventsPage() {
       date: "April 20, 2025",
       time: "9:00 AM & 11:00 AM",
       location: "Main Sanctuary",
-      description: "Celebrate the resurrection of Jesus Christ with special music, message, and children's activities.",
+      description:
+        "Celebrate the resurrection of Jesus Christ with special music, message, and children's activities.",
       img: "/placeholder.svg?height=400&width=600",
       category: "worship",
     },
-  ]
+  ];
 
   const upcomingEvents = [
     {
@@ -52,7 +63,8 @@ export default function EventsPage() {
       date: "March 20, 2025",
       time: "7:30 AM",
       location: "Fellowship Hall",
-      description: "Monthly men's breakfast with guest speaker John Davis discussing 'Faith in the Workplace'.",
+      description:
+        "Monthly men's breakfast with guest speaker John Davis discussing 'Faith in the Workplace'.",
       category: "fellowship",
     },
     {
@@ -70,7 +82,8 @@ export default function EventsPage() {
       date: "March 24, 2025",
       time: "6:30 PM",
       location: "Youth Center",
-      description: "Fun night of games, snacks, and fellowship for students grades 6-12.",
+      description:
+        "Fun night of games, snacks, and fellowship for students grades 6-12.",
       category: "youth",
     },
     {
@@ -79,7 +92,8 @@ export default function EventsPage() {
       date: "March 25, 2025",
       time: "7:00 PM",
       location: "Chapel",
-      description: "Weekly gathering to pray for our church, community, and world needs.",
+      description:
+        "Weekly gathering to pray for our church, community, and world needs.",
       category: "worship",
     },
     {
@@ -88,7 +102,8 @@ export default function EventsPage() {
       date: "March 27, 2025",
       time: "12:00 PM",
       location: "Fellowship Hall",
-      description: "Monthly luncheon for seniors with special music by the Bell Choir.",
+      description:
+        "Monthly luncheon for seniors with special music by the Bell Choir.",
       category: "fellowship",
     },
     {
@@ -97,7 +112,8 @@ export default function EventsPage() {
       date: "March 28, 2025",
       time: "9:00 AM - 12:00 PM",
       location: "Community Center",
-      description: "Monthly food distribution to families in need. Volunteers needed at 8:00 AM.",
+      description:
+        "Monthly food distribution to families in need. Volunteers needed at 8:00 AM.",
       category: "outreach",
     },
     {
@@ -106,7 +122,8 @@ export default function EventsPage() {
       date: "March 29, 2025",
       time: "4:00 PM",
       location: "Choir Room",
-      description: "Weekly practice for children ages 5-12 preparing for the spring musical.",
+      description:
+        "Weekly practice for children ages 5-12 preparing for the spring musical.",
       category: "children",
     },
     {
@@ -115,7 +132,8 @@ export default function EventsPage() {
       date: "March 30, 2025",
       time: "9:30 AM",
       location: "Room 105",
-      description: "Learn about our church's mission, values, and how to get connected.",
+      description:
+        "Learn about our church's mission, values, and how to get connected.",
       category: "study",
     },
     {
@@ -124,37 +142,42 @@ export default function EventsPage() {
       date: "April 5, 2025",
       time: "9:00 AM - 3:00 PM",
       location: "Fellowship Hall",
-      description: "A day focused on strengthening marriages through communication and connection.",
+      description:
+        "A day focused on strengthening marriages through communication and connection.",
       category: "study",
     },
-  ]
+  ];
 
   const monthlyEvents = [
     {
       title: "Communion Sunday",
       day: "First Sunday",
       time: "Both Services",
-      description: "We celebrate communion together on the first Sunday of each month.",
+      description:
+        "We celebrate communion together on the first Sunday of each month.",
     },
     {
       title: "Men's Breakfast",
       day: "Third Friday",
       time: "7:30 AM",
-      description: "Monthly gathering for men with breakfast, fellowship, and a guest speaker.",
+      description:
+        "Monthly gathering for men with breakfast, fellowship, and a guest speaker.",
     },
     {
       title: "Senior Adults Luncheon",
       day: "Fourth Thursday",
       time: "12:00 PM",
-      description: "Monthly luncheon for seniors with special music and a guest speaker.",
+      description:
+        "Monthly luncheon for seniors with special music and a guest speaker.",
     },
     {
       title: "Food Pantry Distribution",
       day: "Last Friday",
       time: "9:00 AM - 12:00 PM",
-      description: "Monthly food distribution to families in need in our community.",
+      description:
+        "Monthly food distribution to families in need in our community.",
     },
-  ]
+  ];
 
   const pastEvents = [
     {
@@ -177,18 +200,17 @@ export default function EventsPage() {
       date: "December 24, 2024",
       img: "/placeholder.svg?height=300&width=400",
     },
-  ]
+  ];
 
   const filteredEvents = upcomingEvents.filter(
     (event) =>
       event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       event.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      event.category.toLowerCase().includes(searchQuery.toLowerCase()),
-  )
+      event.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="flex flex-col min-h-screen">
-
       {/* Main Content */}
       <main className="flex-1">
         {/* Hero Section */}
@@ -203,26 +225,32 @@ export default function EventsPage() {
             />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <div className="text-center text-white p-4">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Events & Activities</h1>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                  Events & Activities
+                </h1>
                 <p className="text-lg md:text-xl max-w-2xl mx-auto">
-                  Connect, grow, and serve through our various events and activities
+                  Connect, grow, and serve through our various events and
+                  activities
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-     
-
         {/* Featured Events */}
         <section className="py-12 md:py-16 bg-white">
           <div className="mx-auto container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">Highlights</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Featured Events</h2>
+                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                  Highlights
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Featured Events
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  Mark your calendar for these special upcoming events at Grace Community Church.
+                  Mark your calendar for these special upcoming events at Zomba
+                  Baptist Church.
                 </p>
               </div>
             </div>
@@ -230,10 +258,16 @@ export default function EventsPage() {
               {featuredEvents.map((event) => (
                 <Card key={event.id} className="overflow-hidden">
                   <div className="relative h-48">
-                    <img src={event.img || "/placeholder.svg"} alt={event.title} fill className="object-cover" />
+                    <img
+                      src={event.img || "/placeholder.svg"}
+                      alt={event.title}
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute top-2 right-2">
                       <Badge className="bg-primary text-primary-foreground">
-                        {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
+                        {event.category.charAt(0).toUpperCase() +
+                          event.category.slice(1)}
                       </Badge>
                     </div>
                   </div>
@@ -253,7 +287,9 @@ export default function EventsPage() {
                         <span>{event.location}</span>
                       </div>
                     </div>
-                    <p className="text-muted-foreground mb-4">{event.description}</p>
+                    <p className="text-muted-foreground mb-4">
+                      {event.description}
+                    </p>
                     <div className="flex justify-between items-center">
                       <Button variant="default" size="sm">
                         Learn More
@@ -275,10 +311,15 @@ export default function EventsPage() {
           <div className="mx-auto container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">Calendar</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Upcoming Events</h2>
+                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                  Calendar
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Upcoming Events
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  Find an event that interests you and get involved in our church community.
+                  Find an event that interests you and get involved in our
+                  church community.
                 </p>
               </div>
             </div>
@@ -305,11 +346,16 @@ export default function EventsPage() {
                             <div className="space-y-1">
                               <div className="flex items-center gap-2">
                                 <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
-                                  {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
+                                  {event.category.charAt(0).toUpperCase() +
+                                    event.category.slice(1)}
                                 </Badge>
-                                <h3 className="text-xl font-bold">{event.title}</h3>
+                                <h3 className="text-xl font-bold">
+                                  {event.title}
+                                </h3>
                               </div>
-                              <p className="text-muted-foreground">{event.description}</p>
+                              <p className="text-muted-foreground">
+                                {event.description}
+                              </p>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4 md:min-w-[280px]">
                               <div className="space-y-1">
@@ -327,7 +373,11 @@ export default function EventsPage() {
                                 </div>
                               </div>
                               <div className="flex items-center sm:items-end">
-                                <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full sm:w-auto"
+                                >
                                   Details
                                 </Button>
                               </div>
@@ -339,7 +389,9 @@ export default function EventsPage() {
                   </div>
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-muted-foreground">No events found matching your search.</p>
+                    <p className="text-muted-foreground">
+                      No events found matching your search.
+                    </p>
                   </div>
                 )}
               </TabsContent>
@@ -353,8 +405,12 @@ export default function EventsPage() {
                         <CardContent className="p-6">
                           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <div className="space-y-1">
-                              <h3 className="text-xl font-bold">{event.title}</h3>
-                              <p className="text-muted-foreground">{event.description}</p>
+                              <h3 className="text-xl font-bold">
+                                {event.title}
+                              </h3>
+                              <p className="text-muted-foreground">
+                                {event.description}
+                              </p>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4 md:min-w-[280px]">
                               <div className="space-y-1">
@@ -372,7 +428,11 @@ export default function EventsPage() {
                                 </div>
                               </div>
                               <div className="flex items-center sm:items-end">
-                                <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full sm:w-auto"
+                                >
                                   Details
                                 </Button>
                               </div>
@@ -394,8 +454,12 @@ export default function EventsPage() {
                         <CardContent className="p-6">
                           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <div className="space-y-1">
-                              <h3 className="text-xl font-bold">{event.title}</h3>
-                              <p className="text-muted-foreground">{event.description}</p>
+                              <h3 className="text-xl font-bold">
+                                {event.title}
+                              </h3>
+                              <p className="text-muted-foreground">
+                                {event.description}
+                              </p>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4 md:min-w-[280px]">
                               <div className="space-y-1">
@@ -413,7 +477,11 @@ export default function EventsPage() {
                                 </div>
                               </div>
                               <div className="flex items-center sm:items-end">
-                                <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full sm:w-auto"
+                                >
                                   Details
                                 </Button>
                               </div>
@@ -436,8 +504,12 @@ export default function EventsPage() {
                           {/* Similar content structure */}
                           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <div className="space-y-1">
-                              <h3 className="text-xl font-bold">{event.title}</h3>
-                              <p className="text-muted-foreground">{event.description}</p>
+                              <h3 className="text-xl font-bold">
+                                {event.title}
+                              </h3>
+                              <p className="text-muted-foreground">
+                                {event.description}
+                              </p>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4 md:min-w-[280px]">
                               <div className="space-y-1">
@@ -455,7 +527,11 @@ export default function EventsPage() {
                                 </div>
                               </div>
                               <div className="flex items-center sm:items-end">
-                                <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full sm:w-auto"
+                                >
                                   Details
                                 </Button>
                               </div>
@@ -477,8 +553,12 @@ export default function EventsPage() {
                           {/* Similar content structure */}
                           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <div className="space-y-1">
-                              <h3 className="text-xl font-bold">{event.title}</h3>
-                              <p className="text-muted-foreground">{event.description}</p>
+                              <h3 className="text-xl font-bold">
+                                {event.title}
+                              </h3>
+                              <p className="text-muted-foreground">
+                                {event.description}
+                              </p>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4 md:min-w-[280px]">
                               <div className="space-y-1">
@@ -496,7 +576,11 @@ export default function EventsPage() {
                                 </div>
                               </div>
                               <div className="flex items-center sm:items-end">
-                                <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full sm:w-auto"
+                                >
                                   Details
                                 </Button>
                               </div>
@@ -511,15 +595,23 @@ export default function EventsPage() {
               <TabsContent value="youth" className="mt-6">
                 <div className="space-y-4">
                   {filteredEvents
-                    .filter((event) => event.category === "youth" || event.category === "children")
+                    .filter(
+                      (event) =>
+                        event.category === "youth" ||
+                        event.category === "children"
+                    )
                     .map((event) => (
                       <Card key={event.id} className="overflow-hidden">
                         <CardContent className="p-6">
                           {/* Similar content structure */}
                           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <div className="space-y-1">
-                              <h3 className="text-xl font-bold">{event.title}</h3>
-                              <p className="text-muted-foreground">{event.description}</p>
+                              <h3 className="text-xl font-bold">
+                                {event.title}
+                              </h3>
+                              <p className="text-muted-foreground">
+                                {event.description}
+                              </p>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4 md:min-w-[280px]">
                               <div className="space-y-1">
@@ -537,7 +629,11 @@ export default function EventsPage() {
                                 </div>
                               </div>
                               <div className="flex items-center sm:items-end">
-                                <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full sm:w-auto"
+                                >
                                   Details
                                 </Button>
                               </div>
@@ -564,9 +660,12 @@ export default function EventsPage() {
                 <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   Regular Schedule
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Monthly Events</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Monthly Events
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  These events occur regularly each month at Grace Community Church.
+                  These events occur regularly each month at Zomba Baptist
+                  Church.
                 </p>
               </div>
             </div>
@@ -603,15 +702,21 @@ export default function EventsPage() {
                 <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   Photo Gallery
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Past Events</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Past Events
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  Take a look at some of our recent events and activities at Grace Community Church.
+                  Take a look at some of our recent events and activities at
+                  Zomba Baptist Church.
                 </p>
               </div>
             </div>
             <div className="grid gap-6 grid-cols-2 md:grid-cols-4">
               {pastEvents.map((event, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-lg">
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-lg"
+                >
                   <img
                     src={event.img || "/placeholder.svg"}
                     alt={event.title}
@@ -620,7 +725,9 @@ export default function EventsPage() {
                     className="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-4 flex flex-col justify-end">
-                    <h3 className="text-lg font-bold text-white">{event.title}</h3>
+                    <h3 className="text-lg font-bold text-white">
+                      {event.title}
+                    </h3>
                     <p className="text-white/80 text-sm">{event.date}</p>
                   </div>
                 </div>
@@ -632,21 +739,22 @@ export default function EventsPage() {
           </div>
         </section>
 
-     
-
         {/* Call to Action */}
         <section className="py-12 md:py-16 bg-primary text-primary-foreground">
           <div className="mx-auto container px-4 md:px-6 text-center">
             <div className="mx-auto max-w-3xl space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Stay Updated on Church Events</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                Stay Updated on Church Events
+              </h2>
               <p className="text-primary-foreground/90 md:text-lg">
-                Sign up for our weekly newsletter to receive updates on upcoming events, announcements, and
-                opportunities to get involved.
+                Sign up for our weekly newsletter to receive updates on upcoming
+                events, announcements, and opportunities to get involved.
               </p>
               <div className="mx-auto max-w-sm space-y-2">
                 <form className="flex space-x-2">
-             
-                  <Button className="bg-background text-foreground hover:bg-background/90">Subscribe</Button>
+                  <Button className="bg-background text-foreground hover:bg-background/90">
+                    Subscribe
+                  </Button>
                 </form>
                 <p className="text-xs text-primary-foreground/70">
                   We respect your privacy and will never share your information.
@@ -657,6 +765,5 @@ export default function EventsPage() {
         </section>
       </main>
     </div>
-  )
+  );
 }
-
