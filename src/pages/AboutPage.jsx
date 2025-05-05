@@ -1,18 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion } from "framer-motion";
-
-import {
-  Heart,
-  MapPin,
-  Clock,
-  Phone,
-  Mail,
-  Facebook,
-  Instagram,
-  Youtube,
-} from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Clock, MapPin, Calendar, ChevronRight } from "lucide-react";
+import React from "react";
+import { Heart, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react";
+import ServiceInfo from "../components/service-info";
 
 const styles = {
   section:
@@ -40,6 +34,50 @@ const styles = {
 };
 
 function AboutPage() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+        duration: 0.6,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100 },
+    },
+  };
+
+  const decorationVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 1.2, ease: "easeOut" },
+    },
+  };
+
+  const pulseVariants = {
+    initial: { scale: 1 },
+    animate: {
+      scale: [1, 1.05, 1],
+      transition: {
+        duration: 4,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+      },
+    },
+  };
+
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   return (
     <>
       <main className=" relative z-10  py-12 ">
@@ -323,70 +361,177 @@ function AboutPage() {
         <section className="py-12 md:py-16 bg-muted flex flex-col items-center justify-center">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-              <div className="space-y-4 flex-1/4 border p-8">
-                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
-                  Join Us
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter">
-                  Service Times & Location
-                </h2>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary">
-                      <Clock className="h-5 w-5 text-white" />
-                    </div>
+              <motion.div
+                ref={ref}
+                className="relative overflow-hidden rounded-xl border bg-gradient-to-b from-white to-slate-50 p-8 shadow-lg dark:from-slate-950 dark:to-slate-900"
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={containerVariants}
+              >
+                {/* Decorative elements */}
+                <motion.div
+                  className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/5"
+                  variants={decorationVariants}
+                  animate={isInView ? "visible" : "hidden"}
+                  initial="hidden"
+                ></motion.div>
+                <motion.div
+                  className="absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-primary/5"
+                  variants={decorationVariants}
+                  animate={isInView ? "visible" : "hidden"}
+                  initial="hidden"
+                ></motion.div>
 
-                    <div>
-                      <h3 className="font-bold">Sunday Services</h3>
-                      <p className="text-muted-foreground">
-                        9:00 AM - International Service
-                      </p>
+                <div className="relative z-10 space-y-6">
+                  {/* Header */}
+                  <motion.div className="space-y-3" variants={itemVariants}>
+                    <motion.div
+                      className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Join Our Community
+                    </motion.div>
+                    <motion.h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+                      Service Times & Location
+                    </motion.h2>
+                    <motion.div
+                      className="h-1 w-20 rounded-full bg-primary/70"
+                      initial={{ width: 0 }}
+                      animate={isInView ? { width: 80 } : { width: 0 }}
+                      transition={{ delay: 0.5, duration: 0.8 }}
+                    ></motion.div>
+                  </motion.div>
 
-                      <p className="text-muted-foreground">
-                        11:00 AM - Chichewa Service
-                      </p>
-                    </div>
+                  {/* Service times */}
+                  <div className="space-y-5">
+                    <motion.div
+                      className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                      variants={itemVariants}
+                      whileHover={{ x: 5 }}
+                    >
+                      <motion.div
+                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/90 shadow-md shadow-primary/20"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        variants={pulseVariants}
+                        animate="animate"
+                      >
+                        <Calendar className="h-6 w-6 text-white" />
+                      </motion.div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                          Sunday Services
+                        </h3>
+                        <p className="text-slate-600 dark:text-slate-300">
+                          9:00 AM - International Service
+                        </p>
+                        <p className="text-slate-600 dark:text-slate-300">
+                          11:00 AM - Chichewa Service
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    <motion.div
+                      className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                      variants={itemVariants}
+                      whileHover={{ x: 5 }}
+                    >
+                      <motion.div
+                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/90 shadow-md shadow-primary/20"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        variants={pulseVariants}
+                        animate="animate"
+                        transition={{ delay: 0.2 }}
+                      >
+                        <Clock className="h-6 w-6 text-white" />
+                      </motion.div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                          Wednesday Night
+                        </h3>
+                        <p className="text-slate-600 dark:text-slate-300">
+                          6:30 PM - Bible Study & Youth Groups
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    <motion.div
+                      className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                      variants={itemVariants}
+                      whileHover={{ x: 5 }}
+                    >
+                      <motion.div
+                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/90 shadow-md shadow-primary/20"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        variants={pulseVariants}
+                        animate="animate"
+                        transition={{ delay: 0.4 }}
+                      >
+                        <MapPin className="h-6 w-6 text-white" />
+                      </motion.div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                          Our Location
+                        </h3>
+                        <p className="text-slate-600 dark:text-slate-300">
+                          Along M1 Road
+                        </p>
+                        <p className="text-slate-600 dark:text-slate-300">
+                          Anytown, ST 12345
+                        </p>
+                      </div>
+                    </motion.div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary">
-                      <Clock className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold">Wednesday Night</h3>
-
-                      <p className="text-muted-foreground">
-                        6:30 PM - Bible Study & Youth Groups
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary">
-                      <MapPin className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold">Our Location</h3>
-                      <p className="text-muted-foreground">123 Faith Avenue</p>
-                      <p className="text-muted-foreground">Anytown, ST 12345</p>
-                    </div>
-                  </div>
+                  {/* CTA */}
+                  <motion.div
+                    className="pt-4"
+                    variants={itemVariants}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={
+                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                    }
+                    transition={{ delay: 1, duration: 0.5 }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button className="group relative overflow-hidden rounded-full px-6 py-6 text-base font-medium transition-all hover:shadow-lg">
+                        <span className="relative z-10">Contact Us</span>
+                        <span className="absolute inset-0  opacity-100 transition-opacity"></span>
+                        <motion.span
+                          initial={{ x: 0 }}
+                          whileHover={{ x: 5 }}
+                          transition={{ type: "spring", stiffness: 400 }}
+                        >
+                          <ChevronRight className="relative z-10 ml-2 h-4 w-4 inline-block" />
+                        </motion.span>
+                      </Button>
+                    </motion.div>
+                  </motion.div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Button variant="outline">Contact Us</Button>
+              </motion.div>
+              <></>
+              <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative overflow-hidden rounded-xl flex-3/4"
+              >
+                <div className="relative overflow-hidden rounded-xl flex-3/4">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.809933638927!2d35.32057426530683!3d-15.385905218177017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d904bedc35d9a7%3A0x7e8ed903188523b7!2sZomba%20Baptist%20Church!5e0!3m2!1sen!2smw!4v1746456701614!5m2!1sen!2smw"
+                    width="800"
+                    height="600"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
-              </div>
-              <div className="relative overflow-hidden rounded-xl flex-3/4">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.809933638927!2d35.32057426530683!3d-15.385905218177017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d904bedc35d9a7%3A0x7e8ed903188523b7!2sZomba%20Baptist%20Church!5e0!3m2!1sen!2smw!4v1746456701614!5m2!1sen!2smw"
-                  width="800"
-                  height="600"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
