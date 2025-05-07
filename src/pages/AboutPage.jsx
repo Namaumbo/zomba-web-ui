@@ -22,9 +22,8 @@ const styles = {
     "absolute -left-4 top-1/2 h-16 w-1 -translate-y-1/2 bg-gradient-to-b from-primary to-primary/50",
   description:
     "text-lg text-center lg:text-left leading-8 text-gray-600 [text-wrap:pretty]",
-  imageContainer: "relative lg:ml-auto rounded-3xl",
-  image:
-    "aspect-[5/3] w-full rounded-3xl object-cover shadow-2xl border border-border",
+  imageContainer: "relative overflow-hidden lg:ml-auto rounded-3xl",
+  image: "aspect-[5/3] w-full rounded-3xl object-cover shadow-2xl ",
   pattern:
     "absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-40",
   glow: "absolute -top-3 -z-10 h-72 w-72 bg-primary/17 blur-3xl lg:top-[-10%] lg:right-[20%]",
@@ -78,197 +77,238 @@ function AboutPage() {
 
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const timelineRef = useRef(null);
+  const valuesRef = useRef(null);
+  const serviceRef = useRef(null);
+
+  const timelineInView = useInView(timelineRef, { once: true, amount: 0.3 });
+  const valuesInView = useInView(valuesRef, { once: true, amount: 0.3 });
+  const serviceInView = useInView(serviceRef, { once: true, amount: 0.3 });
+
   return (
     <>
       <main className=" relative z-10  py-12 ">
-        <div className={`${styles.grid} px-4 sm:px-8 mx-auto container`}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.content}
-          >
-            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary mb-[1rem]">
-              About Us
-            </div>
-            <div className={styles.titleWrapper}>
-              <div className={styles.titleAccent} />
-              <h1 className={styles.title}> A Community of Faith and Love</h1>
-            </div>
-            <p className={styles.description}>
-              Zomba Baptist Church exists to share the transformative love of
-              Christ with our community and beyond. Over 500 active members in
-              our vibrant community. Diverse congregation united in faith and
-              worship, Led by dedicated pastoral leadership, Inclusive
-              membership structure comprising: Senior Pastor-{">"} Full Members
-              -{">"}Associate Members
-            </p>
-            <div className={styles.glow}></div>
-          </motion.div>
-          <div className="sm:py-10">
+        <section className="bg-gradient-to-b from-slate-50 to-white ">
+          <div className={`${styles.grid} px-4 sm:px-8 mx-auto container`}>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className={styles.imageContainer}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className={styles.content}
             >
-              <img
-                src="/congregation1.jpg"
-                alt="Church congregation"
-                className={styles.image}
-              />
-              <div className={styles.pattern} />
-              <div className={styles.spotlight} />
-            </motion.div>
-          </div>
-        </div>
-
-        <section className="py-12 sm:py-20 flex flex-col items-center justify-center bg-primary/30 mt-8 sm:mt-0">
-          <div className=" mx-auto container px-4 md:px-6">
-            <Tabs defaultValue="history" className="w-full">
-              <div className="flex justify-center mb-8">
-                <TabsList>
-                  <TabsTrigger value="history">Our History</TabsTrigger>
-                  <TabsTrigger value="leadership">Leadership</TabsTrigger>
-                </TabsList>
+              <div className="inline-block rounded-2xl bg-primary/10 px-3 py-1 text-sm text-primary mb-[1rem]">
+                About Our Church
               </div>
-              <TabsContent value="history" className="space-y-6">
+              <div className={styles.titleWrapper}>
+                <div className={styles.titleAccent} />
+                <h1 className={styles.title}> A Community of Faith and Love</h1>
+              </div>
+              <p className={styles.description}>
+                Zomba Baptist Church exists to share the transformative love of
+                Christ with our community and beyond. Over 500 active members in
+                our vibrant community. Diverse congregation united in faith and
+                worship, Led by dedicated pastoral leadership, Inclusive
+                membership structure comprising: Senior Pastor-{">"} Full
+                Members -{">"}Associate Members
+              </p>
+              <div className={styles.glow}></div>
+            </motion.div>
+            <div className="sm:py-10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className={styles.imageContainer}
+              >
+                <motion.img
+                  src="/inchurch.jpg"
+                  alt="Church worship service"
+                  className={styles.image}
+                  initial={{ scale: 1 }}
+                  animate={{ scale: 1.09 }}
+                  transition={{
+                    duration: 20,
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
+                />
+                <div className="absolute bottom-0 left-0 p-6 text-white">
+                  <span className="text-sm font-medium uppercase tracking-wider">
+                    Zomba Baptist Church
+                  </span>
+                  <br />
+                  <span className="text-2xl font-bold">
+                    Serving our community since 1990
+                  </span>
+                </div>
+                <div className={styles.pattern} />
+                <div className={styles.spotlight} />
                 <motion.div
-                  className="text-center max-w-3xl mx-auto mb-8 "
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                  className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg p-4 max-w-[200px]"
                 >
-                  <h2 className="text-3xl font-bold tracking-tighter mb-4">
+                  <span className=" text-sm font-medium text-primary">
+                    Join us every Sunday
+                  </span>
+                  <br />
+                  <span className="text-lg font-bold">9:00 AM & 11:00 AM</span>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our History & Leadership Section */}
+        <section className="relative py-24 mt-8 overflow-hidden bg-gradient-to-b from-primary/70 to-primary/5">
+          <div className="container relative px-4 mx-auto">
+            <Tabs defaultValue="history" className="w-full">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex justify-center mb-16"
+              >
+                <TabsList className="grid w-full max-w-md grid-cols-2 p-1 bg-primary/10">
+                  <TabsTrigger
+                    value="history"
+                    className="text-base font-medium"
+                  >
+                    Our History
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="leadership"
+                    className="text-base font-medium"
+                  >
+                    Leadership
+                  </TabsTrigger>
+                </TabsList>
+              </motion.div>
+
+              <TabsContent value="history" className="space-y-16">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center max-w-3xl mx-auto"
+                >
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text">
                     Our Journey of Faith
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-lg text-muted-foreground">
                     Zomba Baptist Church has been serving our community for over
-                    30 years.
+                    30 years, growing from a small gathering to a vibrant
+                    congregation.
                   </p>
                 </motion.div>
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
+
+                <div ref={timelineRef} className="relative">
+                  {/* Timeline line with animated drawing effect */}
                   <motion.div
-                    className="space-y-3 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/15"
-                    initial={{ y: 30, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                  >
-                    <div className="text-primary font-bold">1990</div>
-                    <h3 className="text-xl font-bold pb-3 pt-3 pr-3 pl-2 rounded-4xl max-w-fit">
-                      Our Founding
-                    </h3>
-                    <p className="text-black font-medium">
-                      Zomba Baptist Church was founded by a small group of
-                      families committed to establishing a welcoming place of
-                      worship in our community.
-                    </p>
-                  </motion.div>
+                    initial={{ height: 0 }}
+                    animate={
+                      timelineInView ? { height: "100%" } : { height: 0 }
+                    }
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/50 rounded-full"
+                  />
 
                   <motion.div
-                    className="space-y-3 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/15"
-                    initial={{ y: 30, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    initial="hidden"
+                    animate={timelineInView ? "visible" : "hidden"}
+                    variants={staggerContainer}
+                    className="space-y-24"
                   >
-                    <div className="text-primary font-bold">2005</div>
-                    <h3 className="text-xl font-bold pb-3 pt-3 pr-3 pl-2 rounded-4xl max-w-fit">
-                      Building Expansion
-                    </h3>
-                    <p className="text-black font-medium">
-                      As our congregation grew, we expanded our facilities to
-                      include a larger sanctuary, educational wing, and
-                      community center.
-                    </p>
-                  </motion.div>
+                    <TimelineItem
+                      year="1990"
+                      title="Our Founding"
+                      description="Zomba Baptist Church was founded by a small group of families committed to establishing a welcoming place of worship in our community."
+                      isLeft={true}
+                    />
 
-                  <motion.div
-                    className="space-y-3 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/15"
-                    initial={{ y: 30, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                  >
-                    <div className="text-primary font-bold">2020</div>
-                    <h3 className="text-xl font-bold  pb-3 pt-3 pr-3 pl-2 rounded-4xl max-w-fit">
-                      Community Outreach
-                    </h3>
-                    <p className="text-black font-medium">
-                      We launched several new outreach programs to better serve
-                      our local community and expanded our global missions work.
-                    </p>
+                    <TimelineItem
+                      year="2005"
+                      title="Building Expansion"
+                      description="As our congregation grew, we expanded our facilities to include a larger sanctuary, educational wing, and community center."
+                      isLeft={false}
+                    />
+
+                    <TimelineItem
+                      year="2020"
+                      title="Community Outreach"
+                      description="We launched several new outreach programs to better serve our local community and expanded our global missions work."
+                      isLeft={true}
+                    />
                   </motion.div>
                 </div>
               </TabsContent>
-              <TabsContent value="leadership" className="space-y-6">
+
+              <TabsContent value="leadership" className="space-y-16">
                 <motion.div
-                  className="text-center max-w-3xl mx-auto mb-8"
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center max-w-3xl mx-auto"
                 >
-                  <h2 className="text-3xl font-bold tracking-tighter mb-4">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6  bg-clip-text ">
                     Our Leadership Team
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-lg text-muted-foreground">
                     Meet the dedicated individuals who guide our church
-                    community.
+                    community with wisdom and compassion.
                   </p>
                 </motion.div>
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="relative h-40 w-40 overflow-hidden rounded-full mb-4">
-                      <img
-                        src="/placeholder.svg?height=160&width=160"
-                        alt="Pastor David Johnson"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <h3 className="text-xl font-bold">Pastor David Johnson</h3>
-                    <p className="text-primary">Senior Pastor</p>
-                    <p className="text-muted-foreground mt-2">
-                      Pastor David has been leading our church for over 15 years
-                      with wisdom and compassion.
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="relative h-40 w-40 overflow-hidden rounded-full mb-4">
-                      <img
-                        src="/placeholder.svg?height=160&width=160"
-                        alt="Sarah Williams"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <h3 className="text-xl font-bold">Sarah Williams</h3>
-                    <p className="text-primary">Worship Director</p>
-                    <p className="text-muted-foreground mt-2">
-                      Sarah leads our worship ministry with passion and
-                      creativity.
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="relative h-40 w-40 overflow-hidden rounded-full mb-4">
-                      <img
-                        src="/placeholder.svg?height=160&width=160"
-                        alt="Michael Chen"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <h3 className="text-xl font-bold">Michael Chen</h3>
-                    <p className="text-primary">Youth Pastor</p>
-                    <p className="text-muted-foreground mt-2">
-                      Michael brings energy and insight to our thriving youth
-                      ministry.
-                    </p>
-                  </div>
-                </div>
+
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={staggerContainer}
+                  className="grid gap-10 md:grid-cols-3"
+                >
+                  <LeadershipCard
+                    name="Pastor David Johnson"
+                    role="Senior Pastor"
+                    description="Pastor David has been leading our church for over 15 years with wisdom and compassion."
+                    imageUrl="/placeholder.svg?height=400&width=400"
+                  />
+
+                  <LeadershipCard
+                    name="Sarah Williams"
+                    role="Worship Director"
+                    description="Sarah leads our worship ministry with passion and creativity."
+                    imageUrl="/placeholder.svg?height=400&width=400"
+                  />
+
+                  <LeadershipCard
+                    name="Michael Chen"
+                    role="Youth Pastor"
+                    description="Michael brings energy and insight to our thriving youth ministry."
+                    imageUrl="/placeholder.svg?height=400&width=400"
+                  />
+                </motion.div>
               </TabsContent>
             </Tabs>
           </div>
@@ -561,6 +601,110 @@ function AboutPage() {
         </section>
       </main>
     </>
+  );
+}
+
+function TimelineItem({ year, title, description, isLeft }) {
+  const itemVariants = {
+    hidden: { opacity: 0, x: isLeft ? -20 : 20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5 },
+    },
+  }
+
+  return (
+    <motion.div variants={itemVariants} className={`flex items-center ${isLeft ? "flex-row-reverse" : "flex-row"}`}>
+      <div className={`w-1/2 ${isLeft ? "pl-8 text-right" : "pr-8"}`}>
+        <div className="space-y-2">
+          <div className="text-primary font-bold text-xl">{year}</div>
+          <h3 className="text-2xl font-bold">{title}</h3>
+          <p className="text-slate-600">{description}</p>
+        </div>
+      </div>
+
+      <div className="relative flex items-center justify-center">
+        <div className="h-8 w-8 rounded-full bg-primary z-10"></div>
+      </div>
+
+      <div className="w-1/2"></div>
+    </motion.div>
+  )
+}
+
+// Component for leadership cards
+function LeadershipCard({ name, role, description, imageUrl }) {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      className="flex flex-col items-center text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+    >
+      <div className="relative h-40 w-40 overflow-hidden rounded-full mb-6 border-4 border-primary/10">
+        <img
+          src={imageUrl || "/placeholder.svg"}
+          alt={name}
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <h3 className="text-xl font-bold">{name}</h3>
+      <p className="text-primary font-medium mt-1">{role}</p>
+      <p className="text-slate-600 mt-4">{description}</p>
+    </motion.div>
+  );
+}
+
+// Component for value cards
+function ValueCard({ icon, title, description }) {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
+  return (
+    <motion.div variants={cardVariants}>
+      <Card className="h-full hover:shadow-lg transition-shadow">
+        <CardContent className="p-6 flex flex-col h-full">
+          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+            {icon}
+          </div>
+          <h3 className="text-xl font-bold mb-3">{title}</h3>
+          <p className="text-slate-600 flex-grow">{description}</p>
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
+}
+
+// Component for service info items
+function ServiceInfoItem({ icon, title, items }) {
+  return (
+    <div className="flex items-start gap-4 group">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary shadow-md">
+        {icon}
+      </div>
+      <div className="space-y-1">
+        <h3 className="text-lg font-bold">{title}</h3>
+        {items.map((item, index) => (
+          <p key={index} className="text-slate-600">
+            {item}
+          </p>
+        ))}
+      </div>
+    </div>
   );
 }
 

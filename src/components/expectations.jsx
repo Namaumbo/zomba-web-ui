@@ -142,7 +142,6 @@ export default function Expectations({ isServiceTimesInView }) {
             <motion.img
               src="/congregation1.jpg"
               alt="Church service"
-
               className="w-full h-full object-cover shadow-4xl shadow-black/20"
               initial={{ scale: 1 }}
               animate={isImageInView ? { scale: 1.03 } : { scale: 1 }}
