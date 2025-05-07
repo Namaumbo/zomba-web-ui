@@ -78,14 +78,14 @@ function AboutPage() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+  // const fadeIn = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { duration: 0.6 },
+  //   },
+  // };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -107,8 +107,8 @@ function AboutPage() {
 
   return (
     <>
-      <main className=" relative z-10  py-12 ">
-        <section className="bg-gradient-to-b from-slate-50 to-white ">
+      <main className=" relative z-10  ">
+        <section className="bg-gradient-to-b from-slate-50 to-white pt-5 ">
           <div className={`${styles.grid} px-4 sm:px-8 mx-auto container`}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -552,7 +552,7 @@ function AboutPage() {
                   </motion.div>
                 </div>
               </motion.div>
-              <></>
+              
               <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 50 }}

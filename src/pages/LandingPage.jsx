@@ -8,7 +8,7 @@ import HeroCarousel from "../components/hero-carousel";
 import PastorSection from "../components/pastor-message";
 import MissionSection from "../components/mission-section";
 import ServiceLocation from "../components/service-location";
-import { motion, useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion";
 
 export default function LandingPage() {
   return (
@@ -39,16 +39,36 @@ export default function LandingPage() {
               <div className="space-y-4 ">
                 <ServiceLocation />
               </div>
-             
-              <div className="relative overflow-hidden rounded-xl shadow-2xl ">
-                <img
-                  src="/inchurch.jpg"
-                  alt="Church building"
-                  fill
-                  className="object-cover "
-                />
-              </div>
-            </div>
+
+              <div className="sm:py-10">
+                <motion.div
+                  initial={{ opacity: 0, y: -100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="relative overflow-hidden lg:ml-auto rounded-3xl"
+                >
+                  <motion.img
+                    src="/inchurch.jpg"
+                    alt="Church worship service"
+                    className="aspect-[5/3] w-full rounded-3xl object-cover shadow-2xl"
+                    initial={{ scale: 1 }}
+                    animate={{ scale: 1.09 }}
+                    transition={{
+                      duration: 20,
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <div className="absolute bottom-0 left-0 p-6 text-white">
+                    <span className="text-sm font-medium uppercase tracking-wider">
+                      Zomba Baptist Church
+                    </span>
+                    <br />
+                  
+                  </div>
+                </motion.div>
+              </div>            </div>
           </div>
         </section>
 

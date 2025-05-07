@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,6 +23,8 @@ import {
   Send,
   Check,
 } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import ContactMap from "../components/contact-map";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -98,6 +100,8 @@ export default function ContactPage() {
       img: "/placeholder.svg?height=200&width=200",
     },
   ];
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -193,190 +197,8 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form & Map */}
-        <section className="py-12 md:py-16 bg-muted/30">
-          <div className="mx-auto container px-4 md:px-6">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-              <div>
-                <div className="mb-6">
-                  <h2 className="text-3xl font-bold tracking-tighter mb-2">
-                    Send Us a Message
-                  </h2>
-                  <p className="text-muted-foreground">
-                    Have a question or want to get in touch? Fill out the form
-                    below and we'll get back to you as soon as possible.
-                  </p>
-                </div>
 
-                {isSubmitted ? (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                    <div className="mx-auto h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                      <Check className="h-6 w-6 text-green-600" />
-                    </div>
-                    <h3 className="text-xl font-bold text-green-800 mb-2">
-                      Message Sent!
-                    </h3>
-                    <p className="text-green-700">
-                      Thank you for contacting us. We'll respond to your message
-                      as soon as possible.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="name"
-                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
-                          Name
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formState.name}
-                          onChange={handleChange}
-                          placeholder="Your name"
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="email"
-                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
-                          Email
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formState.email}
-                          onChange={handleChange}
-                          placeholder="Your email"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="phone"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Phone (optional)
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formState.phone}
-                        onChange={handleChange}
-                        placeholder="Your phone number"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="subject"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Subject
-                      </label>
-                      <Select
-                        value={formState.subject}
-                        onValueChange={handleSelectChange}
-                      >
-                        <SelectTrigger id="subject">
-                          <SelectValue placeholder="Select a subject" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="general">
-                            General Inquiry
-                          </SelectItem>
-                          <SelectItem value="prayer">Prayer Request</SelectItem>
-                          <SelectItem value="membership">
-                            Membership Information
-                          </SelectItem>
-                          <SelectItem value="volunteer">
-                            Volunteer Opportunities
-                          </SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="message"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Message
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formState.message}
-                        onChange={handleChange}
-                        placeholder="Your message"
-                        rows={5}
-                        required
-                      />
-                    </div>
-
-                    <Button type="submit" className="w-full">
-                      <Send className="mr-2 h-4 w-4" /> Send Message
-                    </Button>
-                  </form>
-                )}
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <h2 className="text-3xl font-bold tracking-tighter mb-2">
-                    Find Us
-                  </h2>
-                  <p className="text-muted-foreground mb-4">
-                    We're conveniently located in the heart of Anytown, just a
-                    few blocks from downtown.
-                  </p>
-                </div>
-
-                <div className="relative h-[400px] overflow-hidden rounded-xl border">
-                  {/* This would typically be replaced with an actual map embed */}
-                  <div className="absolute inset-0 bg-muted flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                      <h3 className="text-xl font-bold">Map Placeholder</h3>
-                      <p className="text-muted-foreground">
-                        This would be replaced with an actual map embed from
-                        Google Maps, Mapbox, etc.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Directions</h3>
-                  <p className="text-muted-foreground">
-                    From Highway 101, take Exit 25 and turn right onto Main
-                    Street. Continue for 2 miles, then turn left onto Faith
-                    Avenue. The church will be on your right.
-                  </p>
-                  <p className="text-muted-foreground">
-                    Public Transportation: Bus routes 10 and 15 stop directly in
-                    front of the church.
-                  </p>
-                </div>
-
-                <div className="flex gap-4">
-                  <Button>Get Directions</Button>
-                  <Button variant="outline">View Larger Map</Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <ContactMap />
         {/* Staff Contact */}
         <section className="py-12 md:py-16 bg-white">
           <div className="mx-auto container px-4 md:px-6">
