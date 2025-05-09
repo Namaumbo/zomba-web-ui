@@ -39,20 +39,28 @@ export default function LandingPage() {
               <div className="space-y-4 ">
                 <ServiceLocation />
               </div>
-
-              <div className="sm:py-10">
+              <div className="relative">
                 <motion.div
-                  initial={{ opacity: 0, y: -100 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  className="relative overflow-hidden lg:ml-auto rounded-3xl"
+                  initial={{ opacity: 0, y: 40, rotate: -2 }}
+                  animate={{ opacity: 1, y: 0, rotate: 0 }}
+                  transition={{ duration: 1, delay: 0.7 }}
+                  className="relative overflow-hidden rounded-3xl"
                 >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.5, delay: 1 }}
+                  />
+
                   <motion.img
                     src="/inchurch.jpg"
                     alt="Church worship service"
-                    className="aspect-[5/3] w-full rounded-3xl object-cover shadow-2xl"
-                    initial={{ scale: 1 }}
-                    animate={{ scale: 1.09 }}
+                    className="aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl"
+                    initial={{ scale: 1.1 }}
+                    animate={{
+                      scale: [1.1, 1.05, 1.1],
+                    }}
                     transition={{
                       duration: 20,
                       repeat: Number.POSITIVE_INFINITY,
@@ -60,15 +68,38 @@ export default function LandingPage() {
                       ease: "easeInOut",
                     }}
                   />
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <span className="text-sm font-medium uppercase tracking-wider">
+
+                  <motion.div
+                    className="absolute bottom-0 left-0 p-6 text-white z-20"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
+                  >
+                    <motion.span
+                      className="text-sm font-medium uppercase tracking-wider"
+                      whileHover={{ letterSpacing: "0.1em" }}
+                      transition={{ duration: 0.3 }}
+                    >
                       Zomba Baptist Church
-                    </span>
+                    </motion.span>
                     <br />
-                  
-                  </div>
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "40%" }}
+                      transition={{ duration: 1, delay: 1.5 }}
+                      className="h-0.5 bg-white/70 mt-2"
+                    />
+                  </motion.div>
                 </motion.div>
-              </div>            </div>
+
+                <motion.div
+                  className="absolute -bottom-4 -right-4 h-30 w-30 rounded-full bg-primary/20 backdrop-blur-md z-0"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1.0, delay: 1.3 }}
+                />
+              </div>
+            </div>
           </div>
         </section>
 
