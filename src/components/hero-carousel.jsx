@@ -21,7 +21,7 @@ const slides = [
       "Just as the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many - Matthew 20:28",
   },
   {
-    img: "/placeholder.svg?height=600&width=1200",
+    img: "/mgonero.jpg",
     title: "God Loves You",
     description:
       "At ZBC, We believe that God loves you and has a plan for your life.He gave his Son for You to be saved and have etrnal life",
