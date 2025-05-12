@@ -79,7 +79,7 @@ export default function MinistryComponent({
                 <h3 className="text-white font-bold text-2xl tracking-tight mb-2">
                   {ministry.ministry}
                 </h3>
-                <div className="h-1 w-16 bg-teal-500 rounded-full" />
+                <div className="h-1 w-16 bg-primary/50 rounded-full" />
               </motion.div>
             </div>
 
@@ -105,7 +105,7 @@ export default function MinistryComponent({
                 }}
                 transition={{ duration: 0.2 }}
               >
-                <Button className="w-full group bg-teal-600 hover:bg-teal-700 text-white">
+                <Button className="w-full group  text-white">
                   Read More
                   <motion.div
                     animate={{

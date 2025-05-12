@@ -7,7 +7,7 @@ export default function MinistryPage() {
   const ministries = [
     {
       ministry: "Youth Ministry",
-      coverPage: "/placeholder.svg?height=600&width=800&text=Youth+Ministry",
+      coverPage: "/youthMinistry.jpg",
       description:
         "Our youth ministry is dedicated to helping young people grow in their faith through fellowship, Bible study, and service opportunities.",
       verse:
@@ -22,7 +22,7 @@ export default function MinistryPage() {
     },
     {
       ministry: "Outreach Ministry",
-      coverPage: "/placeholder.svg?height=600&width=800&text=Outreach+Ministry",
+      coverPage: "/evangelism.jpg",
       description:
         "Our outreach ministry serves the local community through various programs, providing practical help and sharing God's love with those in need.",
       verse:
@@ -30,7 +30,7 @@ export default function MinistryPage() {
     },
     {
       ministry: "Children's Ministry",
-      coverPage: "/placeholder.svg?height=600&width=800&text=Children's+Ministry",
+      coverPage: "/kids.jpg",
       description:
         "The children's ministry provides a safe and fun environment where children can learn about God's love and develop a strong foundation of faith.",
       verse:
@@ -38,7 +38,7 @@ export default function MinistryPage() {
     },
     {
       ministry: "Prayer Ministry",
-      coverPage: "/placeholder.svg?height=600&width=800&text=Prayer+Ministry",
+      coverPage: "/prayer.jpg",
       description:
         "Our prayer ministry is committed to interceding for the needs of our church, community, and world, believing in the power of prayer to bring transformation.",
       verse: "Devote yourselves to prayer, being watchful and thankful. - Colossians 4:2",
