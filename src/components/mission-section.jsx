@@ -106,21 +106,7 @@ export default function MissionSection() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Link toimport { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
-
-export default ScrollToTop;
-="about" asChild>
+                  <Link to="about" asChild>
                     <Button
                       variant="link"
                       className="p-0 h-auto mt-4 text-primary"
