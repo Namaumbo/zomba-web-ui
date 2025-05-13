@@ -1,26 +1,17 @@
 import {
   Heart,
-  MapPin,
-  Clock,
-  Phone,
-  Mail,
-  Facebook,
-  Instagram,
-  Youtube,
   Menu,
-  BookDashed,
   X
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
-function NavBarComponent() {
+function   NavBarComponent() {
   const location = useLocation();
   const currentPath = location.pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  // Close mobile menu when route changes
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);

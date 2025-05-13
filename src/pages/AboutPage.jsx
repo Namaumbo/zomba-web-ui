@@ -177,7 +177,9 @@ function AboutPage() {
                   <span className="text-lg font-bold">9:00 AM & 11:00 AM</span>
                 </motion.div>
               </motion.div>
+              
             </div>
+            
           </div>
         </section>
 

@@ -14,11 +14,13 @@ import ServicePage from "./pages/ServicesPage";
 import EventsPage from "./pages/EventsPage";
 import ContactPage from "./pages/ContactusPage";
 import MinistryPage from "./pages/MinistryPage";
-import '@fontsource/inter';
+import "@fontsource/inter";
+import ScrollToTop from "./components/scroll-top";
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop/>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<LandingPage />} />
@@ -27,7 +29,6 @@ function App() {
             <Route path="/events" element={<EventsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/ministries" element={<MinistryPage />} />
-
 
             {/* <Route path="/ministries" element={<MinistriesPage />} />
             
