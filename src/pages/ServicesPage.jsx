@@ -1,36 +1,64 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Clock, Music, BookOpen, Users, Calendar, HelpCircle, MapPin, ChevronRight } from "lucide-react"
-import Expectations from "../components/expectations"
-import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion"
-import { useRef, useState } from "react"
+"use client";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Clock,
+  Music,
+  BookOpen,
+  Users,
+  Calendar,
+  HelpCircle,
+  MapPin,
+  ChevronRight,
+} from "lucide-react";
+import Expectations from "../components/expectations";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useInView,
+  AnimatePresence,
+} from "framer-motion";
+import { useRef, useState } from "react";
+import ServiceCard from "../components/service-card.jsx";
 
 export default function ServicePage() {
   // Refs for scroll animations
-  const heroRef = useRef(null)
-  const serviceTimesRef = useRef(null)
-  const serviceElementsRef = useRef(null)
-  const sermonsRef = useRef(null)
-  const faqRef = useRef(null)
+  const heroRef = useRef(null);
+  const serviceTimesRef = useRef(null);
+  const serviceElementsRef = useRef(null);
+  const sermonsRef = useRef(null);
+  const faqRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Check if sections are in view
-  const isServiceTimesInView = useInView(serviceTimesRef, { once: true, amount: 0.2 })
-  const isServiceElementsInView = useInView(serviceElementsRef, { once: true, amount: 0.2 })
-  const isSermonsInView = useInView(sermonsRef, { once: true, amount: 0.2 })
-  const isFaqInView = useInView(faqRef, { once: true, amount: 0.2 })
+  const isServiceTimesInView = useInView(serviceTimesRef, {
+    once: true,
+    amount: 0.2,
+  });
+  const isServiceElementsInView = useInView(serviceElementsRef, {
+    once: true,
+    amount: 0.2,
+  });
+  const isSermonsInView = useInView(sermonsRef, { once: true, amount: 0.2 });
+  const isFaqInView = useInView(faqRef, { once: true, amount: 0.2 });
 
   // Parallax effect for hero section
   const { scrollYProgress: heroScrollProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
-  })
+  });
 
-  const heroScale = useTransform(heroScrollProgress, [0, 1], [1, 1.1])
-  const heroOpacity = useTransform(heroScrollProgress, [0, 0.8], [1, 0])
-  const heroY = useTransform(heroScrollProgress, [0, 1], [0, 100])
+  const heroScale = useTransform(heroScrollProgress, [0, 1], [1, 1.1]);
+  const heroOpacity = useTransform(heroScrollProgress, [0, 0.8], [1, 0]);
+  const heroY = useTransform(heroScrollProgress, [0, 1], [0, 100]);
 
   // Animation variants
   const fadeInUp = {
@@ -44,7 +72,7 @@ export default function ServicePage() {
         damping: 15,
       },
     },
-  }
+  };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -55,37 +83,45 @@ export default function ServicePage() {
         delayChildren: 0.1,
       },
     },
-  }
+  };
 
   const cardHover = {
-    rest: { scale: 1, boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)" },
+    rest: {
+      scale: 1,
+      boxShadow:
+        "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    },
     hover: {
       scale: 1.03,
-      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      boxShadow:
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       transition: { type: "spring", stiffness: 400, damping: 17 },
     },
-  }
+  };
 
   const upcomingSermons = [
     {
       title: "Finding Peace in Troubled Times",
       date: "March 17, 2025",
       scripture: "John 14:27",
-      description: "Discovering God's peace that surpasses all understanding in the midst of life's challenges.",
+      description:
+        "Discovering God's peace that surpasses all understanding in the midst of life's challenges.",
     },
     {
       title: "The Power of Community",
       date: "March 24, 2025",
       scripture: "Acts 2:42-47",
-      description: "Exploring how authentic Christian community can transform our lives and the world around us.",
+      description:
+        "Exploring how authentic Christian community can transform our lives and the world around us.",
     },
     {
       title: "Grace for the Journey",
       date: "March 31, 2025",
       scripture: "2 Corinthians 12:9",
-      description: "Understanding how God's grace sustains us through every season of life.",
+      description:
+        "Understanding how God's grace sustains us through every season of life.",
     },
-  ]
+  ];
 
   const faqItems = [
     {
@@ -113,17 +149,20 @@ export default function ServicePage() {
       answer:
         "No, we won't ask you to stand or identify yourself as a visitor. We want you to feel welcome without any pressure or embarrassment.",
     },
-  ]
+  ];
 
   // State for active tab
-  const [activeTab, setActiveTab] = useState("Chichewa")
+  const [activeTab, setActiveTab] = useState("Chichewa");
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-1">
         {/* Hero Section with Parallax */}
         <motion.section className="relative" ref={heroRef}>
-          <motion.div className="relative h-[300px] md:h-[400px] w-full overflow-hidden" style={{ scale: heroScale }}>
+          <motion.div
+            className="relative h-[300px] md:h-[400px] w-full overflow-hidden"
+            style={{ scale: heroScale }}
+          >
             <motion.img
               src="/inchurch.jpg"
               alt="Church worship service"
@@ -156,7 +195,8 @@ export default function ServicePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
                 >
-                  Join us as we gather to worship, learn, and grow together in faith
+                  Join us as we gather to worship, learn, and grow together in
+                  faith
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -180,7 +220,9 @@ export default function ServicePage() {
                 >
                   Join Us
                 </motion.div>
-                <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Service Times</motion.h2>
+                <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Service Times
+                </motion.h2>
                 <motion.div
                   className="h-1 w-20 rounded-full bg-primary/50 mx-auto"
                   initial={{ width: 0 }}
@@ -188,7 +230,8 @@ export default function ServicePage() {
                   transition={{ delay: 0.3, duration: 0.8 }}
                 />
                 <motion.p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  We offer multiple services to accommodate different schedules and worship preferences.
+                  We offer multiple services to accommodate different schedules
+                  and worship preferences.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -199,122 +242,50 @@ export default function ServicePage() {
               animate={isServiceTimesInView ? "visible" : "hidden"}
               variants={staggerContainer}
             >
-              <motion.div variants={fadeInUp} whileHover="hover" initial="rest">
-                <motion.div variants={cardHover}>
-                  <Card className="overflow-hidden h-full">
-                    <div className="relative h-48">
-                      <motion.img
-                        src="/placeholder.svg?height=400&width=600"
-                        alt="Chichewa Service"
-                        className="object-cover w-full h-full"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.4 }}
-                      />
-                    </div>
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <motion.div
-                          whileHover={{ rotate: 15, scale: 1.1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <Clock className="h-5 w-5 text-primary" />
-                        </motion.div>
-                        <h3 className="text-xl font-bold">Sunday 9:00 AM</h3>
-                      </div>
-                      <p className="text-lg font-medium mb-2">Chichewa Service</p>
-                      <p className="text-muted-foreground mb-4">
-                        A classic worship experience featuring hymns, choir, and Chichewa liturgy.
-                      </p>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
-                        <span>Main Sanctuary</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} whileHover="hover" initial="rest">
-                <motion.div variants={cardHover}>
-                  <Card className="overflow-hidden h-full">
-                    <div className="relative h-48">
-                      <motion.img
-                        src="/placeholder.svg?height=400&width=600"
-                        alt="International Service"
-                        className="object-cover w-full h-full"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.4 }}
-                      />
-                    </div>
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <motion.div
-                          whileHover={{ rotate: 15, scale: 1.1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <Clock className="h-5 w-5 text-primary" />
-                        </motion.div>
-                        <h3 className="text-xl font-bold">Sunday 11:00 AM</h3>
-                      </div>
-                      <p className="text-lg font-medium mb-2">International Service</p>
-                      <p className="text-muted-foreground mb-4">
-                        A modern worship experience with our praise band and International music.
-                      </p>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
-                        <span>Main Sanctuary</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} whileHover="hover" initial="rest">
-                <motion.div variants={cardHover}>
-                  <Card className="overflow-hidden h-full">
-                    <div className="relative h-48">
-                      <motion.img
-                        src="/placeholder.svg?height=400&width=600"
-                        alt="Wednesday Service"
-                        className="object-cover w-full h-full"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.4 }}
-                      />
-                    </div>
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <motion.div
-                          whileHover={{ rotate: 15, scale: 1.1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <Clock className="h-5 w-5 text-primary" />
-                        </motion.div>
-                        <h3 className="text-xl font-bold">Wednesday 6:30 PM</h3>
-                      </div>
-                      <p className="text-lg font-medium mb-2">Midweek Service</p>
-                      <p className="text-muted-foreground mb-4">
-                        A casual midweek gathering with Bible study, prayer, and fellowship.
-                      </p>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
-                        <span>Fellowship Hall</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
+              <ServiceCard
+                image="/inchurch.jpg"
+                service="International Service"
+                time="Sunday, 9:00"
+                location="Main Church"
+                description="A modern worship experience with our praise band and International music"
+              />
+              <ServiceCard
+                image="/chichewa.jpeg"
+                service="Chichewa Service"
+                time="Sunday, 10:30"
+                location="Main Church"
+                description="Join us for a traditional worship service with hymns and a sermon."
+              />
+              <ServiceCard
+                image="/bg-3.jpg"
+                service="Midweek Service"
+                time="Wednesday, 6:30"
+                location="Main Church"
+                description="A casual midweek gathering with Bible study, prayer, and fellowship. ."
+              />
             </motion.div>
 
             <motion.div
               className="flex justify-center mt-8"
               initial={{ opacity: 0, y: 20 }}
-              animate={isServiceTimesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isServiceTimesInView
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 20 }
+              }
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button>
                   Plan Your Visit
-                  <motion.span initial={{ x: 0 }} whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 400 }}>
+                  <motion.span
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </motion.span>
                 </Button>
@@ -324,7 +295,7 @@ export default function ServicePage() {
         </section>
 
         {/* What to Expect */}
-        <Expectations isServiceTimesInView={isServiceTimesInView}/>
+        <Expectations isServiceTimesInView={isServiceTimesInView} />
 
         {/* Service Elements */}
         <section className="py-12 md:py-16 bg-white" ref={serviceElementsRef}>
@@ -349,25 +320,41 @@ export default function ServicePage() {
                 <motion.div
                   className="h-1 w-20 rounded-full bg-primary/50 mx-auto"
                   initial={{ width: 0 }}
-                  animate={isServiceElementsInView ? { width: 80 } : { width: 0 }}
+                  animate={
+                    isServiceElementsInView ? { width: 80 } : { width: 0 }
+                  }
                   transition={{ delay: 0.3, duration: 0.8 }}
                 />
                 <motion.p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  Each service includes these key elements to create a meaningful worship experience.
+                  Each service includes these key elements to create a
+                  meaningful worship experience.
                 </motion.p>
               </motion.div>
             </motion.div>
 
-            <Tabs defaultValue="Chichewa" className="w-full" onValueChange={setActiveTab} value={activeTab}>
+            <Tabs
+              defaultValue="Chichewa"
+              className="w-full"
+              onValueChange={setActiveTab}
+              value={activeTab}
+            >
               <motion.div
                 className="flex justify-center mb-8"
                 initial={{ opacity: 0, y: 10 }}
-                animate={isServiceElementsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                animate={
+                  isServiceElementsInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 10 }
+                }
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
                 <TabsList>
-                  <TabsTrigger value="Chichewa">Chichewa Service</TabsTrigger>
-                  <TabsTrigger value="International">International Service</TabsTrigger>
+                  <TabsTrigger value="Chichewa">
+                    <h3 className=""> Chichewa Service</h3>
+                  </TabsTrigger>
+                  <TabsTrigger value="International">
+                    International Service
+                  </TabsTrigger>
                 </TabsList>
               </motion.div>
 
@@ -394,9 +381,12 @@ export default function ServicePage() {
                             "Our Chichewa service features beloved hymns led by our choir and organ accompaniment.",
                         },
                         {
-                          icon: <BookOpen className="h-8 w-8 text-primary mb-4" />,
+                          icon: (
+                            <BookOpen className="h-8 w-8 text-primary mb-4" />
+                          ),
                           title: "Scripture Reading",
-                          description: "We read from both the Old and New Testaments, following the church calendar.",
+                          description:
+                            "We read from both the Old and New Testaments, following the church calendar.",
                         },
                         {
                           icon: (
@@ -511,8 +501,12 @@ export default function ServicePage() {
                               >
                                 {item.icon}
                               </motion.div>
-                              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                              <p className="text-muted-foreground">{item.description}</p>
+                              <h3 className="text-xl font-bold mb-2">
+                                {item.title}
+                              </h3>
+                              <p className="text-muted-foreground">
+                                {item.description}
+                              </p>
                             </CardContent>
                           </Card>
                         </motion.div>
@@ -553,7 +547,8 @@ export default function ServicePage() {
                             </svg>
                           ),
                           title: "Welcome & Announcements",
-                          description: "We begin with a warm welcome and brief announcements about church life.",
+                          description:
+                            "We begin with a warm welcome and brief announcements about church life.",
                         },
                         {
                           icon: (
@@ -574,7 +569,8 @@ export default function ServicePage() {
                             </svg>
                           ),
                           title: "Extended Worship",
-                          description: "We spend 25-30 minutes in worship through International music and prayer.",
+                          description:
+                            "We spend 25-30 minutes in worship through International music and prayer.",
                         },
                         {
                           icon: (
@@ -642,8 +638,12 @@ export default function ServicePage() {
                               >
                                 {item.icon}
                               </motion.div>
-                              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                              <p className="text-muted-foreground">{item.description}</p>
+                              <h3 className="text-xl font-bold mb-2">
+                                {item.title}
+                              </h3>
+                              <p className="text-muted-foreground">
+                                {item.description}
+                              </p>
                             </CardContent>
                           </Card>
                         </motion.div>
@@ -683,7 +683,8 @@ export default function ServicePage() {
                   transition={{ delay: 0.3, duration: 0.8 }}
                 />
                 <motion.p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  Join us in the coming weeks as we explore these important topics together.
+                  Join us in the coming weeks as we explore these important
+                  topics together.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -713,8 +714,12 @@ export default function ServicePage() {
                         <p className="text-sm font-medium">{sermon.date}</p>
                       </div>
                       <h3 className="text-xl font-bold mb-1">{sermon.title}</h3>
-                      <p className="text-primary text-sm mb-3">{sermon.scripture}</p>
-                      <p className="text-muted-foreground">{sermon.description}</p>
+                      <p className="text-primary text-sm mb-3">
+                        {sermon.scripture}
+                      </p>
+                      <p className="text-muted-foreground">
+                        {sermon.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -724,13 +729,22 @@ export default function ServicePage() {
             <motion.div
               className="flex justify-center mt-8"
               initial={{ opacity: 0, y: 20 }}
-              animate={isSermonsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isSermonsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button variant="outline">
                   View Past Sermons
-                  <motion.span initial={{ x: 0 }} whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 400 }}>
+                  <motion.span
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </motion.span>
                 </Button>
@@ -774,7 +788,9 @@ export default function ServicePage() {
             <motion.div
               className="mx-auto max-w-3xl"
               initial={{ opacity: 0, y: 20 }}
-              animate={isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
               transition={{ delay: 0.4, duration: 0.5 }}
             >
               <Accordion type="single" collapsible className="w-full">
@@ -782,7 +798,9 @@ export default function ServicePage() {
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 10 }}
-                    animate={isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                    animate={
+                      isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
+                    }
                     transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
                   >
                     <AccordionItem value={`item-${index}`}>
@@ -815,5 +833,5 @@ export default function ServicePage() {
         </section>
       </main>
     </div>
-  )
+  );
 }
