@@ -376,7 +376,7 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16 bg-white flex flex-col items-center justify-center max-w-4xl">
+        <section className="py-12 md:py-16 bg-white flex flex-col items-center justify-center mx-auto max-w-7xl">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
