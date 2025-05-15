@@ -96,10 +96,10 @@ function NavBarComponent() {
             <Link href="/" className="flex items-center">
               <div className="relative h-16 w-16 md:h-20 md:w-20">
                 <img
-                  src="/placeholder.svg?height=80&width=80"
+                  src="/zbc_logo.png"
                   alt="Zomba Baptist Church Logo"
-                  width={80}
-                  height={80}
+                  width={100}
+                  height={100}
                   className="object-contain"
                 />
               </div>
