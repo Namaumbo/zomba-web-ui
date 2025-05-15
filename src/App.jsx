@@ -16,6 +16,7 @@ import ContactPage from "./pages/ContactusPage";
 import MinistryPage from "./pages/MinistryPage";
 import "@fontsource/inter";
 import ScrollToTop from "./components/scroll-top";
+import GalleryPage from "./pages/GalleryPage";
 function App() {
   return (
     <>
@@ -29,8 +30,10 @@ function App() {
             <Route path="/events" element={<EventsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/ministries" element={<MinistryPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
 
-            {/* <Route path="/ministries" element={<MinistriesPage />} />
+
+            {/* 
             
             <Route
               path="/about/association"

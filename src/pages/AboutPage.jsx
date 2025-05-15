@@ -5,6 +5,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Clock, MapPin, Calendar, ChevronRight } from "lucide-react";
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
+
 import {
   Heart,
   Phone,
@@ -130,8 +132,8 @@ function AboutPage() {
     },
   };
 
-  const imageRef = useRef < HTMLImageElement > null;
-  const { handleScroll } = useParallax(imageRef, 0.4); // 0.4 is the parallax speed factor
+  const imageRef = useRef( null);
+  const { handleScroll } = useParallax(imageRef, 0.6); // 0.4 is the parallax speed factor
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -692,8 +694,8 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16 bg-primary text-primary-foreground overflow-hidden">
-          <div className="container px-4 md:px-6">
+        <section className="  py-12 md:py-16 bg-primary text-primary-foreground overflow-hidden">
+          <div className=" mx-auto container px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-center md:text-left space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -705,18 +707,19 @@ function AboutPage() {
                   your spiritual journey, there&apos;s a place for you here.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 pt-4">
-                  <Button variant="secondary">
+                  <Link to={"/gallery"}> <Button onClick variant="secondary">
                     Our Church In Pictures -{">"}
-                  </Button>
+                  </Button></Link>
+                 
                 </div>
               </div>
               <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
                 <div className="absolute inset-0 w-full h-full">
                   <img
                     ref={imageRef}
-                    src="/placeholder.svg?height=600&width=800"
+                    src="/kids.jpg"
                     alt="Church community"
-                    className="w-full h-[120%] object-cover"
+                    className="w-full h-[140%] shadow-2xl object-cover"
                     style={{
                       transform: "translateY(0)",
                       willChange: "transform",
