@@ -70,33 +70,34 @@ export default function ContactPage() {
     }, 5000);
   };
 
+  
   const staffMembers = [
     {
-      name: "Pastor David Johnson",
-      position: "Senior Pastor",
-      email: "pastor.david@gracechurch.org",
-      phone: "(123) 456-7890 ext. 101",
-      img: "/placeholder.svg?height=200&width=200",
+      name: "Pastor Richard Makhenjera",
+      position: "Resident Pastor",
+      email: "example@example.com",
+      phone: "(+256) 987654321 ",
+      img: "",
     },
     {
-      name: "Sarah Williams",
-      position: "Worship Director",
-      email: "sarah.williams@gracechurch.org",
-      phone: "(123) 456-7890 ext. 102",
+      name: "Mr Kambalame",
+      position: "Church Administrator",
+      email: "example@example.com",
+      phone: "(+265) 987654321 ",
       img: "/placeholder.svg?height=200&width=200",
     },
     {
       name: "Michael Chen",
       position: "Youth Pastor",
-      email: "michael.chen@gracechurch.org",
-      phone: "(123) 456-7890 ext. 103",
+      email: "example@example@gmail.com",
+      phone: "(+265) 987654321 ",
       img: "/placeholder.svg?height=200&width=200",
     },
     {
       name: "Jennifer Martinez",
       position: "Children's Ministry Director",
-      email: "jennifer.martinez@gracechurch.org",
-      phone: "(123) 456-7890 ext. 104",
+      email: "example@example@gmail.com",
+      phone: "(+265) 987654321",
       img: "/placeholder.svg?height=200&width=200",
     },
   ];
@@ -195,8 +196,6 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
-        {/* Contact Form & Map */}
 
         <ContactMap />
         {/* Staff Contact */}

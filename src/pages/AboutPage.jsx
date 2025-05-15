@@ -15,8 +15,9 @@ import {
   Zap,
   Users,
 } from "lucide-react";
-import ServiceInfo from "../components/service-info";
 
+import { useEffect } from "react"
+import { useParallax } from "../hooks/use-parallax"
 const styles = {
   section:
     "relative bg-gradient-to-b from-gray-50 pt-20 to-white min-h-[calc(100dvh-5rem)] flex items-center",
@@ -128,6 +129,14 @@ function AboutPage() {
       },
     },
   };
+
+  const imageRef = useRef < HTMLImageElement > null;
+  const { handleScroll } = useParallax(imageRef, 0.4); // 0.4 is the parallax speed factor
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   return (
     <>
@@ -683,25 +692,37 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16 bg-primary text-primary-foreground flex flex-col items-center justify-center">
-          <div className="container px-4 md:px-6 text-center">
-            <div className="mx-auto max-w-3xl space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                Come Grow With Us
-              </h2>
-              <p className="text-primary-foreground/90 md:text-lg">
-                We invite you to join us this Sunday and experience the warmth
-                and welcome of our church family. No matter where you are on
-                your spiritual journey, there&apos;s a place for you here.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4">
-                <Button variant="secondary">Plan Your Visit</Button>
-                <Button
-                  variant="outline"
-                  className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  Contact Us
-                </Button>
+        <section className="py-12 md:py-16 bg-primary text-primary-foreground overflow-hidden">
+          <div className="container px-4 md:px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="text-center md:text-left space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Come Grow With Us
+                </h2>
+                <p className="text-primary-foreground/90 md:text-lg">
+                  We invite you to join us this Sunday and experience the warmth
+                  and welcome of our church family. No matter where you are on
+                  your spiritual journey, there&apos;s a place for you here.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 pt-4">
+                  <Button variant="secondary">
+                    Our Church In Pictures -{">"}
+                  </Button>
+                </div>
+              </div>
+              <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
+                <div className="absolute inset-0 w-full h-full">
+                  <img
+                    ref={imageRef}
+                    src="/placeholder.svg?height=600&width=800"
+                    alt="Church community"
+                    className="w-full h-[120%] object-cover"
+                    style={{
+                      transform: "translateY(0)",
+                      willChange: "transform",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
