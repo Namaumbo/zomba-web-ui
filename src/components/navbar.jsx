@@ -1,17 +1,15 @@
-import {
-  Heart,
-  Menu,
-  X
-} from "lucide-react";
+import { Heart, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { Phone, Mail, Facebook } from "lucide-react";
+import { motion } from "framer-motion";
 
-function   NavBarComponent() {
+function NavBarComponent() {
   const location = useLocation();
   const currentPath = location.pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
@@ -29,69 +27,174 @@ function   NavBarComponent() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 10,
+      },
+    },
+  };
+
   return (
     <>
-      <header className="bg-white/90 h-28 border-b sticky top-0 z-10 flex justify-center items-center">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <Link to="/" className="flex items-center gap-2">
-            <Heart className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">ZBC</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            {navLinks.map(({ path, label }) => (
-              <Link
-                key={path}
-                to={path}
-                className={`text-sm font-medium hover:text-primary pb-2 ${
-                  currentPath === path
-                    ? "text-primary border-b-2 border-primary"
-                    : ""
-                }`}
-              >
-                <span id="link" className="p-2 font-inter">
-                  {label}
-                </span>
-              </Link>
-            ))}
-          </nav>
-          <Button onClick={toggleMobileMenu} size="sm" className="md:hidden">
-            <span>
-              {mobileMenuOpen ? <X /> : <Menu />}
-            </span>
-          </Button>
-        </div>
-      </header>
-
-      {/* Mobile Menu Slider */}
-      <div 
-        className={`fixed top-28 right-0 h-[calc(100vh-7rem)] w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-20 md:hidden ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col p-4">
-          {navLinks.map(({ path, label }) => (
-            <Link
-              key={path}
-              to={path}
-              className={`py-3 px-4 text-sm font-medium hover:bg-gray-100 rounded-md ${
-                currentPath === path
-                  ? "text-primary font-semibold"
-                  : ""
-              }`}
-            >
-              <span className="font-inter">{label}</span>
+      <div className="bg-purple-900 text-white py-2 px-4 md:px-8">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+          <div className="flex items-center space-x-4 mb-2 md:mb-0">
+            <div className="flex items-center">
+              <Phone size={14} className="mr-1" />
+              <span>(+265) 993 740 261</span>
+            </div>
+            <div className="flex items-center">
+              <Mail size={14} className="mr-1" />
+              <span>zombabaptistchurch@gmail.com</span>
+            </div>
+          </div>
+          <div className="flex items-center space-x-4">
+            <Link href="/login" className="hover:underline flex items-center">
+              Client Login
             </Link>
-          ))}
+            <Link href="https://facebook.com" className="hover:text-purple-200">
+              <Facebook size={18} />
+            </Link>
+          </div>
         </div>
       </div>
-      
-      {/* Overlay when mobile menu is open */}
-      {mobileMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black/20 z-10 md:hidden"
-          onClick={toggleMobileMenu}
-        />
-      )}
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-md py-2" : "bg-white py-4"
+        }`}
+      >
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="flex justify-between items-center">
+            <Link href="/" className="flex items-center">
+              <div className="relative h-16 w-16 md:h-20 md:w-20">
+                <img
+                  src="/placeholder.svg?height=80&width=80"
+                  alt="Zomba Baptist Church Logo"
+                  width={80}
+                  height={80}
+                  className="object-contain"
+                />
+              </div>
+              <div className="ml-2">
+                <h1 className="text-lg md:text-xl font-bold text-purple-900">
+                  Zomba Baptist Church
+                </h1>
+                <p className="text-xs text-gray-500">Faith • Hope • Love</p>
+              </div>
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-purple-900"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={
+                    isMobileMenuOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
+                  }
+                />
+              </svg>
+            </button>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              {navLinks.map(({ path, label }) => (
+                <Link
+                  key={path}
+                  to={path}
+                  className={`text-sm font-medium hover:text-primary pb-2 ${
+                    currentPath === path
+                      ? "text-primary border-b-2 border-primary"
+                      : ""
+                  }`}
+                >
+                  <span id="link" className="p-2 font-inter">
+                    {label}
+                  </span>
+                </Link>
+              ))}
+              <Link
+                to={"/contact"}
+                className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-md transition-colors"
+              >
+                Get Involved
+              </Link>
+            </nav>
+          </div>
+
+          {/* Mobile Navigation */}
+          <motion.nav
+            className={`md:hidden overflow-hidden`}
+            initial="closed"
+            animate={isMobileMenuOpen ? "open" : "closed"}
+            variants={{
+              open: { height: "auto", opacity: 1 },
+              closed: { height: 0, opacity: 0 },
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="flex flex-col py-4 space-y-3">
+              {["About", "Ministries", "Services", "Contact", "Events"].map(
+                (item) => (
+                  <Link
+                    key={item}
+                    href={`/${item.toLowerCase()}`}
+                    className="text-gray-700 hover:text-purple-700 font-medium transition-colors"
+                  >
+                    {item}
+                  </Link>
+                )
+              )}
+              <Link
+                href="/get-involved"
+                className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-md transition-colors inline-block w-fit"
+              >
+                Get Involved
+              </Link>
+            </div>
+          </motion.nav>
+        </div>
+      </header>
     </>
   );
 }
