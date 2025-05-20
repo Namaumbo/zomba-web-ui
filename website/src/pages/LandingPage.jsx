@@ -87,7 +87,101 @@ export default function LandingPage() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
-                <ServiceLocation />
+                {/* <ServiceLocation /> */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8 }}
+                  className="relative"
+                >
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "80%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                    className="h-1 bg-purple-600 mb-6"
+                  />
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="text-3xl mb-8 font-bold tracking-tighter sm:text-4xl md:text-5xl"
+                  >
+                    Sunday <span className="text-purple-500">Worship</span>{" "}
+                    Services
+                  </motion.h2>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="text-lg text-gray-700 mb-8 leading-relaxed"
+                  >
+                    We invite you to join us in worship and fellowship.
+                    Experience the warmth of our community as we gather together
+                    to praise God and grow in faith. "For where two or three
+                    gather in my name, there am I with them."
+                    <span className="italic text-purple-500 ">
+                      - Matthew 18:20.
+                    </span>
+                  </motion.p>
+
+                  <motion.div
+                    variants={container}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="space-y-4 mb-8"
+                  >
+                    <motion.div
+                      variants={item}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
+                      <p className="text-gray-700">Wednesday, 16:00 to 17:00</p>
+                    </motion.div>
+                    <motion.div
+                      variants={item}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
+                      <p className="text-gray-700">
+                        Last Friday of the month: Overnight from 20:00
+                      </p>
+                    </motion.div>
+                    <motion.div
+                      variants={item}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
+                      <p className="text-gray-700">
+                        First Wednesday of the month: Prayer and fasting up to
+                        17:00
+                      </p>
+                    </motion.div>
+                    <motion.div
+                      variants={item}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
+                      <p className="text-gray-700">
+                        First Monday to Friday of every quarter: 5 days of
+                        prayer and fasting
+                      </p>
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Purple gradient blob */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 0.15 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                    className="absolute -bottom-32  w-96 h-96 bg-purple-600 rounded-full blur-2xl -z-10"
+                  />
+                </motion.div>
               </motion.div>
               <div className="relative">
                 <motion.div
