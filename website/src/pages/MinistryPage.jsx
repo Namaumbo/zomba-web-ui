@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import MinistryComponent from "../components/ministry-component"
-
+import MinistryComponent from "../components/ministry-component";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function MinistryPage() {
   const ministries = [
@@ -18,7 +19,8 @@ export default function MinistryPage() {
       coverPage: "/placeholder.svg?height=600&width=800&text=Worship+Ministry",
       description:
         "The worship ministry leads our congregation in praise and worship, creating an atmosphere where people can encounter God's presence.",
-      verse: "Worship the LORD with gladness; come before him with joyful songs. - Psalm 100:2",
+      verse:
+        "Worship the LORD with gladness; come before him with joyful songs. - Psalm 100:2",
     },
     {
       ministry: "Outreach Ministry",
@@ -41,7 +43,8 @@ export default function MinistryPage() {
       coverPage: "/prayer.jpg",
       description:
         "Our prayer ministry is committed to interceding for the needs of our church, community, and world, believing in the power of prayer to bring transformation.",
-      verse: "Devote yourselves to prayer, being watchful and thankful. - Colossians 4:2",
+      verse:
+        "Devote yourselves to prayer, being watchful and thankful. - Colossians 4:2",
     },
     {
       ministry: "Missions Ministry",
@@ -51,23 +54,36 @@ export default function MinistryPage() {
       verse:
         "Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit. - Matthew 28:19",
     },
-  ]
+  ];
 
   const handleMinistryClick = (ministry) => {
-    console.log("Ministry clicked:", ministry)
+    console.log("Ministry clicked:", ministry);
     // Handle navigation or modal display here
-  }
+  };
 
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4 text-gray-800">Our Ministries</h1>
+        <h1 className="text-4xl font-bold mb-4 text-gray-800">
+          Our Ministries
+        </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Discover the various ways you can connect, serve, and grow through our church ministries.
+          Discover the various ways you can connect, serve, and grow through our
+          church ministries.
         </p>
       </div>
+      <div className="flex flex-row justify-center">
+        <Link 
+        to={"/articles"}
+        asChild>
+          <Button>Our Articles</Button>
+        </Link>
+      </div>
 
-      <MinistryComponent ministries={ministries} onMinistryClick={handleMinistryClick} />
+      <MinistryComponent
+        ministries={ministries}
+        onMinistryClick={handleMinistryClick}
+      />
     </div>
-  )
+  );
 }
