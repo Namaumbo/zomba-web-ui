@@ -3,6 +3,7 @@
 import MinistryComponent from "../components/ministry-component";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Check, ChevronRight, ArrowRight } from "lucide-react";
 
 export default function MinistryPage() {
   const ministries = [
@@ -73,10 +74,10 @@ export default function MinistryPage() {
         </p>
       </div>
       <div className="flex flex-row justify-center">
-        <Link 
-        to={"/articles"}
-        asChild>
-          <Button>Our Articles</Button>
+        <Link to={"/articles"} asChild>
+          <Button>
+            Our Articles <ChevronRight />
+          </Button>
         </Link>
       </div>
 

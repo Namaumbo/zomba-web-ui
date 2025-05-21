@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CalendarIcon, Clock, User } from "lucide-react";
 
 export default function ArticlesPage() {
+  
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
