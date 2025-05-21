@@ -140,15 +140,8 @@ export default function LandingPage() {
                       className="flex items-start gap-3"
                     >
                       <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
-                      <p className="text-gray-700">Wednesday, 16:00 to 17:00</p>
-                    </motion.div>
-                    <motion.div
-                      variants={item}
-                      className="flex items-start gap-3"
-                    >
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
                       <p className="text-gray-700">
-                        Last Friday of the month: Overnight from 20:00
+                        International Service: 8:30 AM - 10:45 AM
                       </p>
                     </motion.div>
                     <motion.div
@@ -157,20 +150,10 @@ export default function LandingPage() {
                     >
                       <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
                       <p className="text-gray-700">
-                        First Wednesday of the month: Prayer and fasting up to
-                        17:00
+                        Chichewa Service: 10:00 AM - 12:00 PM
                       </p>
                     </motion.div>
-                    <motion.div
-                      variants={item}
-                      className="flex items-start gap-3"
-                    >
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
-                      <p className="text-gray-700">
-                        First Monday to Friday of every quarter: 5 days of
-                        prayer and fasting
-                      </p>
-                    </motion.div>
+                
                   </motion.div>
 
                   {/* Purple gradient blob */}

@@ -82,7 +82,7 @@ export default function MissionSection() {
             animate={isInView ? "visible" : "hidden"}
           >
             <Card className="overflow-hidden h-full border-none shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-60">
+              <div className="relative h-60 mt-[-1.5rem]">
                 <img
                   src="/WhatsApp Image 2025-01-27 at 17.21.17.jpeg"
                   alt="Church congregation"
@@ -128,7 +128,7 @@ export default function MissionSection() {
             animate={isInView ? "visible" : "hidden"}
           >
             <Card className="overflow-hidden h-full border-none shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-60">
+              <div className="relative h-60 mt-[-1.5rem]">
                 <img
                   src="/mgonero.jpg"
                   alt="Church mission"
@@ -178,7 +178,7 @@ export default function MissionSection() {
             animate={isInView ? "visible" : "hidden"}
           >
             <Card className="overflow-hidden h-full border-none shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-60">
+              <div className="relative h-60 mt-[-1.5rem]">
                 <img
                   src="/evanjelism.jpg"
                   alt="Church outreach"
