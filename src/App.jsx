@@ -18,11 +18,13 @@ import "@fontsource/inter";
 import ScrollToTop from "./components/scroll-top";
 import GalleryPage from "./pages/GalleryPage";
 import ArticlesPage from "./pages/ArticlesPage";
+import ArticleDetailPage from "./pages/ArticleDetailPage";
+import AssociationPage from "./pages/AssociationPage"
 function App() {
   return (
     <>
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<LandingPage />} />
@@ -32,14 +34,13 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/ministries" element={<MinistryPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/articles" element={<ArticlesPage/>}/>
+            <Route path="/articles" element={<ArticlesPage />} />
+            <Route path="/articles/:slug" element={<ArticleDetailPage />} />
+            <Route path="/about/association" element={<AssociationPage />} />
 
             {/* 
             
-            <Route
-              path="/about/association"
-              element={<AboutPageExplaination />}
-            />
+           
             <Route
               path="ministries/ministry-details"
               element={<MinistryExplaination />}

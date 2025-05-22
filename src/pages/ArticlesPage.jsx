@@ -13,7 +13,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CalendarIcon, Clock, User } from "lucide-react";
 
 export default function ArticlesPage() {
-  
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
@@ -119,9 +118,11 @@ function ArticleCard({ article }) {
         </div>
       </CardContent>
       <CardFooter className="mt-auto">
-        <Button variant="outline" asChild className="w-full">
-          <Link href={`/articles/${article.slug}`}>Read Article</Link>
-        </Button>
+        <Link to={`/articles/${article.slug}`} asChild>
+          <Button variant="outline" className="w-full">
+            Read Article
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );

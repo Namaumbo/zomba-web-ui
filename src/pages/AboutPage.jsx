@@ -18,8 +18,8 @@ import {
   Users,
 } from "lucide-react";
 
-import { useEffect } from "react"
-import { useParallax } from "../hooks/use-parallax"
+import { useEffect } from "react";
+import { useParallax } from "../hooks/use-parallax";
 const styles = {
   section:
     "relative bg-gradient-to-b from-gray-50 pt-20 to-white min-h-[calc(100dvh-5rem)] flex items-center",
@@ -132,7 +132,7 @@ function AboutPage() {
     },
   };
 
-  const imageRef = useRef( null);
+  const imageRef = useRef(null);
   const { handleScroll } = useParallax(imageRef, 0.6); // 0.4 is the parallax speed factor
 
   useEffect(() => {
@@ -503,12 +503,14 @@ function AboutPage() {
                         <span>UBIA Ministries (United States of America)</span>
                       </li>
                     </ul>
-                    <motion.button
-                      className="mt-6 text-purple-700 font-medium flex items-center hover:text-purple-900 transition-colors"
-                      whileHover={{ x: 5 }}
-                    >
-                      READ MORE <ChevronRight className="h-4 w-4 ml-1" />
-                    </motion.button>
+                    <Link to={"/about/association"} asChild>
+                      <motion.button
+                        className="mt-6 text-purple-700 font-medium flex items-center hover:text-purple-900 transition-colors"
+                        whileHover={{ x: 5 }}
+                      >
+                        READ MORE <ChevronRight className="h-4 w-4 ml-1" />
+                      </motion.button>
+                    </Link>
                   </motion.div>
                 </motion.div>
               </div>
@@ -707,10 +709,12 @@ function AboutPage() {
                   your spiritual journey, there&apos;s a place for you here.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 pt-4">
-                  <Link to={"/gallery"}> <Button onClick variant="secondary">
-                    Our Church In Pictures -{">"}
-                  </Button></Link>
-                 
+                  <Link to={"/gallery"}>
+                    {" "}
+                    <Button onClick variant="secondary">
+                      Our Church In Pictures -{">"}
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
