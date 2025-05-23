@@ -8,6 +8,8 @@ import { getArticle } from "../lib/api";
 import ReactMarkdown from "react-markdown";
 import { motion, useInView } from "framer-motion";
 
+import { Separator } from "@/components/ui/separator";
+
 export default function ArticleDetailPage() {
   const { slug } = useParams();
   const [article, setArticle] = useState(null);
@@ -59,7 +61,7 @@ export default function ArticleDetailPage() {
           The article you are looking for does not exist or has been moved.
         </p>
         <Button asChild>
-          <Link to="/articles">Back to Articles</Link>
+          <Link to="/articles">{"<-"} Back to Articles</Link>
         </Button>
       </div>
     );
@@ -127,19 +129,24 @@ export default function ArticleDetailPage() {
           </Button>
         </div>
       </div>
-      <div className="bg-[#f3f4f6] p-4 rounded-2xl h-fit mt-12">
-        <motion.div
-          className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-        >
+      <div className="bg-[#f3f4f6] p-8 rounded-2xl h-fit mt-12">
+        <motion.div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
           </span>
-          A Message from Our Pastor
+          Church News and ministry
         </motion.div>
-        <p>{}</p>
+        <p className="mt-4 text-sm">
+          Authored By{" "}
+          <span className="text-muted-foreground ml-4">{article.author}</span>
+        </p>
+        <p className="text-sm mt-5">
+          Published on{" "}
+          <span className="text-muted-foreground ml-3">{article.date}</span>
+        </p>
+        <div className="mt-8">
+          <Separator />
+        </div>
       </div>
     </div>
   );
