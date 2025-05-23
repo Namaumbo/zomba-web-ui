@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,8 +13,26 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CalendarIcon, Clock, User } from "lucide-react";
+import { getAllArticles } from "../lib/api";
 
 export default function ArticlesPage() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await getAllArticles();
+        const data = response.data;
+        setArticles(data);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+        throw error;
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
@@ -92,13 +112,17 @@ export default function ArticlesPage() {
 
 // Article Card Component
 function ArticleCard({ article }) {
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL;
   return (
     <Card className="overflow-hidden flex flex-col h-full">
       <div className="relative h-28 w-full mt-[-1.5rem]">
         <img
-          src={article.img || "/placeholder.svg"}
+          src={
+            article?.imgURL?.url
+              ? `${STRAPI_URL}${article.imgURL.formats.medium.url}`
+              : "/api/placeholder/300/250"
+          }
           alt={article.title}
-          fill
           className="object-cover h-60 w-full"
         />
       </div>
@@ -129,71 +153,71 @@ function ArticleCard({ article }) {
 }
 
 // Sample article data
-const articles = [
-  {
-    id: 1,
-    title: "Finding Peace in Prayer: A Guide for Modern Christians",
-    slug: "finding-peace-in-prayer",
-    author: "Pastor Makhenjera",
-    date: "May 15, 2023",
-    category: "Faith",
-    img: "/kidsandpaster.jpg",
-    excerpt:
-      "In today's fast-paced world, finding moments of peace through prayer can transform your spiritual journey and daily life.",
-  },
-  {
-    id: 2,
-    title: "Building a Strong Church Community in the Digital Age",
-    slug: "building-strong-church-community",
-    author: "Deacon Petro",
-    date: "April 28, 2023",
-    category: "Community",
-    img: "/youthMinistry.jpg",
-    excerpt:
-      "Discover how our church is adapting to modern times while maintaining the close-knit community that defines us.",
-  },
-  {
-    id: 3,
-    title: "Summer Youth Camp: Registration Now Open",
-    slug: "summer-youth-camp",
-    author: "Mayamiko ",
-    date: "April 10, 2023",
-    category: "Events",
-    img: "/evangelism.jpg",
-    excerpt:
-      "Our annual summer youth camp is back! Register your children for a week of fun, friendship, and spiritual growth.",
-  },
-  {
-    id: 4,
-    title: "Faith and Family: Balancing Modern Parenting with Christian Values",
-    slug: "faith-and-family",
-    author: "Smart",
-    date: "March 22, 2023",
-    category: "Family",
-    img: "/evanjelism.jpg",
-    excerpt:
-      "Practical advice for parents seeking to raise children with strong Christian values in today's challenging world.",
-  },
-  {
-    id: 5,
-    title: "Understanding the Psalms: A 5-Week Bible Study Series",
-    slug: "understanding-psalms",
-    author: "Limbani Jambo",
-    date: "March 15, 2023",
-    category: "Faith",
-    img: "/placeholder.svg?height=400&width=600",
-    excerpt:
-      "Join us for an in-depth exploration of the Psalms and discover the timeless wisdom they offer for our lives today.",
-  },
-  {
-    id: 6,
-    title: "Community Outreach: Serving Our Local Homeless Shelter",
-    slug: "community-outreach-homeless",
-    author: "Outreach Coordinator James Wilson",
-    date: "March 8, 2023",
-    category: "Community",
-    img: "/placeholder.svg?height=400&width=600",
-    excerpt:
-      "Learn about our recent service project at the downtown homeless shelter and how you can get involved in future outreach efforts.",
-  },
-];
+// const articles = [
+//   {
+//     id: 1,
+//     title: "Finding Peace in Prayer: A Guide for Modern Christians",
+//     slug: "finding-peace-in-prayer",
+//     author: "Pastor Makhenjera",
+//     date: "May 15, 2023",
+//     category: "Faith",
+//     img: "/kidsandpaster.jpg",
+//     excerpt:
+//       "In today's fast-paced world, finding moments of peace through prayer can transform your spiritual journey and daily life.",
+//   },
+//   {
+//     id: 2,
+//     title: "Building a Strong Church Community in the Digital Age",
+//     slug: "building-strong-church-community",
+//     author: "Deacon Petro",
+//     date: "April 28, 2023",
+//     category: "Community",
+//     img: "/youthMinistry.jpg",
+//     excerpt:
+//       "Discover how our church is adapting to modern times while maintaining the close-knit community that defines us.",
+//   },
+//   {
+//     id: 3,
+//     title: "Summer Youth Camp: Registration Now Open",
+//     slug: "summer-youth-camp",
+//     author: "Mayamiko ",
+//     date: "April 10, 2023",
+//     category: "Events",
+//     img: "/evangelism.jpg",
+//     excerpt:
+//       "Our annual summer youth camp is back! Register your children for a week of fun, friendship, and spiritual growth.",
+//   },
+//   {
+//     id: 4,
+//     title: "Faith and Family: Balancing Modern Parenting with Christian Values",
+//     slug: "faith-and-family",
+//     author: "Smart",
+//     date: "March 22, 2023",
+//     category: "Family",
+//     img: "/evanjelism.jpg",
+//     excerpt:
+//       "Practical advice for parents seeking to raise children with strong Christian values in today's challenging world.",
+//   },
+//   {
+//     id: 5,
+//     title: "Understanding the Psalms: A 5-Week Bible Study Series",
+//     slug: "understanding-psalms",
+//     author: "Limbani Jambo",
+//     date: "March 15, 2023",
+//     category: "Faith",
+//     img: "/placeholder.svg?height=400&width=600",
+//     excerpt:
+//       "Join us for an in-depth exploration of the Psalms and discover the timeless wisdom they offer for our lives today.",
+//   },
+//   {
+//     id: 6,
+//     title: "Community Outreach: Serving Our Local Homeless Shelter",
+//     slug: "community-outreach-homeless",
+//     author: "Outreach Coordinator James Wilson",
+//     date: "March 8, 2023",
+//     category: "Community",
+//     img: "/placeholder.svg?height=400&width=600",
+//     excerpt:
+//       "Learn about our recent service project at the downtown homeless shelter and how you can get involved in future outreach efforts.",
+//   },
+// ];

@@ -15,10 +15,8 @@ export default function ArticleDetailPage() {
     const fetchArticle = async () => {
       try {
         setLoading(true);
-        // Adjust this URL to your Strapi API endpoint
         // This assumes your articles have a 'slug' field
         const response = await fetch(
-          `http://localhost:1337/api/articles?filters[slug][$eq]=${slug}&populate=*`
         );
 
         if (!response.ok) {

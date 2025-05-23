@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "author": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "long": {
+      "type": "string"
+    },
+    "CompletionTime": {
+      "type": "integer"
+    },
+    "content": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "imgURL": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
