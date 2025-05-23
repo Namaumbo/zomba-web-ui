@@ -29,7 +29,6 @@ export default function ArticlesPage() {
         throw error;
       }
     };
-
     fetchArticles();
   }, []);
 
@@ -110,7 +109,7 @@ export default function ArticlesPage() {
   );
 }
 
-// Article Card Component
+
 function ArticleCard({ article }) {
   const STRAPI_URL = import.meta.env.VITE_STRAPI_URL;
   return (
