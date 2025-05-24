@@ -2,13 +2,22 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CalendarIcon, Clock, User } from "lucide-react";
+import {
+  CalendarIcon,
+  Clock,
+  User,
+  Calendar,
+  Heart,
+  BookOpen,
+  Users,
+  Star,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { getArticle } from "../lib/api";
 import ReactMarkdown from "react-markdown";
 import { motion, useInView } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card"
 
-import { Separator } from "@/components/ui/separator";
 
 export default function ArticleDetailPage() {
   const { slug } = useParams();
@@ -73,16 +82,19 @@ export default function ArticleDetailPage() {
   };
 
   return (
-    <div className="container max-w-7xl mx-auto flex gap-2 flex-col md:flex-row">
-      <div className="px-4 py-12 max-w-4xl">
+    <div className="container  mx-auto flex gap-2 flex-col md:flex-row">
+      <div className="px-4 py-12 max-w-6xl">
+        <Badge className="mb-4 bg-purple-100 text-purple-700 hover:bg-purple-200 ">
+          <BookOpen className="w-3 h-3 mr-1" />
+          Church News and Ministry
+        </Badge>
         <div className="relative text-center mb-12">
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-200 via-purple-500 to-purple-200 rounded-full"></div>
           <h1 className="text-4xl font-bold tracking-tight mb-4 bg-clip-text  ">
             {article.title}
           </h1>
         </div>
 
-        <div className="relative h-[400px] w-full rounded-xl overflow-hidden mb-8">
+        <div className="relative h-[400px] w-full rounded-xl overflow-hidden mb-8 shadow-2xl">
           <img
             src={getStrapiImageUrl(article?.imgURL?.formats?.medium?.url)}
             alt={article.title}
@@ -116,38 +128,101 @@ export default function ArticleDetailPage() {
           </Badge>
           {/* Assuming 'category' is a string field */}
         </div>
-        {/* 
-    <div
-      className="prose prose-lg max-w-none mx-auto text-gray-700 dark:text-gray-300"
-      dangerouslySetInnerHTML={{ __html: article.content }}
-    /> */}
-        <ReactMarkdown>{article.content}</ReactMarkdown>
+
+        <div
+          className="prose prose-lg max-w-none mx-auto text-gray-700 dark:text-gray-300"
+          dangerouslySetInnerHTML={{ __html: article.content }}
+        />
 
         <div className="mt-12 text-center">
           <Button asChild variant="outline">
-            <Link to="/articles">Back to All Articles</Link>
+            <Link to="/articles">{"<"}- Back to All Articles</Link>
           </Button>
         </div>
       </div>
-      <div className="bg-[#f3f4f6] p-8 rounded-2xl h-fit mt-12">
-        <motion.div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-          <span className="relative flex h-2 w-2">
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          Church News and ministry
-        </motion.div>
-        <p className="mt-4 text-sm">
-          Authored By{" "}
-          <span className="text-muted-foreground ml-4">{article.author}</span>
-        </p>
-        <p className="text-sm mt-5">
-          Published on{" "}
-          <span className="text-muted-foreground ml-3">{article.date}</span>
-        </p>
-        <div className="mt-8">
-          <Separator />
+      <aside className="lg:col-span-1 mt-6 pt-4">
+        <div className="sticky top-40 space-y-6 ">
+          {/* Author Card */}
+          <Card className="border-purple-200">
+            <CardContent className="p-6">
+              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <User className="w-5 h-5 text-purple-600" />
+                About the Author
+              </h3>
+              <div className="space-y-3">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  MN
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Mr. Namaumbo</p>
+                  <p className="text-sm text-gray-600">Ministry Coordinator</p>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Dedicated to fostering spiritual growth and character
+                  development in our educational community.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Articles */}
+          <Card className="border-blue-200">
+            <CardContent className="p-6">
+              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-blue-600" />
+                Related Articles
+              </h3>
+              <div className="space-y-4">
+                <div className="border-b border-gray-100 pb-3">
+                  <h4 className="font-medium text-gray-900 text-sm mb-1">
+                    Building Character Through Faith
+                  </h4>
+                  <p className="text-xs text-gray-600">
+                    How our programs shape young minds
+                  </p>
+                </div>
+                <div className="border-b border-gray-100 pb-3">
+                  <h4 className="font-medium text-gray-900 text-sm mb-1">
+                    Community Outreach Programs
+                  </h4>
+                  <p className="text-xs text-gray-600">
+                    Serving our local community
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 text-sm mb-1">
+                    Youth Ministry Updates
+                  </h4>
+                  <p className="text-xs text-gray-600">
+                    Latest news from our youth programs
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Newsletter Signup */}
+          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-white">
+            <CardContent className="p-6">
+              <h3 className="font-bold text-gray-900 mb-4">Stay Connected</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Subscribe to our newsletter for the latest updates on church
+                programs and community events.
+              </p>
+              <div className="space-y-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+                <Button className="w-full bg-green-600 hover:bg-green-700">
+                  Subscribe
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-      </div>
+      </aside>
     </div>
   );
 }

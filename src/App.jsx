@@ -19,7 +19,8 @@ import ScrollToTop from "./components/scroll-top";
 import GalleryPage from "./pages/GalleryPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
-import AssociationPage from "./pages/AssociationPage"
+import AssociationPage from "./pages/AssociationPage";
+import DonatePage from "./pages/DonatePage";
 function App() {
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
             <Route path="/articles" element={<ArticlesPage />} />
             <Route path="/articles/:slug" element={<ArticleDetailPage />} />
             <Route path="/about/association" element={<AssociationPage />} />
+            <Route path="/donate" element={<DonatePage />} />
 
             {/* 
             

@@ -153,11 +153,10 @@ function NavBarComponent() {
                   </span>
                 </Link>
               ))}
-              <Link
-                to={"/contact"}
-                className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-md transition-colors"
-              >
-                Get Involved
+              <Link to={"/donate"} className="mb-2">
+                <Button >
+                  <span className="font-extrabold p-4">Donate</span>
+                </Button>
               </Link>
             </nav>
           </div>
