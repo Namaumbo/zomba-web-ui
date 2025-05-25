@@ -21,6 +21,7 @@ import ArticlesPage from "./pages/ArticlesPage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
 import AssociationPage from "./pages/AssociationPage";
 import DonatePage from "./pages/DonatePage";
+import SermonsPage from "./pages/SermonsPage";
 function App() {
   return (
     <>
@@ -39,6 +40,7 @@ function App() {
             <Route path="/articles/:slug" element={<ArticleDetailPage />} />
             <Route path="/about/association" element={<AssociationPage />} />
             <Route path="/donate" element={<DonatePage />} />
+            <Route path="/sermons" element={<SermonsPage/>}/>
 
             {/* 
             

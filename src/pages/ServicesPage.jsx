@@ -28,7 +28,7 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import ServiceCard from "../components/service-card.jsx";
-
+import { Link } from "react-router-dom";
 export default function ServicePage() {
   // Refs for scroll animations
   const heroRef = useRef(null);
@@ -738,8 +738,9 @@ export default function ServicePage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                <Link to={"/sermons"}>
                 <Button variant="outline">
-                  View Past Sermons
+                  View Sermons
                   <motion.span
                     initial={{ x: 0 }}
                     whileHover={{ x: 5 }}
@@ -748,6 +749,7 @@ export default function ServicePage() {
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </motion.span>
                 </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
