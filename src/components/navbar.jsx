@@ -71,7 +71,7 @@ function NavBarComponent() {
               <Phone size={14} className="mr-1" />
               <span>(+265) 993 740 261</span>
             </div>
-            <div className="flex items-center">
+            <div className=" hidden md:flex items-center">
               <Mail size={14} className="mr-1" />
               <span>zombabaptistchurch@gmail.com</span>
             </div>
@@ -80,7 +80,7 @@ function NavBarComponent() {
             <Link href="/login" className="hover:underline flex items-center">
               Client Login
             </Link>
-            <Link href="https://facebook.com" className="hover:text-purple-200">
+            <Link href="https://facebook.com" className="hidden md:block hover:text-purple-200">
               <Facebook size={18} />
             </Link>
           </div>

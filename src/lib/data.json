@@ -1,0 +1,204 @@
+{
+  "youth-ministry": {
+    "title": "Youth Ministry",
+    "slug": "youth-ministry",
+    "subtitle": "Empowering the Next Generation for Christ",
+    "description": "Our youth ministry is dedicated to helping young people grow in their faith through fellowship, Bible study, and service opportunities that build character and deepen their relationship with God.",
+    "coverPage": "/youthMinistry.jpg",
+    "verse": "Don't let anyone look down on you because you are young, but set an example for the believers in speech, in conduct, in love, in faith and in purity.",
+
+    "verseReference": "1 Timothy 4:12",
+    "category": "Community",
+    "leader": {
+      "name": "Pastor John Smith",
+      "title": "Youth Pastor",
+      "bio": "Pastor John has been working with youth for over 10 years and has a heart for seeing young people discover their purpose in Christ. He holds a Master's in Youth Ministry and is passionate about discipleship.",
+      "email": "john.smith@zombabaptist.org",
+      "phone": "(265) 123-4567",
+      "image": "/placeholder.svg?height=300&width=300"
+    },
+
+    "meetingTime": "Fridays 7:00 PM",
+    "location": "Youth Center",
+    "ageGroup": "13-25 years",
+    "memberCount": "85",
+    "yearsActive": "12",
+    "heroImage": "/placeholder.svg?height=500&width=1200",
+    "images": [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+
+      "/placeholder.svg?height=300&width=400"
+    ],
+
+    "mission": "To create a safe, welcoming environment where young people can explore their faith, build meaningful relationships, and develop into confident Christian leaders.",
+
+    "vision": "To see every young person in our community equipped with the tools and confidence to live out their faith boldly in their daily lives.",
+
+    "activities": [
+      {
+        "title": "Weekly Bible Study",
+        "description": "Interactive Bible studies that help young people understand scripture and apply it to their daily lives through discussion, multimedia, and practical exercises.",
+
+        "schedule": "Every Friday 7:00 PM",
+        "participants": "25-30 youth"
+      },
+      {
+        "title": "Community Service Projects",
+        "description": "Monthly service projects that allow youth to make a tangible difference in their community while learning the importance of serving others.",
+
+        "schedule": "First Saturday of each month",
+        "participants": "40-50 volunteers"
+      },
+      {
+        "title": "Youth Camps & Retreats",
+        "description": "Annual camps and quarterly retreats designed for spiritual growth, team building, and creating lasting friendships in a fun, engaging environment.",
+
+        "schedule": "Summer camp + 4 retreats yearly",
+        "participants": "60-70 campers"
+      },
+      {
+        "title": "Mentorship Program",
+        "description": "One-on-one mentoring relationships between adult leaders and youth, providing guidance, accountability, and support for personal and spiritual growth.",
+
+        "schedule": "Ongoing relationships",
+        "participants": "30 mentor pairs"
+      }
+    ],
+
+    "upcomingEvents": [
+      {
+        "title": "Summer Youth Camp 2024",
+        "date": "July 15-20, 2024",
+        "time": "All Week",
+        "location": "Mountain View Retreat Center",
+        "description": "A week-long camp focused on spiritual growth, outdoor activities, and building lasting friendships.",
+
+        "cost": "$150 per person",
+        "registration": "Open until June 30th"
+      },
+      {
+        "title": "Community Service Day",
+        "date": "June 8, 2024",
+        "time": "9:00 AM - 3:00 PM",
+        "location": "Various Community Locations",
+        "description": "Join us as we serve our local community through various volunteer projects and outreach initiatives.",
+
+        "cost": "Free",
+        "registration": "Open"
+      },
+      {
+        "title": "Youth Leadership Training",
+        "date": "June 22, 2024",
+        "time": "10:00 AM - 4:00 PM",
+        "location": "Church Conference Room",
+        "description": "Special training session for youth interested in developing their leadership skills and taking on ministry roles.",
+
+        "cost": "Free",
+        "registration": "Contact Pastor John"
+      }
+    ],
+
+    "stats": [
+      { "label": "Active Members", "value": "85+", "icon": "Users" },
+      { "label": "Years Active", "value": "12", "icon": "Award" },
+      { "label": "Lives Impacted", "value": "500+", "icon": "Heart" },
+      { "label": "Service Hours", "value": "2,400", "icon": "Target" }
+    ]
+  },
+  "worship-ministry": {
+    "title": "Worship Ministry",
+    "slug": "worship-ministry",
+    "subtitle": "Leading Hearts in Worship and Praise",
+    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
+    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
+    "verseReference": "Psalm 100:2",
+    "category": "Worship",
+    "coverPage": "/evangelism.jpg",
+    "leader": {
+      "name": "Sarah Johnson",
+      "title": "Worship Pastor",
+      "bio": "Sarah is a gifted worship leader with over 15 years of experience in leading congregational worship and training musicians. She has a Bachelor's in Music Ministry and a heart for creating authentic worship experiences.",
+      "email": "sarah.johnson@zombabaptist.org",
+      "phone": "(265) 123-4568",
+      "image": "/placeholder.svg?height=300&width=300"
+    },
+
+    "meetingTime": "Sundays 9:00 AM & 11:00 AM",
+    "location": "Main Sanctuary",
+    "ageGroup": "All ages",
+    "memberCount": "45",
+    "yearsActive": "8",
+    "heroImage": "/placeholder.svg?height=500&width=1200",
+    "images": [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+
+      "/placeholder.svg?height=300&width=400"
+    ],
+
+    "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
+
+    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
+
+    "activities": [
+      {
+        "title": "Sunday Morning Worship",
+        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
+
+        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
+        "participants": "Full congregation"
+      },
+      {
+        "title": "Choir Ministry",
+        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
+
+        "schedule": "Wednesdays 7:00 PM",
+        "participants": "25 choir members"
+      },
+      {
+        "title": "Instrumental Training",
+        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
+
+        "schedule": "Various times throughout the week",
+        "participants": "15 musicians"
+      },
+      {
+        "title": "Worship Team Development",
+        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
+
+        "schedule": "Monthly workshops",
+        "participants": "20 team members"
+      }
+    ],
+
+    "upcomingEvents": [
+      {
+        "title": "Worship Night",
+        "date": "June 15, 2024",
+        "time": "7:00 PM - 9:00 PM",
+        "location": "Main Sanctuary",
+        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
+
+        "cost": "Free",
+        "registration": "No registration required"
+      },
+      {
+        "title": "Choir Auditions",
+        "date": "June 1, 2024",
+        "time": "2:00 PM - 5:00 PM",
+        "location": "Music Room",
+        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
+
+        "cost": "Free",
+        "registration": "Contact Sarah Johnson"
+      }
+    ]
+  }
+}
