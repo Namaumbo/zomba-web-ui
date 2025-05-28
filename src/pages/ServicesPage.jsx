@@ -274,23 +274,7 @@ export default function ServicePage() {
                   : { opacity: 0, y: 20 }
               }
               transition={{ delay: 0.6, duration: 0.5 }}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button>
-                  Plan Your Visit
-                  <motion.span
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </motion.span>
-                </Button>
-              </motion.div>
-            </motion.div>
+            ></motion.div>
           </div>
         </section>
 
@@ -739,16 +723,16 @@ export default function ServicePage() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link to={"/sermons"}>
-                <Button variant="outline">
-                  View Sermons
-                  <motion.span
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </motion.span>
-                </Button>
+                  <Button variant="outline">
+                    View Sermons
+                    <motion.span
+                      initial={{ x: 0 }}
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </motion.span>
+                  </Button>
                 </Link>
               </motion.div>
             </motion.div>
