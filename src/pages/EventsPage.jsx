@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,22 +16,26 @@ import {
   Filter,
   Share2,
 } from "lucide-react";
+import { getEvents } from "../lib/api";
 
 export default function EventsPage() {
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL;
+
   const [searchQuery, setSearchQuery] = useState("");
 
-  const featuredEvents = [
-    {
-      id: 1,
-      title: "Annual Church Meeting",
-      date: "June 12, 2025",
-      time: "11:00 AM - 3:00 PM",
-      location: "Zomba Baptist Church",
-      description: "Join us for our annual church Meeting.",
-      img: "/inchurch.jpg",
-      category: "fellowship",
-    },
-  ];
+  const [featuredEvents, setFeaturedEvents] = useState([]);
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const res = await getEvents();
+        setFeaturedEvents(res.data || []);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
 
   const upcomingEvents = [
     {
@@ -98,15 +102,14 @@ export default function EventsPage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative">
-          <div className="relative h-[50%] md:h-[40rem] w-full overflow-hidden">
+          <div className="relative h-[50%] md:h-[30rem] w-100% overflow-hidden">
             <img
-              src="/placeholder.svg?height=800&width=1600"
+              src="/bg-5.jpg"
               alt="Church events"
-              fill
-              className="object-cover"
-              priority
+              className="object-cover w-full h-full"
+              priority="true"
             />
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+            <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
               <div className="text-center text-white p-4">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                   Events & Activities
@@ -118,8 +121,7 @@ export default function EventsPage() {
               </div>
             </div>
           </div>
-        </section>
-
+        </section>{" "}
         {/* Featured Events */}
         <section className="py-12 md:py-16 bg-white">
           <div className="mx-auto container px-4 md:px-6">
@@ -142,7 +144,11 @@ export default function EventsPage() {
                 <Card key={event.id} className="overflow-hidden">
                   <div className="relative h-48  mt-[-8%]">
                     <img
-                      src={event.img || "/placeholder.svg"}
+                      src={
+                        event?.imgUrl?.url
+                          ? `${STRAPI_URL}${event?.imgUrl?.formats?.medium.url}`
+                          : "/api/placeholder/300/250"
+                      }
                       alt={event.title}
                       fill
                       className="object-cover"
@@ -190,7 +196,6 @@ export default function EventsPage() {
             </div>
           </div>
         </section>
-
         {/* Upcoming Events */}
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="mx-auto container px-4 md:px-6">
@@ -283,9 +288,10 @@ export default function EventsPage() {
           </div>
         </section>
 
+        
         {/* Regular Events */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="mx-auto container px-4 md:px-6">
+        <section className="py-12 md:py-16 ">
+          <div className="mx-auto container px-4 md:px-6 ">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
@@ -300,30 +306,180 @@ export default function EventsPage() {
                 </p>
               </div>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {monthlyEvents.map((event, index) => (
-                <Card key={index} className="bg-muted/30">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="h-5 w-5 text-primary" />
-                      <h3 className="text-xl font-bold">{event.title}</h3>
-                    </div>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span className="font-medium">{event.day}</span>
+            <div  className="bg-slate-50 ">
+              <div className="flex items-center justify-center min-h-screen p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+                  {/* Communion Sunday Card */}
+                  <Card className="relative overflow-hidden border-0 shadow-2xl bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 backdrop-blur-sm">
+                    {/* Floating bubbles */}
+                    <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-purple-200/40 to-pink-200/40 rounded-full blur-xl"></div>
+                    <div className="absolute -top-2 -right-6 w-16 h-16 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-lg"></div>
+                    <div className="absolute -bottom-6 -left-2 w-24 h-24 bg-gradient-to-br from-pink-200/30 to-purple-200/30 rounded-full blur-xl"></div>
+                    <div className="absolute -bottom-4 -right-4 w-18 h-18 bg-gradient-to-br from-purple-200/40 to-blue-200/40 rounded-full blur-lg"></div>
+
+                    {/* Small floating dots */}
+                    <div className="absolute top-8 right-8 w-2 h-2 bg-purple-300/60 rounded-full"></div>
+                    <div className="absolute top-16 left-12 w-1.5 h-1.5 bg-pink-300/60 rounded-full"></div>
+                    <div className="absolute bottom-20 right-12 w-1 h-1 bg-blue-300/60 rounded-full"></div>
+                    <div className="absolute bottom-32 left-8 w-1.5 h-1.5 bg-purple-300/60 rounded-full"></div>
+
+                    <CardContent className="relative p-8 space-y-6">
+                      <div className="flex items-center space-x-3">
+                        <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-lg">
+                          <Calendar className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            Communion Sunday
+                          </h2>
+                          <p className="text-sm text-gray-500 font-medium">
+                            First Sunday
+                          </p>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4 text-primary" />
-                        <span>{event.time}</span>
+
+                      <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-sm">
+                        <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl">
+                          <Clock className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          Both Services
+                        </span>
                       </div>
-                    </div>
-                    <p className="text-muted-foreground">{event.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+
+                      <div className="space-y-2">
+                        <p className="text-gray-600 leading-relaxed">
+                          We celebrate communion together on the first Sunday of
+                          each month.
+                        </p>
+                      </div>
+
+                      <div className="flex justify-center pt-2">
+                        <div className="flex space-x-2">
+                          <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
+                          <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full"></div>
+                          <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Youth Group Card */}
+                  <Card className="relative overflow-hidden border-0 shadow-2xl bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/30 backdrop-blur-sm">
+                    {/* Floating bubbles */}
+                    <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-emerald-200/40 to-teal-200/40 rounded-full blur-xl"></div>
+                    <div className="absolute -top-2 -right-6 w-16 h-16 bg-gradient-to-br from-green-200/30 to-emerald-200/30 rounded-full blur-lg"></div>
+                    <div className="absolute -bottom-6 -left-2 w-24 h-24 bg-gradient-to-br from-teal-200/30 to-emerald-200/30 rounded-full blur-xl"></div>
+                    <div className="absolute -bottom-4 -right-4 w-18 h-18 bg-gradient-to-br from-emerald-200/40 to-green-200/40 rounded-full blur-lg"></div>
+
+                    {/* Small floating dots */}
+                    <div className="absolute top-8 right-8 w-2 h-2 bg-emerald-300/60 rounded-full"></div>
+                    <div className="absolute top-16 left-12 w-1.5 h-1.5 bg-teal-300/60 rounded-full"></div>
+                    <div className="absolute bottom-20 right-12 w-1 h-1 bg-green-300/60 rounded-full"></div>
+                    <div className="absolute bottom-32 left-8 w-1.5 h-1.5 bg-emerald-300/60 rounded-full"></div>
+
+                    <CardContent className="relative p-8 space-y-6">
+                      <div className="flex items-center space-x-3">
+                        <div className="p-3 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl shadow-lg">
+                          <Users className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                            Youth Group
+                          </h2>
+                          <p className="text-sm text-gray-500 font-medium">
+                            Every Friday
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-sm">
+                        <div className="p-2 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl">
+                          <Clock className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          7:00 PM - 9:00 PM
+                        </span>
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="text-gray-600 leading-relaxed">
+                          Join us for games, worship, and fellowship. Ages 13-18
+                          welcome!
+                        </p>
+                      </div>
+
+                      <div className="flex justify-center pt-2">
+                        <div className="flex space-x-2">
+                          <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
+                          <div className="w-2 h-2 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full"></div>
+                          <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full"></div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Community Outreach Card */}
+                  <Card className="relative overflow-hidden border-0 shadow-2xl bg-gradient-to-br from-white via-orange-50/30 to-amber-50/30 backdrop-blur-sm">
+                    {/* Floating bubbles */}
+                    <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-orange-200/40 to-amber-200/40 rounded-full blur-xl"></div>
+                    <div className="absolute -top-2 -right-6 w-16 h-16 bg-gradient-to-br from-yellow-200/30 to-orange-200/30 rounded-full blur-lg"></div>
+                    <div className="absolute -bottom-6 -left-2 w-24 h-24 bg-gradient-to-br from-amber-200/30 to-orange-200/30 rounded-full blur-xl"></div>
+                    <div className="absolute -bottom-4 -right-4 w-18 h-18 bg-gradient-to-br from-orange-200/40 to-yellow-200/40 rounded-full blur-lg"></div>
+
+                    {/* Small floating dots */}
+                    <div className="absolute top-8 right-8 w-2 h-2 bg-orange-300/60 rounded-full"></div>
+                    <div className="absolute top-16 left-12 w-1.5 h-1.5 bg-amber-300/60 rounded-full"></div>
+                    <div className="absolute bottom-20 right-12 w-1 h-1 bg-yellow-300/60 rounded-full"></div>
+                    <div className="absolute bottom-32 left-8 w-1.5 h-1.5 bg-orange-300/60 rounded-full"></div>
+
+                    <CardContent className="relative p-8 space-y-6">
+                      <div className="flex items-center space-x-3">
+                        <div className="p-3 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl shadow-lg">
+                          <Heart className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h2 className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                            Community Outreach
+                          </h2>
+                          <p className="text-sm text-gray-500 font-medium">
+                            Third Saturday
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-sm">
+                        <div className="p-2 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl">
+                          <Clock className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          9:00 AM - 2:00 PM
+                        </span>
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="text-gray-600 leading-relaxed">
+                          Serving our community through food drives and local
+                          volunteer work.
+                        </p>
+                      </div>
+
+                      <div className="flex justify-center pt-2">
+                        <div className="flex space-x-2">
+                          <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full"></div>
+                          <div className="w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full"></div>
+                          <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full"></div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+
 
         {/* Past Events */}
         <section className="py-12 md:py-16 bg-muted/30">
@@ -369,7 +525,6 @@ export default function EventsPage() {
             </div>
           </div>
         </section>
-
         {/* Call to Action */}
         <section className="py-12 md:py-16 bg-primary text-primary-foreground">
           <div className="mx-auto container px-4 md:px-6 text-center">

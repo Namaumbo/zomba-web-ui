@@ -4,7 +4,7 @@
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "FeaturedEvent",
+    "displayName": "Event",
     "description": ""
   },
   "options": {
@@ -12,9 +12,6 @@
   },
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "date": {
       "type": "string"
     },
     "time": {
@@ -26,11 +23,22 @@
     "description": {
       "type": "text"
     },
-    "img": {
-      "type": "string"
-    },
     "category": {
       "type": "string"
+    },
+    "imgUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "date": {
+      "type": "date"
     }
   }
 }
