@@ -201,25 +201,25 @@ function AboutPage() {
                 </div>
                 <div className={styles.pattern} />
                 <div className={styles.spotlight} />
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
-                  className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg p-4 max-w-[200px]"
-                >
-                  <span className=" text-sm font-medium text-primary">
-                    Join us every Sunday
-                  </span>
-                  <br />
-                  <span className="text-lg font-bold">9:00 AM & 11:00 AM</span>
-                </motion.div>
               </motion.div>
             </div>
           </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="hidden md:block absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg p-4 max-w-[200px]"
+          >
+            <span className=" text-sm font-medium text-primary">
+              Join us every Sunday
+            </span>
+            <br />
+            <span className="text-lg font-bold">9:00 AM & 11:00 AM</span>
+          </motion.div>
         </section>
 
         {/* Our History & Leadership Section */}
-        <section className="relative py-24 mt-8 overflow-hidden bg-gradient-to-b from-[#600285] to-primary/5">
+        <section className="relative py-24 mt-8  bg-gradient-to-b from-[#600285] to-primary/5">
           <div className="container relative px-4 mx-auto">
             <Tabs defaultValue="history" className="w-full">
               <motion.div

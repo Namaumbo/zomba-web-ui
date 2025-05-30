@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Phone, Mail, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
+import { Home, Info, Settings, Calendar, Users } from "lucide-react";
 
 function NavBarComponent() {
   const location = useLocation();
@@ -15,12 +16,12 @@ function NavBarComponent() {
   }, [location]);
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/services", label: "Services" },
-    { path: "/events", label: "Events" },
-    { path: "/ministries", label: "Ministries" },
-    { path: "/contact", label: "Contact" },
+    { path: "/", label: "Home", Icon: <Home size={18}/> },
+    { path: "/about", label: "About", Icon: <Info size={18}/> },
+    { path: "/services", label: "Services", Icon: <Settings size={18}/> },
+    { path: "/events", label: "Events", Icon: <Calendar size={18}/> },
+    { path: "/ministries", label: "Ministries", Icon: <Users size={18}/> },
+    { path: "/contact", label: "Contact", Icon: <Phone size={18}/> },
   ];
 
   const toggleMobileMenu = () => {
@@ -176,20 +177,22 @@ function NavBarComponent() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <div className="flex flex-col py-4 space-y-3">
-              {navLinks.map(({ path, label }) => (
+              {navLinks.map(({ path, label, Icon }) => (
                 <Link
                   key={path}
                   to={path}
                   className="text-gray-700 hover:text-purple-700 font-medium transition-colors"
                 >
-                  {label}
+                  <div className="flex flex-row gap-3 content-center">
+                    {Icon} <p className="text-sm font-bold">{label}</p>
+                  </div>
                 </Link>
               ))}
               <Link
-                href="/get-involved"
+                to={"/donate"}
                 className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-md transition-colors inline-block w-fit"
               >
-                Get Involved
+               DONATE
               </Link>
             </div>
           </motion.nav>

@@ -98,7 +98,7 @@ export default function LandingPage() {
                 >
                   <motion.div
                     initial={{ width: 0 }}
-                    whileInView={{ width: "80%" }}
+                    whileInView={{ width: "50%" }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 0.2 }}
                     className="h-1 bg-purple-600 mb-6"
@@ -108,7 +108,7 @@ export default function LandingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="text-3xl mb-8 font-bold tracking-tighter sm:text-4xl md:text-5xl"
+                    className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
                   >
                     Sunday <span className="text-purple-500">Worship</span>{" "}
                     Services
@@ -272,6 +272,13 @@ export default function LandingPage() {
 
               <div className="flex flex-col justify-center  lg:p-12 relative  ">
                 <div className="space-y-6">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "50%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                    className="h-1 bg-purple-600 mb-6"
+                  />
                   <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                     Corporate <span className="text-purple-500">Prayer</span>{" "}
                     Sessions{" "}
@@ -334,10 +341,13 @@ export default function LandingPage() {
                       </p>
                     </motion.div>
                   </motion.div>
-                  <button className="mb-6 bg-primary flex items-center justify-center text-white px-8 py-3 text-lg font-medium rounded-full w-40 group transition-all duration-200">
-                    Join Us{" "}
+                  <Link
+                    to="/services"
+                    className="mb-6 bg-primary flex items-center justify-center text-white px-8 py-3 text-lg font-medium rounded-full w-40 group transition-all duration-200"
+                  >
+                    Join Us
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Decorative Element */}
