@@ -30,7 +30,7 @@ export default function AssociationPage() {
   return (
     <>
       <div>
-        <section className="bg-gradient-to-b from-slate-50 to-white pt-5 mt-20 ">
+        <section className="bg-gradient-to-b from-slate-50 to-white pt-5 md:mt-20 ">
           <div className={`${styles.grid} px-4 sm:px-8 mx-auto container`}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -1,19 +1,21 @@
 "use client";
 
+import React from "react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import HeroCarousel from "../components/hero-carousel";
 import PastorSection from "../components/pastor-message";
 import MissionSection from "../components/mission-section";
-import ServiceLocation from "../components/service-location";
 import { motion, useInView } from "framer-motion";
-import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Shield } from "lucide-react";
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    document.title = "Home | Zomba Baptist Church";
     setIsVisible(true);
   }, []);
 
@@ -87,7 +89,6 @@ export default function LandingPage() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
-                {/* <ServiceLocation /> */}
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -112,6 +113,7 @@ export default function LandingPage() {
                     Sunday <span className="text-purple-500">Worship</span>{" "}
                     Services
                   </motion.h2>
+
                   <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -153,7 +155,6 @@ export default function LandingPage() {
                         Chichewa Service: 10:00 AM - 12:00 PM
                       </p>
                     </motion.div>
-                
                   </motion.div>
 
                   {/* Purple gradient blob */}
@@ -166,7 +167,7 @@ export default function LandingPage() {
                   />
                 </motion.div>
               </motion.div>
-              <div className="relative">
+              <div className="relative ">
                 <motion.div
                   initial={{ opacity: 0, y: 40, rotate: -2 }}
                   whileInView={{ opacity: 1, y: 0, rotate: 0 }}
@@ -185,7 +186,7 @@ export default function LandingPage() {
                   <motion.img
                     src="/inchurch.jpg"
                     alt="Church worship service"
-                    className="aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl"
+                    className="aspect-[3/3] md:aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl"
                     initial={{ scale: 1.1 }}
                     animate={{
                       scale: [1.1, 1.05, 1.1],
@@ -237,7 +238,7 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
-                className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden"
+                className="relative h-[300px] md:h-[600px] rounded-2xl overflow-hidden"
               >
                 <div className="absolute inset-0 bg-black/30 z-10 rounded-2xl" />
                 <img
@@ -269,109 +270,79 @@ export default function LandingPage() {
                 </motion.div>
               </motion.div>
 
-              {/* Right Column - Content */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "80%" }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  className="h-1 bg-purple-600 mb-6"
-                />
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="text-3xl mb-8 font-bold tracking-tighter sm:text-4xl md:text-5xl"
-                >
-                  Corporate <span className="text-purple-500">Prayer</span>{" "}
-                  Sessions
-                </motion.h2>
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="text-lg text-gray-700 mb-8 leading-relaxed"
-                >
-                  Join us in our dedicated corporate prayer sessions where we
-                  come together as a community to seek God's presence, intercede
-                  for one another, and experience the power of unified prayer.
-                </motion.p>
+              <div className="flex flex-col justify-center  lg:p-12 relative  ">
+                <div className="space-y-6">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                    Corporate <span className="text-purple-500">Prayer</span>{" "}
+                    Sessions{" "}
+                  </h2>
 
-                <motion.div
-                  variants={container}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  className="space-y-4 mb-8"
-                >
-                  <motion.div
-                    variants={item}
-                    className="flex items-start gap-3"
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="text-lg text-gray-600 mb-8 leading-relaxed"
                   >
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
-                    <p className="text-gray-700">Wednesday, 16:00 to 17:00</p>
-                  </motion.div>
-                  <motion.div
-                    variants={item}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
-                    <p className="text-gray-700">
-                      Last Friday of the month: Overnight from 20:00
-                    </p>
-                  </motion.div>
-                  <motion.div
-                    variants={item}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
-                    <p className="text-gray-700">
-                      First Wednesday of the month: Prayer and fasting up to
-                      17:00
-                    </p>
-                  </motion.div>
-                  <motion.div
-                    variants={item}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
-                    <p className="text-gray-700">
-                      First Monday to Friday of every quarter: 5 days of prayer
-                      and fasting
-                    </p>
-                  </motion.div>
-                </motion.div>
+                    Join us in our dedicated corporate prayer sessions where we
+                    come together as a community to seek God's presence,
+                    intercede for one another, and experience the power of
+                    unified prayer.
+                  </motion.p>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                >
-                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-all duration-300 transform hover:scale-105">
-                    Join Us
-                    <ChevronDown size={18} />
+                  <motion.div
+                    variants={container}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="space-y-4 mb-8"
+                  >
+                    <motion.div
+                      variants={item}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
+                      <p className="text-gray-700">Wednesday, 16:00 to 17:00</p>
+                    </motion.div>
+                    <motion.div
+                      variants={item}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
+                      <p className="text-gray-700">
+                        Last Friday of the month: Overnight from 20:00
+                      </p>
+                    </motion.div>
+                    <motion.div
+                      variants={item}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
+                      <p className="text-gray-700">
+                        First Wednesday of the month: Prayer and fasting up to
+                        17:00
+                      </p>
+                    </motion.div>
+                    <motion.div
+                      variants={item}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2.5"></div>
+                      <p className="text-gray-700">
+                        First Monday to Friday of every quarter: 5 days of
+                        prayer and fasting
+                      </p>
+                    </motion.div>
+                  </motion.div>
+                  <button className="mb-6 bg-primary flex items-center justify-center text-white px-8 py-3 text-lg font-medium rounded-full w-40 group transition-all duration-200">
+                    Join Us{" "}
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </button>
-                </motion.div>
+                </div>
 
-                {/* Purple gradient blob */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 0.15 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.6 }}
-                  className="absolute -bottom-32  w-96 h-96 bg-purple-600 rounded-full blur-2xl -z-10"
-                />
-              </motion.div>
+                {/* Decorative Element */}
+                <div className=" mb-5 absolute bottom-0 right-0 w-24 h-24 bg-primary rounded-tl-full rounded-bl-full opacity-50" />
+              </div>
             </div>
           </div>
         </div>

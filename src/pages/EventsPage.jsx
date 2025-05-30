@@ -25,6 +25,7 @@ export default function EventsPage() {
 
   const [featuredEvents, setFeaturedEvents] = useState([]);
   useEffect(() => {
+    document.title = "Events | Zomba Baptist Church";
     const fetchEvents = async () => {
       try {
         const res = await getEvents();
@@ -142,7 +143,7 @@ export default function EventsPage() {
             <div className="grid gap-6 md:grid-cols-3">
               {featuredEvents.map((event) => (
                 <Card key={event.id} className="overflow-hidden">
-                  <div className="relative h-48  mt-[-8%]">
+                  <div className="relative h-40  mt-[-8%]">
                     <img
                       src={
                         event?.imgUrl?.url
@@ -151,7 +152,7 @@ export default function EventsPage() {
                       }
                       alt={event.title}
                       fill
-                      className="object-cover"
+                      className="object-cover overflow-hidden h-[13rem] md:h-[18rem] w-full"
                     />
                     <div className="absolute top-2 right-2 md:top-6">
                       <Badge className="bg-primary text-primary-foreground">

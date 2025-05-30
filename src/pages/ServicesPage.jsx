@@ -26,7 +26,7 @@ import {
   useInView,
   AnimatePresence,
 } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ServiceCard from "../components/service-card.jsx";
 import { Link } from "react-router-dom";
 export default function ServicePage() {
@@ -154,6 +154,9 @@ export default function ServicePage() {
   // State for active tab
   const [activeTab, setActiveTab] = useState("Chichewa");
 
+  useEffect(() => {
+    document.title = "Service | Zomba Baptist Church";
+  });
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-1">

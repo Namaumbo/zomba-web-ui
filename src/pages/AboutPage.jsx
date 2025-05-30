@@ -136,6 +136,8 @@ function AboutPage() {
   const { handleScroll } = useParallax(imageRef, 0.6); // 0.4 is the parallax speed factor
 
   useEffect(() => {
+    document.title = "About | Zomba Baptist Church";
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);

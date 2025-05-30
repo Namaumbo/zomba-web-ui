@@ -70,7 +70,6 @@ export default function ContactPage() {
     }, 5000);
   };
 
-  
   const staffMembers = [
     {
       name: "Pastor Richard Makhenjera",
@@ -104,6 +103,9 @@ export default function ContactPage() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
+  React.useEffect(() => {
+    document.title = "Contact | Zomba Baptist Church";
+  });
   return (
     <div className="flex flex-col min-h-screen">
       {/* Main Content */}

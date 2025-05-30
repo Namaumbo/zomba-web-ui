@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import MinistryComponent from "../components/ministry-component";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -68,6 +68,9 @@ export default function MinistryPage() {
     // Handle navigation or modal display here
   };
 
+  React.useEffect(() => {
+    document.title = "Ministry | Zomba Baptist Church";
+  });
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
@@ -87,8 +90,7 @@ export default function MinistryPage() {
         </Link>
       </div>
 
-      <MinistryComponent
-      />
+      <MinistryComponent />
     </div>
   );
 }
