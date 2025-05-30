@@ -80,7 +80,10 @@ function NavBarComponent() {
             <Link href="/login" className="hover:underline flex items-center">
               Client Login
             </Link>
-            <Link href="https://facebook.com" className="hidden md:block hover:text-purple-200">
+            <Link
+              href="https://facebook.com"
+              className="hidden md:block hover:text-purple-200"
+            >
               <Facebook size={18} />
             </Link>
           </div>
@@ -154,7 +157,7 @@ function NavBarComponent() {
                 </Link>
               ))}
               <Link to={"/donate"} className="mb-2">
-                <Button >
+                <Button>
                   <span className="font-extrabold p-4">Donate</span>
                 </Button>
               </Link>
@@ -173,17 +176,15 @@ function NavBarComponent() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <div className="flex flex-col py-4 space-y-3">
-              {["About", "Ministries", "Services", "Contact", "Events"].map(
-                (item) => (
-                  <Link
-                    key={item}
-                    href={`/${item.toLowerCase()}`}
-                    className="text-gray-700 hover:text-purple-700 font-medium transition-colors"
-                  >
-                    {item}
-                  </Link>
-                )
-              )}
+              {navLinks.map(({ path, label }) => (
+                <Link
+                  key={path}
+                  to={path}
+                  className="text-gray-700 hover:text-purple-700 font-medium transition-colors"
+                >
+                  {label}
+                </Link>
+              ))}
               <Link
                 href="/get-involved"
                 className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-md transition-colors inline-block w-fit"
