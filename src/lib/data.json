@@ -200,5 +200,465 @@
         "registration": "Contact Sarah Johnson"
       }
     ]
+  },
+  "Mens-ministry": {
+    "title": "Mens Ministry",
+    "slug": "worship-ministry",
+    "subtitle": "Leading Hearts in Worship and Praise",
+    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
+    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
+    "verseReference": "Psalm 100:2",
+    "category": "Worship",
+    "coverPage": "/evangelism.jpg",
+    "leader": {
+      "name": "Sarah Johnson",
+      "title": "Worship Pastor",
+      "bio": "Sarah is a gifted worship leader with over 15 years of experience in leading congregational worship and training musicians. She has a Bachelor's in Music Ministry and a heart for creating authentic worship experiences.",
+      "email": "sarah.johnson@zombabaptist.org",
+      "phone": "(265) 123-4568",
+      "image": "/placeholder.svg?height=300&width=300"
+    },
+
+    "meetingTime": "Sundays 9:00 AM & 11:00 AM",
+    "location": "Main Sanctuary",
+    "ageGroup": "All ages",
+    "memberCount": "45",
+    "yearsActive": "8",
+    "heroImage": "/evangelism.jpg",
+    "images": [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+
+      "/placeholder.svg?height=300&width=400"
+    ],
+
+    "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
+
+    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
+
+    "activities": [
+      {
+        "title": "Sunday Morning Worship",
+        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
+
+        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
+        "participants": "Full congregation"
+      },
+      {
+        "title": "Choir Ministry",
+        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
+
+        "schedule": "Wednesdays 7:00 PM",
+        "participants": "25 choir members"
+      },
+      {
+        "title": "Instrumental Training",
+        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
+
+        "schedule": "Various times throughout the week",
+        "participants": "15 musicians"
+      },
+      {
+        "title": "Worship Team Development",
+        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
+
+        "schedule": "Monthly workshops",
+        "participants": "20 team members"
+      }
+    ],
+
+    "upcomingEvents": [
+      {
+        "title": "Worship Night",
+        "date": "June 15, 2024",
+        "time": "7:00 PM - 9:00 PM",
+        "location": "Main Sanctuary",
+        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
+
+        "cost": "Free",
+        "registration": "No registration required"
+      },
+      {
+        "title": "Choir Auditions",
+        "date": "June 1, 2024",
+        "time": "2:00 PM - 5:00 PM",
+        "location": "Music Room",
+        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
+
+        "cost": "Free",
+        "registration": "Contact Sarah Johnson"
+      }
+    ]
+  },
+  "Womens-ministry": {
+    "title": "Women Ministry",
+    "slug": "worship-ministry",
+    "subtitle": "Leading Hearts in Worship and Praise",
+    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
+    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
+    "verseReference": "Psalm 100:2",
+    "category": "Worship",
+    "coverPage": "/evangelism.jpg",
+    "leader": {
+      "name": "Sarah Johnson",
+      "title": "Worship Pastor",
+      "bio": "Sarah is a gifted worship leader with over 15 years of experience in leading congregational worship and training musicians. She has a Bachelor's in Music Ministry and a heart for creating authentic worship experiences.",
+      "email": "sarah.johnson@zombabaptist.org",
+      "phone": "(265) 123-4568",
+      "image": "/placeholder.svg?height=300&width=300"
+    },
+
+    "meetingTime": "Sundays 9:00 AM & 11:00 AM",
+    "location": "Main Sanctuary",
+    "ageGroup": "All ages",
+    "memberCount": "45",
+    "yearsActive": "8",
+    "heroImage": "/evangelism.jpg",
+    "images": [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+
+      "/placeholder.svg?height=300&width=400"
+    ],
+
+    "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
+
+    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
+
+    "activities": [
+      {
+        "title": "Sunday Morning Worship",
+        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
+
+        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
+        "participants": "Full congregation"
+      },
+      {
+        "title": "Choir Ministry",
+        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
+
+        "schedule": "Wednesdays 7:00 PM",
+        "participants": "25 choir members"
+      },
+      {
+        "title": "Instrumental Training",
+        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
+
+        "schedule": "Various times throughout the week",
+        "participants": "15 musicians"
+      },
+      {
+        "title": "Worship Team Development",
+        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
+
+        "schedule": "Monthly workshops",
+        "participants": "20 team members"
+      }
+    ],
+
+    "upcomingEvents": [
+      {
+        "title": "Worship Night",
+        "date": "June 15, 2024",
+        "time": "7:00 PM - 9:00 PM",
+        "location": "Main Sanctuary",
+        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
+
+        "cost": "Free",
+        "registration": "No registration required"
+      },
+      {
+        "title": "Choir Auditions",
+        "date": "June 1, 2024",
+        "time": "2:00 PM - 5:00 PM",
+        "location": "Music Room",
+        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
+
+        "cost": "Free",
+        "registration": "Contact Sarah Johnson"
+      }
+    ]
+  },
+  "evangelism-ministry": {
+    "title": "  Evangelism, Outreach, and Discipleship Ministry ",
+    "slug": "worship-ministry",
+    "subtitle": "Leading Hearts in Worship and Praise",
+    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
+    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
+    "verseReference": "Psalm 100:2",
+    "category": "Worship",
+    "coverPage": "/evangelism.jpg",
+    "leader": {
+      "name": "Sarah Johnson",
+      "title": "Worship Pastor",
+      "bio": "Sarah is a gifted worship leader with over 15 years of experience in leading congregational worship and training musicians. She has a Bachelor's in Music Ministry and a heart for creating authentic worship experiences.",
+      "email": "sarah.johnson@zombabaptist.org",
+      "phone": "(265) 123-4568",
+      "image": "/placeholder.svg?height=300&width=300"
+    },
+
+    "meetingTime": "Sundays 9:00 AM & 11:00 AM",
+    "location": "Main Sanctuary",
+    "ageGroup": "All ages",
+    "memberCount": "45",
+    "yearsActive": "8",
+    "heroImage": "/evangelism.jpg",
+    "images": [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+
+      "/placeholder.svg?height=300&width=400"
+    ],
+
+    "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
+
+    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
+
+    "activities": [
+      {
+        "title": "Sunday Morning Worship",
+        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
+
+        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
+        "participants": "Full congregation"
+      },
+      {
+        "title": "Choir Ministry",
+        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
+
+        "schedule": "Wednesdays 7:00 PM",
+        "participants": "25 choir members"
+      },
+      {
+        "title": "Instrumental Training",
+        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
+
+        "schedule": "Various times throughout the week",
+        "participants": "15 musicians"
+      },
+      {
+        "title": "Worship Team Development",
+        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
+
+        "schedule": "Monthly workshops",
+        "participants": "20 team members"
+      }
+    ],
+
+    "upcomingEvents": [
+      {
+        "title": "Worship Night",
+        "date": "June 15, 2024",
+        "time": "7:00 PM - 9:00 PM",
+        "location": "Main Sanctuary",
+        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
+
+        "cost": "Free",
+        "registration": "No registration required"
+      },
+      {
+        "title": "Choir Auditions",
+        "date": "June 1, 2024",
+        "time": "2:00 PM - 5:00 PM",
+        "location": "Music Room",
+        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
+
+        "cost": "Free",
+        "registration": "Contact Sarah Johnson"
+      }
+    ]
+  },
+  "Prison Ministry": {
+    "title": " Prison Ministry ",
+    "slug": "worship-ministry",
+    "subtitle": "Leading Hearts in Worship and Praise",
+    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
+    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
+    "verseReference": "Psalm 100:2",
+    "category": "Worship",
+    "coverPage": "/evangelism.jpg",
+    "leader": {
+      "name": "Sarah Johnson",
+      "title": "Worship Pastor",
+      "bio": "Sarah is a gifted worship leader with over 15 years of experience in leading congregational worship and training musicians. She has a Bachelor's in Music Ministry and a heart for creating authentic worship experiences.",
+      "email": "sarah.johnson@zombabaptist.org",
+      "phone": "(265) 123-4568",
+      "image": "/placeholder.svg?height=300&width=300"
+    },
+
+    "meetingTime": "Sundays 9:00 AM & 11:00 AM",
+    "location": "Main Sanctuary",
+    "ageGroup": "All ages",
+    "memberCount": "45",
+    "yearsActive": "8",
+    "heroImage": "/evangelism.jpg",
+    "images": [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+
+      "/placeholder.svg?height=300&width=400"
+    ],
+
+    "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
+
+    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
+
+    "activities": [
+      {
+        "title": "Sunday Morning Worship",
+        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
+
+        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
+        "participants": "Full congregation"
+      },
+      {
+        "title": "Choir Ministry",
+        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
+
+        "schedule": "Wednesdays 7:00 PM",
+        "participants": "25 choir members"
+      },
+      {
+        "title": "Instrumental Training",
+        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
+
+        "schedule": "Various times throughout the week",
+        "participants": "15 musicians"
+      },
+      {
+        "title": "Worship Team Development",
+        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
+
+        "schedule": "Monthly workshops",
+        "participants": "20 team members"
+      }
+    ],
+
+    "upcomingEvents": [
+      {
+        "title": "Worship Night",
+        "date": "June 15, 2024",
+        "time": "7:00 PM - 9:00 PM",
+        "location": "Main Sanctuary",
+        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
+
+        "cost": "Free",
+        "registration": "No registration required"
+      },
+      {
+        "title": "Choir Auditions",
+        "date": "June 1, 2024",
+        "time": "2:00 PM - 5:00 PM",
+        "location": "Music Room",
+        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
+
+        "cost": "Free",
+        "registration": "Contact Sarah Johnson"
+      }
+    ]
+  },
+  "  Social Welfare Ministry": {
+    "title": "   Social Welfare Ministry",
+    "slug": "worship-ministry",
+    "subtitle": "Leading Hearts in Worship and Praise",
+    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
+    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
+    "verseReference": "Psalm 100:2",
+    "category": "Worship",
+    "coverPage": "/evangelism.jpg",
+    "leader": {
+      "name": "Sarah Johnson",
+      "title": "Worship Pastor",
+      "bio": "Sarah is a gifted worship leader with over 15 years of experience in leading congregational worship and training musicians. She has a Bachelor's in Music Ministry and a heart for creating authentic worship experiences.",
+      "email": "sarah.johnson@zombabaptist.org",
+      "phone": "(265) 123-4568",
+      "image": "/placeholder.svg?height=300&width=300"
+    },
+
+    "meetingTime": "Sundays 9:00 AM & 11:00 AM",
+    "location": "Main Sanctuary",
+    "ageGroup": "All ages",
+    "memberCount": "45",
+    "yearsActive": "8",
+    "heroImage": "/evangelism.jpg",
+    "images": [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+      "/placeholder.svg?height=300&width=400",
+
+      "/placeholder.svg?height=300&width=400"
+    ],
+
+    "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
+
+    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
+
+    "activities": [
+      {
+        "title": "Sunday Morning Worship",
+        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
+
+        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
+        "participants": "Full congregation"
+      },
+      {
+        "title": "Choir Ministry",
+        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
+
+        "schedule": "Wednesdays 7:00 PM",
+        "participants": "25 choir members"
+      },
+      {
+        "title": "Instrumental Training",
+        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
+
+        "schedule": "Various times throughout the week",
+        "participants": "15 musicians"
+      },
+      {
+        "title": "Worship Team Development",
+        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
+
+        "schedule": "Monthly workshops",
+        "participants": "20 team members"
+      }
+    ],
+
+    "upcomingEvents": [
+      {
+        "title": "Worship Night",
+        "date": "June 15, 2024",
+        "time": "7:00 PM - 9:00 PM",
+        "location": "Main Sanctuary",
+        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
+
+        "cost": "Free",
+        "registration": "No registration required"
+      },
+      {
+        "title": "Choir Auditions",
+        "date": "June 1, 2024",
+        "time": "2:00 PM - 5:00 PM",
+        "location": "Music Room",
+        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
+
+        "cost": "Free",
+        "registration": "Contact Sarah Johnson"
+      }
+    ]
   }
 }
