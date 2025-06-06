@@ -196,7 +196,9 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
             </div>
-          </div>
+            From M1 road, turn at Zomba Clock Tower into Zomba City. Drive straight through town passing Zomba Police Station. Continue up the hill and turn right at Zomba Baptist Church sign. The church is located on the right side.
+
+Public Transportation: Bus routes 10 and 15 stop directly in front of the church.       </div>
         </section>
 
         <ContactMap />
@@ -209,7 +211,7 @@ export default function ContactPage() {
                   Our Team
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Staff Directory
+                  Staff Directory & Feed back
                 </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
                   Meet our dedicated staff members who are here to serve and

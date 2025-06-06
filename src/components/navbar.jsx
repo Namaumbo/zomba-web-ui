@@ -107,7 +107,7 @@ function NavBarComponent() {
                   className="object-contain"
                 />
               </div>
-              <div className="ml-2">
+              <div className="ml-2 hidden md:block">
                 <h1 className="text-lg md:text-xl font-bold text-purple-900">
                   Zomba Baptist Church
                 </h1>
