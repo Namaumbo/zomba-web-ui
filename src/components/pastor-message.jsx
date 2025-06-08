@@ -1,15 +1,18 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { Quote } from "lucide-react"
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Quote } from "lucide-react";
 
 export default function PastorSection() {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="py-16 md:py-24 relative overflow-hidden"
+    >
       <motion.div
         className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-slate-50 to-slate-100 -z-10"
         initial={{ opacity: 0 }}
@@ -39,7 +42,7 @@ export default function PastorSection() {
             animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -50 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-              <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg order-2 lg:order-1">
+            <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg order-2 lg:order-1">
               <img
                 src="/pastorPicture.jpg"
                 alt="Pastor Richard Makhenjera"
@@ -56,13 +59,19 @@ export default function PastorSection() {
               <motion.div
                 className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-primary rounded-tl-2xl"
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.5 }}
+                animate={{
+                  opacity: isInView ? 1 : 0,
+                  scale: isInView ? 1 : 0.5,
+                }}
                 transition={{ duration: 0.6, delay: 1 }}
               />
               <motion.div
                 className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-primary rounded-br-2xl"
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.5 }}
+                animate={{
+                  opacity: isInView ? 1 : 0,
+                  scale: isInView ? 1 : 0.5,
+                }}
                 transition={{ duration: 0.6, delay: 1.1 }}
               />
             </div>
@@ -111,7 +120,8 @@ export default function PastorSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               whileHover={{
                 y: -5,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
               }}
             >
               <Quote className="absolute text-primary/10 w-20 h-20 -top-4 -left-4" />
@@ -122,9 +132,11 @@ export default function PastorSection() {
                   animate={{ opacity: isInView ? 1 : 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                  I am so excited to welcome you to our ZBC website. We are looking forward to keep interacting with
-                  you. Our goal is to keep you informed of what the Lord is doing through His Church. Keep following us
-                  for what the Lord Almighty wants to share with you through this website.
+                  I am so excited to welcome you to our ZBC website. We are
+                  looking forward to keep interacting with you. Our goal is to
+                  keep you informed of what the Lord is doing through His
+                  Church. Keep following us for what the Lord Almighty wants to
+                  share with you through this website.
                 </motion.p>
 
                 <motion.p
@@ -132,8 +144,9 @@ export default function PastorSection() {
                   animate={{ opacity: isInView ? 1 : 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
                 >
-                  We believe that God has a purpose for each of us, and we're excited to help you discover yours. I look
-                  forward to meeting you personally this Sunday!
+                  We believe that God has a purpose for each of us, and we're
+                  excited to help you discover yours. I look forward to meeting
+                  you personally this Sunday!
                 </motion.p>
 
                 <motion.div
@@ -162,24 +175,9 @@ export default function PastorSection() {
                 </motion.div>
               </div>
             </motion.div>
-
-            <motion.div
-              className="flex justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-            >
-              <motion.button
-                className="px-6 py-3 bg-primary text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all"
-                whileHover={{ scale: 1.05, backgroundColor: "var(--primary-dark, #0056b3)" }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Meet Our Pastor
-              </motion.button>
-            </motion.div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

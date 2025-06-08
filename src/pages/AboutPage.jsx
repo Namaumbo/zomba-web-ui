@@ -1,25 +1,27 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Clock, MapPin, Calendar, ChevronRight } from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
 import {
   Heart,
-  Phone,
-  Mail,
-  Facebook,
-  Instagram,
   FileText,
   Zap,
   Users,
+  ChevronRight,
+  Calendar,
+  Clock,
+  MapPin,
 } from "lucide-react";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useParallax } from "../hooks/use-parallax";
+import Timeline from "../components/timeline";
 const styles = {
   section:
     "relative bg-gradient-to-b from-gray-50 pt-20 to-white min-h-[calc(100dvh-5rem)] flex items-center",
@@ -87,6 +89,61 @@ function AboutPage() {
     },
   };
 
+  // Animation variants for Beany section
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const statVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (custom) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: custom * 0.2,
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+  const blobVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: -10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const staggerChildren = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
@@ -103,6 +160,19 @@ function AboutPage() {
   const timelineRef = useRef(null);
   const valuesRef = useRef(null);
   const serviceRef = useRef(null);
+
+  // Animation controls for Beany section
+  const controls = useAnimation();
+  const [beanyRef, beanyInView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (beanyInView) {
+      controls.start("visible");
+    }
+  }, [controls, beanyInView]);
 
   const timelineInView = useInView(timelineRef, { once: true, amount: 0.3 });
   const valuesInView = useInView(valuesRef, { once: true, amount: 0.3 });
@@ -144,82 +214,191 @@ function AboutPage() {
 
   return (
     <>
-      <main className=" relative z-10  ">
-        <section className="bg-gradient-to-b from-slate-50 to-white pt-5 ">
-          <div className={`${styles.grid} px-4 sm:px-8 mx-auto container`}>
+      <main className="relative z-10">
+        {/* Beany About Section */}
+        <div className="min-h-screen  ">
+          <div className="max-w-7xl mx-auto px-4 py-16 relative">
+            {/* Small accent bubble */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className={styles.content}
+              className="absolute bottom-20 right-32 w-[80px] h-[80px] bg-[#6d26c4ad] opacity-25 -z-10"
+              style={{
+                borderRadius: "50% 50% 50% 50% / 60% 40% 60% 40%",
+              }}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{
+                opacity: 0.4,
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                delay: 0.5,
+                duration: 1,
+                scale: {
+                  duration: 3,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "easeInOut",
+                },
+              }}
+            />
+
+            {/* Header section */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerChildren}
+              className="text-center mb-16"
             >
-              <div className="inline-block rounded-2xl bg-primary/10 px-3 py-1 text-sm text-primary mb-[1rem]">
-                About Our Church
-              </div>
-              <div className={styles.titleWrapper}>
-                <div className={styles.titleAccent} />
-                <h1 className={styles.title}> A Community of Faith and Love</h1>
-              </div>
-              <p className={styles.description}>
-                Zomba Baptist Church exists to share the transformative love of
-                Christ with our community and beyond. Over 500 active members in
-                our vibrant community. Diverse congregation united in faith and
-                worship, Led by dedicated pastoral leadership, Inclusive
-                membership structure comprising: Senior Pastor-{">"} Full
-                Members -{">"}Associate Members
-              </p>
-              <div className={styles.glow}></div>
-            </motion.div>
-            <div className="sm:py-10">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className={styles.imageContainer}
+              <motion.p
+                variants={fadeIn}
+                className="text-primary uppercase tracking-widest font-medium mb-2"
               >
-                <motion.img
-                  src="/inchurch.jpg"
-                  alt="Church worship service"
-                  className={styles.image}
-                  initial={{ scale: 1 }}
-                  animate={{ scale: 1.09 }}
-                  transition={{
-                    duration: 20,
-                    repeat: Number.POSITIVE_INFINITY,
-                    repeatType: "reverse",
-                    ease: "easeInOut",
-                  }}
+                ALL ABOUT US
+              </motion.p>
+              <motion.h1
+                variants={scaleIn}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1D3557] mb-6"
+              >
+                About Zomba baptist Church
+              </motion.h1>
+              <motion.p
+                variants={fadeIn}
+                className="max-w-3xl mx-auto text-lg text-[#1D3557]/80"
+              >
+                We are a Jesus-centered church committed to sharing God's love
+                and grace. Founded in 1979, we have grown into a vibrant
+                community of believers dedicated to worship, fellowship, and
+                serving our community in Zomba.
+              </motion.p>
+            </motion.div>
+
+            {/* Story section with image */}
+            <motion.div
+              ref={beanyRef}
+              initial="hidden"
+              animate={controls}
+              variants={staggerChildren}
+              className="grid md:grid-cols-2 gap-8 items-center mb-20"
+            >
+              {/* Image with blob background */}
+              <motion.div className="relative">
+                <motion.div
+                  variants={blobVariants}
+                  className="absolute inset-0 bg-primary/40 rounded-[40%_10%_70%_30%/40%_50%_60%_50%] -z-10"
                 />
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <span className="text-sm font-medium uppercase tracking-wider">
-                    Zomba Baptist Church
-                  </span>
-                  <br />
-                  <span className="text-2xl font-bold">
-                    Serving our community since 1990
-                  </span>
-                </div>
-                <div className={styles.pattern} />
-                <div className={styles.spotlight} />
+                <motion.div variants={scaleIn} className="relative z-10 mt-4">
+                  <div className="rounded-full overflow-hidden border-4 border-white shadow-xl w-[350px] h-[350px] mx-auto">
+                    <img
+                      src="/inchurch.jpg"
+                      alt="Sue de Bievre, Beany Founder"
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <motion.p
+                    variants={fadeIn}
+                    className="text-center mt-4 font-medium bg-white max-w-fit mx-auto p-2 rounded-lg"
+                  >
+                    Zomba Baptist church
+                  </motion.p>
+                </motion.div>
               </motion.div>
-            </div>
+
+              {/* Story text */}
+              <motion.div variants={staggerChildren}>
+                <motion.div variants={fadeIn} className="mb-4">
+                  <p className="text-primary font-semibold">
+                    1978 TIL INFINITY
+                  </p>
+                  <h2 className="text-3xl font-bold text-[#1D3557] mb-4">
+                    The ZBC Story
+                  </h2>
+                </motion.div>
+
+                <motion.div
+                  variants={fadeIn}
+                  className="prose prose-lg text-[#1D3557]/80"
+                >
+                  <p>
+                    Zomba Baptist Church exists to share the transformative love
+                    of Christ with our community and beyond. Over 500 active
+                    members in our vibrant community.
+                  </p>
+                  <br />
+                  <p>
+                    Diverse congregation united in faith and worship, Led by
+                    dedicated pastoral leadership, Inclusive membership
+                    structure comprising: Senior Pastor-{">"} Full Members -
+                    {">"}Associate Members
+                  </p>
+
+                  <br />
+                  <p>
+                    Diverse congregation united in faith and worship, Led by
+                    dedicated pastoral leadership, Inclusive membership
+                    structure comprising: Senior Pastor-{">"} Full Members -
+                    {">"}Associate Members
+                  </p>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+
+            {/* Stats section */}
+            <motion.div
+              initial="hidden"
+              animate={controls}
+              variants={staggerChildren}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+            >
+              {[
+                {
+                  number: "590",
+                  text: "members",
+                  custom: 0,
+                },
+                {
+                  number: "10",
+                  text: "Ministries",
+                  custom: 1,
+                },
+                {
+                  number: "34+",
+                  text: "Impact",
+                  custom: 2,
+                },
+                {
+                  number: "3",
+                  text: "children churches",
+                  custom: 3,
+                },
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  custom={stat.custom}
+                  variants={statVariants}
+                  className="flex flex-col items-center"
+                >
+                  <motion.h3
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1D3557] mb-2"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      delay: stat.custom * 0.2 + 0.5,
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                  >
+                    {stat.number}
+                  </motion.h3>
+                  <p className="text-[#1D3557]/70 font-medium">
+                    {stat.text} <span className="text-xl">{stat.emoji}</span>
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="hidden md:block absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg p-4 max-w-[200px]"
-          >
-            <span className=" text-sm font-medium text-primary">
-              Join us every Sunday
-            </span>
-            <br />
-            <span className="text-lg font-bold">9:00 AM & 11:00 AM</span>
-          </motion.div>
-        </section>
+        </div>
 
         {/* Our History & Leadership Section */}
-        <section className="relative py-24 mt-8  bg-gradient-to-b from-[#600285] to-primary/5">
+        <section className="relative py-24 bg-primary/70 ">
           <div className="container relative px-4 mx-auto">
             <Tabs defaultValue="history" className="w-full">
               <motion.div
@@ -245,59 +424,14 @@ function AboutPage() {
               </motion.div>
 
               <TabsContent value="history" className="space-y-16">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-center max-w-3xl mx-auto"
-                >
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text">
-                    Our Journey of Faith
-                  </h2>
-                  <p className="text-lg text-black">
-                    Zomba Baptist Church has been serving our community for over
-                    30 years, growing from a small gathering to a vibrant
-                    congregation.
-                  </p>
-                </motion.div>
-
                 <div ref={timelineRef} className="relative">
-                  {/* Timeline line with animated drawing effect */}
-                  <motion.div
-                    initial={{ height: 0 }}
-                    animate={
-                      timelineInView ? { height: "100%" } : { height: 0 }
-                    }
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
-                    className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/50 rounded-full"
-                  />
-
                   <motion.div
                     initial="hidden"
                     animate={timelineInView ? "visible" : "hidden"}
                     variants={staggerContainer}
                     className="space-y-24"
                   >
-                    <TimelineItem
-                      year="1990"
-                      title="Our Founding"
-                      description="Zomba Baptist Church was founded by a small group of families committed to establishing a welcoming place of worship in our community."
-                      isLeft={true}
-                    />
-
-                    <TimelineItem
-                      year="2005"
-                      title="Building Expansion"
-                      description="As our congregation grew, we expanded our facilities to include a larger sanctuary, educational wing, and community center."
-                      isLeft={false}
-                    />
-
-                    <TimelineItem
-                      year="2020"
-                      title="Community Outreach"
-                      description="We launched several new outreach programs to better serve our local community and expanded our global missions work."
-                      isLeft={true}
-                    />
+                    <Timeline />
                   </motion.div>
                 </div>
               </TabsContent>
@@ -312,7 +446,7 @@ function AboutPage() {
                   <h2 className="text-3xl md:text-5xl font-bold mb-6  bg-clip-text ">
                     Our Leadership Team
                   </h2>
-                  <p className="text-lg text-black">
+                  <p className="text-lg text-[#1D3557]">
                     Meet the dedicated individuals who guide our church
                     community with wisdom and compassion.
                   </p>
@@ -389,7 +523,7 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16 bg-white flex flex-col items-center justify-center mx-auto max-w-7xl">
+        <section className="py-12 md:py-16 flex flex-col items-center justify-center mx-auto max-w-7xl">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -698,8 +832,8 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="  py-12 md:py-16 bg-primary text-primary-foreground overflow-hidden">
-          <div className=" mx-auto container px-4 md:px-6">
+        <section className="py-12 md:py-16 bg-primary text-primary-foreground overflow-hidden">
+          <div className="mx-auto container px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-center md:text-left space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -712,8 +846,7 @@ function AboutPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 pt-4">
                   <Link to={"/gallery"}>
-                    {" "}
-                    <Button onClick variant="secondary">
+                    <Button variant="secondary">
                       Our Church In Pictures -{">"}
                     </Button>
                   </Link>
@@ -761,13 +894,13 @@ function TimelineItem({ year, title, description, isLeft }) {
       <div className={`w-1/2 ${isLeft ? "pl-8 text-right" : "pr-8"}`}>
         <div className="space-y-2">
           <div className="text-primary font-bold text-xl">{year}</div>
-          <h3 className="text-2xl font-bold">{title}</h3>
-          <p className="text-slate-600">{description}</p>
+          <h3 className="text-2xl font-bold text-white ">{title}</h3>
+          <p className="text-white">{description}</p>
         </div>
       </div>
 
       <div className="relative flex items-center justify-center">
-        <div className="h-8 w-8 rounded-full bg-primary z-10"></div>
+        <div className="h-12 w-12 rounded-full bg-primary z-10"></div>
       </div>
 
       <div className="w-1/2"></div>
