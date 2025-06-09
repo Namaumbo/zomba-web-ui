@@ -500,27 +500,6 @@ export default function MinistryDetailPage() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="w-full py-16 bg-gradient-to-r from-rose-600 to-amber-600 text-white">
-          <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {[
-                { number: "10+", label: "Years of Service" },
-                { number: "200+", label: "Youth Members" },
-                { number: "50+", label: "Volunteer Leaders" },
-                { number: "20+", label: "Annual Events" },
-              ].map((stat, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <span className="text-4xl md:text-5xl font-bold mb-2">
-                    {stat.number}
-                  </span>
-                  <span className="text-white/80">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Gallery Section with masonry layout */}
         <section className="w-full py-20 md:py-28 bg-slate-50">
           <div className="container px-4 md:px-6">
@@ -572,13 +551,6 @@ export default function MinistryDetailPage() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-12 flex justify-center">
-              <Button className="group bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-700 hover:to-amber-700 text-white border-0">
-                View Full Gallery
-                <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
             </div>
           </div>
         </section>
@@ -848,9 +820,3 @@ export default function MinistryDetailPage() {
     </div>
   );
 }
-
-// export async function generateStaticParams() {
-//   return Object.keys(ministries).map((slug) => ({
-//     slug,
-//   }));
-// }

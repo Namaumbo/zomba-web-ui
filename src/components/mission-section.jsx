@@ -61,7 +61,7 @@ export default function MissionSection() {
               Our Identity & Purpose
             </motion.div>
 
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold text-[#1D3557] tracking-tighter sm:text-4xl md:text-5xl">
               Who We Are & Our Mission
             </h2>
 

@@ -43,7 +43,7 @@ const styles = {
   glow: "absolute -top-3 -z-10 h-72 w-72 bg-primary/17 blur-3xl lg:top-[-10%] lg:right-[20%]",
   spotlight: "absolute right-0 top-0 -z-10 h-96 w-96 bg-primary/5 blur-3xl",
   headerTitle:
-    "mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl",
+    "mt-4 text-3xl font-bold tracking-tight  sm:text-4xl ",
 };
 
 function AboutPage() {
@@ -305,7 +305,7 @@ function AboutPage() {
               <motion.div variants={staggerChildren}>
                 <motion.div variants={fadeIn} className="mb-4">
                   <p className="text-primary font-semibold">
-                    1978 TIL INFINITY
+                    1979 TIL INFINITY
                   </p>
                   <h2 className="text-3xl font-bold text-[#1D3557] mb-4">
                     The ZBC Story
@@ -443,10 +443,10 @@ function AboutPage() {
                   transition={{ duration: 0.6 }}
                   className="text-center max-w-3xl mx-auto"
                 >
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6  bg-clip-text ">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6  bg-clip-text  text-white">
                     Our Leadership Team
                   </h2>
-                  <p className="text-lg text-[#1D3557]">
+                  <p className="text-lg text-white">
                     Meet the dedicated individuals who guide our church
                     community with wisdom and compassion.
                   </p>
@@ -530,7 +530,8 @@ function AboutPage() {
                 <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   Our Values
                 </div>
-                <h2 className={styles.headerTitle}>What We Stand For</h2>
+                <h2 className=
+                {`${styles.headerTitle} text-[#1D3557]`}>What We Stand For</h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
                   These core values guide everything we do as a church
                   community.
@@ -931,7 +932,7 @@ function LeadershipCard({ name, role, description, imageUrl }) {
           className="object-cover w-full h-full object-top"
         />
       </div>
-      <h3 className="text-xl font-bold">{name}</h3>
+      <h3 className="text-xl font-bold text-[#1D3557]">{name}</h3>
       <p className="text-primary font-medium mt-1">{role}</p>
       <p className="text-slate-600 mt-4">{description}</p>
     </motion.div>

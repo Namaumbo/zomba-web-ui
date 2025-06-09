@@ -104,7 +104,7 @@ export default function PastorSection() {
               </motion.div>
 
               <motion.h2
-                className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#1D3557]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
@@ -126,7 +126,7 @@ export default function PastorSection() {
             >
               <Quote className="absolute text-primary/10 w-20 h-20 -top-4 -left-4" />
 
-              <div className="relative space-y-4 text-gray-600 leading-relaxed">
+              <div className="relative space-y-4 text-[#1D3557] leading-relaxed">
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isInView ? 1 : 0 }}
