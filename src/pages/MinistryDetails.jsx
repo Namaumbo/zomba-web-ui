@@ -22,234 +22,59 @@ export default function MinistryDetailPage() {
   const ministry = data[slug];
   console.log(ministry);
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section with Overlay */}
-      <section className="relative h-[70vh]  overflow-hidden">
-        <img
-          src={ministry.heroImage || "/placeholder.svg"}
-          alt={ministry.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
-        <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl text-white">
-              <Link
-                href="/ministries"
-                className="inline-flex items-center text-white/80 hover:text-white transition-colors mb-6 animate-fade-in"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Ministries
-              </Link>
-
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-slide-in-left">
-                {ministry.title}
-              </h1>
-              <p
-                className="text-2xl md:text-3xl font-light mb-6 animate-slide-in-left"
-                style={{ animationDelay: "200ms" }}
-              >
-                {ministry.subtitle}
-              </p>
-              <p
-                className="text-xl mb-8 text-white/90 animate-slide-in-left"
-                style={{ animationDelay: "400ms" }}
-              >
-                {ministry.description}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2">
-                <Button
-                  size="lg"
-                  className="bg-purple-600 hover:bg-purple-700 text-white"
+    <main className="flex-1">
+    
+      <div className="min-h-screen bg-white">
+        {/* Hero Section with Overlay */}
+        <section className="relative h-[90vh]  overflow-hidden">
+          <img
+            src={ministry.heroImage || "/placeholder.svg"}
+            alt={ministry.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+          <div className="absolute inset-0 flex items-center">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl text-white">
+                <Link
+                  to={"/ministries"}
+                  className="inline-flex items-center text-white/80 hover:text-white transition-colors mb-6 animate-fade-in"
                 >
-                  Join This Ministry
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Ministries
+                </Link>
 
-      {/* Scripture Section */}
-      {/* <section className="py-16 bg-purple-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <Quote className="w-12 h-12 mx-auto mb-6 opacity-50" />
-          <blockquote className="text-2xl md:text-3xl font-light italic mb-4 max-w-4xl mx-auto animate-fade-in">
-            "{ministry.verse}"
-          </blockquote>
-          <cite className="text-lg opacity-90 animate-fade-in-delay">
-            — {ministry.verseReference}
-          </cite>
-        </div>
-      </section> */}
-
-      {/* What We Do Section */}
-      {/* <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
-              What We Do
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-delay">
-              Discover the meaningful ways we serve, grow, and make a difference
-              in our community through various activities and programs.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {ministry.activities.map((activity, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 animate-fade-in-up border-0 shadow-lg"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-4xl mb-4">{activity.icon}</div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">
-                        {activity.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {activity.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Ministry Leader Section */}
-      {/* <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              <div className="md:col-span-1 animate-scale-in">
-                <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden shadow-xl">
-                  <img
-                    src="/placeholder.svg?height=300&width=300"
-                    alt={ministry.leader}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <div className="md:col-span-2 animate-slide-in-right">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  Meet Our Leader
-                </h2>
-                <h3 className="text-2xl font-semibold text-purple-600 mb-4">
-                  {ministry.leader}
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  {ministry.leaderBio}
+                <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-slide-in-left">
+                  {ministry.title}
+                </h1>
+                <p
+                  className="text-2xl md:text-3xl font-light mb-6 animate-slide-in-left"
+                  style={{ animationDelay: "200ms" }}
+                >
+                  {ministry.subtitle}
                 </p>
-                <Button className="bg-purple-600 hover:bg-purple-700">
-                  {/* Contact {ministry.leader.split(" ")[0]} */}
-      {/* </Button>
+                <p
+                  className="text-xl mb-8 text-white/90 animate-slide-in-left"
+                  style={{ animationDelay: "400ms" }}
+                >
+                  {ministry.description}
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section> */}
+        </section>
 
-      {/* Upcoming Events */}
-      {/* <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
-              Upcoming Events
-            </h2>
-            <p className="text-xl text-gray-600 animate-fade-in-delay">
-              Join us for these exciting upcoming events and activities.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {ministry.upcomingEvents.map((event, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in-up"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <CardContent className="p-0">
-                  <div className="bg-gradient-to-r from-purple-600 to-purple-700 p-6 text-white">
-                    <Calendar className="w-8 h-8 mb-4" />
-                    <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
-                    <p className="text-purple-100">{event.date}</p>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-4">{event.description}</p>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      {event.location}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Photo Gallery */}
-      {/* <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
-              Ministry Gallery
-            </h2>
-            <p className="text-xl text-gray-600 animate-fade-in-delay">
-              See our ministry in action through these memorable moments.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ministry.images.map((img, index) => (
-              <div
-                key={index}
-                className="relative h-64 rounded-xl overflow-hidden shadow-lg group animate-scale-in cursor-pointer"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <img
-                  src={img || "/placeholder.svg"}
-                  alt={`${ministry.title} gallery ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Call to Action */}
-      {/* <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-700 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <Heart className="w-16 h-16 mx-auto mb-6 animate-fade-in" />
-          <h2 className="text-4xl font-bold mb-6 animate-fade-in-delay">
-            Ready to Join {ministry.title}?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto animate-fade-in-delay-2">
-            Take the next step in your faith journey and become part of our
-            ministry family. We'd love to have you join us!
-          </p>
-        </div>
-      </section> */}
-
-      <main className="  bg-blue-800 flex-1 pt-20">
-        <section className="w-full py-16 md:py-20 bg-white border-b border-slate-100">
-          <div className="container px-4 md:px-6">
+        <section className=" border-3 w-full py-16 md:py-20 bg-white border-b border-slate-100">
+          <div className=" px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <span className="inline-block px-3 py-1 text-sm font-medium text-slate-700 bg-slate-100 rounded-full mb-4">
                   Our Ministry
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                  Empowering the Next Generation
+                  {ministry.slogan}
                 </h2>
-                <div className="w-16 h-1 bg-gradient-to-r from-rose-600 to-amber-600 rounded-full mx-auto mb-6"></div>
+                <div className="w-16 h-1 bg-primary rounded-full mx-auto mb-6"></div>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -816,7 +641,7 @@ export default function MinistryDetailPage() {
             </div>
           </div>
         </section>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

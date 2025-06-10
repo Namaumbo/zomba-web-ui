@@ -6,7 +6,7 @@
     "description": "Our youth ministry is dedicated to helping young people grow in their faith through fellowship, Bible study, and service opportunities that build character and deepen their relationship with God.",
     "coverPage": "/youthMinistry.jpg",
     "verse": "Don't let anyone look down on you because you are young, but set an example for the believers in speech, in conduct, in love, in faith and in purity.",
-
+    "slogan": "Empowering Youth for Christ",
     "verseReference": "1 Timothy 4:12",
     "category": "Community",
     "leader": {
@@ -116,6 +116,7 @@
     "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
     "verse": "Worship the LORD with gladness; come before him with joyful songs.",
     "verseReference": "Psalm 100:2",
+    "slogan": "Lifting Hearts in Worship and Praise",
     "category": "Worship",
     "coverPage": "/evangelism.jpg",
     "leader": {
@@ -203,12 +204,14 @@
   },
   "Mens-ministry": {
     "title": "Mens Ministry",
-    "slug": "worship-ministry",
+    "slug": "Mens-ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
     "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
     "verse": "Worship the LORD with gladness; come before him with joyful songs.",
     "verseReference": "Psalm 100:2",
     "category": "Worship",
+    "slogan": "Building Strong Men of Faith and Character",
+
     "coverPage": "/evangelism.jpg",
     "leader": {
       "name": "Sarah Johnson",
@@ -295,12 +298,14 @@
   },
   "Womens-ministry": {
     "title": "Women Ministry",
-    "slug": "worship-ministry",
+    "slug": "Womens-ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
     "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
     "verse": "Worship the LORD with gladness; come before him with joyful songs.",
     "verseReference": "Psalm 100:2",
     "category": "Worship",
+    "slogan": "Empowering Women Through Faith and Fellowship",
+
     "coverPage": "/evangelism.jpg",
     "leader": {
       "name": "Sarah Johnson",
@@ -387,12 +392,14 @@
   },
   "evangelism-ministry": {
     "title": "  Evangelism, Outreach, and Discipleship Ministry ",
-    "slug": "worship-ministry",
+    "slug": "evangelism-ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
     "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
     "verse": "Worship the LORD with gladness; come before him with joyful songs.",
     "verseReference": "Psalm 100:2",
     "category": "Worship",
+    "slogan": "Reaching Hearts, Transforming Lives, Making Disciples",
+
     "coverPage": "/evangelism.jpg",
     "leader": {
       "name": "Sarah Johnson",
@@ -479,12 +486,14 @@
   },
   "Prison Ministry": {
     "title": " Prison Ministry ",
-    "slug": "worship-ministry",
+    "slug": "prison-ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
     "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
     "verse": "Worship the LORD with gladness; come before him with joyful songs.",
     "verseReference": "Psalm 100:2",
     "category": "Worship",
+    "slogan": "Bringing Hope Behind Bars",
+
     "coverPage": "/evangelism.jpg",
     "leader": {
       "name": "Sarah Johnson",
@@ -571,11 +580,13 @@
   },
   "  Social Welfare Ministry": {
     "title": "   Social Welfare Ministry",
-    "slug": "worship-ministry",
+    "slug": "Social-Welfare-Ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
     "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
     "verse": "Worship the LORD with gladness; come before him with joyful songs.",
     "verseReference": "Psalm 100:2",
+    "slogan": "Serving Others, Sharing God's Love",
+
     "category": "Worship",
     "coverPage": "/evangelism.jpg",
     "leader": {
