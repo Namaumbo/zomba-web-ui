@@ -8,7 +8,6 @@
     "verse": "Don't let anyone look down on you because you are young, but set an example for the believers in speech, in conduct, in love, in faith and in purity.",
     "slogan": "Empowering Youth for Christ",
     "verseReference": "1 Timothy 4:12",
-    "category": "Community",
     "leader": {
       "name": "Pastor John Smith",
       "title": "Youth Pastor",
@@ -19,21 +18,55 @@
     },
 
     "meetingTime": "Fridays 7:00 PM",
-    "location": "Youth Center",
-    "ageGroup": "13-25 years",
-    "memberCount": "85",
-    "yearsActive": "12",
     "heroImage": "/youthMinistry.jpg",
     "images": [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      {
+        "src": "/youthMinistry.jpg",
+        "alt": "Ministry activity 1",
+        "height": 300,
+        "title": "Youth Gathering",
+        "description": "Building community through faith and fellowship",
+        "span": "lg:row-span-2"
+      },
+      {
+        "src": "/youth1.jpeg",
+        "alt": "Ministry activity 2",
+        "height": 200,
+        "title": "Outreach Program",
+        "description": "Serving our local communities with love."
+      },
+      {
+        "src": "/youth2.jpeg",
+        "alt": "Ministry activity 3",
+        "height": 350,
+        "title": "Praise Night",
+        "description": "An evening of music, worship, and testimony.",
+        "span": "lg:col-span-2"
+      },
 
-      "/placeholder.svg?height=300&width=400"
+      {
+        "src": "/youth3.jpeg",
+        "alt": "Ministry activity 5",
+        "height": 200,
+        "title": "Bible Study",
+        "description": "Growing in knowledge and understanding."
+      },
+      {
+        "src": "/youth4.jpeg",
+        "alt": "Ministry activity 6",
+        "height": 300,
+        "title": "Community Service",
+        "description": "Hands-on projects that make a difference."
+      },
+
+      {
+        "src": "/WhatsApp Image 2025-01-27 at 17.21.17.jpeg",
+        "alt": "Ministry activity 4",
+        "height": 350,
+        "title": "Youth Camp",
+        "description": "Deepening faith through retreats and fun"
+      }
     ],
-
     "mission": "To create a safe, welcoming environment where young people can explore their faith, build meaningful relationships, and develop into confident Christian leaders.",
 
     "vision": "To see every young person in our community equipped with the tools and confidence to live out their faith boldly in their daily lives.",
@@ -47,7 +80,7 @@
         "participants": "25-30 youth"
       },
       {
-        "title": "Community Service Projects",
+        "title": "Community Projects",
         "description": "Monthly service projects that allow youth to make a tangible difference in their community while learning the importance of serving others.",
 
         "schedule": "First Saturday of each month",
@@ -102,12 +135,7 @@
       }
     ],
 
-    "stats": [
-      { "label": "Active Members", "value": "85+", "icon": "Users" },
-      { "label": "Years Active", "value": "12", "icon": "Award" },
-      { "label": "Lives Impacted", "value": "500+", "icon": "Heart" },
-      { "label": "Service Hours", "value": "2,400", "icon": "Target" }
-    ]
+    "experience": "The Zomba Baptist Youth Department is a vibrant and dynamic ministry dedicated to nurturing young people in their faith journey. We provide a supportive environment where youth can grow spiritually, develop leadership skills, and build lasting friendships through engaging activities, Bible study, mentorship, and community service. Our programs are designed to empower young people to live out their faith confidently while making a positive impact in their community."
   },
   "worship-ministry": {
     "title": "Worship Ministry",

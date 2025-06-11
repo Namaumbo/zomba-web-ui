@@ -158,8 +158,8 @@ function NavBarComponent() {
                 </Link>
               ))}
               <Link to={"/donate"} className="mb-2">
-                <Button>
-                  <span className="font-extrabold p-4">Donate</span>
+                <Button className="h-12 px-4">
+                  <span className="6 font-extrabold p-4">Donate</span>
                 </Button>
               </Link>
             </nav>
@@ -190,7 +190,7 @@ function NavBarComponent() {
               ))}
               <Link
                 to={"/donate"}
-                className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-md transition-colors inline-block w-fit"
+                className="h-12 px-6 bg-primary text-white py-3 rounded-md transition-colors inline-block w-fit"
               >
                DONATE
               </Link>
