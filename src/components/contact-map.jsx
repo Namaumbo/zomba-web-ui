@@ -132,7 +132,7 @@ export default function ContactMap() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Get In Touch</h2>
+          <h2 className="text-[#1D3557]text-4xl md:text-5xl font-bold tracking-tight mb-4">Get In Touch</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             We'd love to hear from you. Whether you have a question, prayer request, or want to join our community.
           </p>

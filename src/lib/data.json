@@ -163,13 +163,52 @@
     "yearsActive": "8",
     "heroImage": "/evangelism.jpg",
     "images": [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      {
+        "src": "/praise2.jpeg",
+        "alt": "Ministry activity 1",
+        "height": 300,
+        "title": "Praise Team Leader",
+        "description": "Praise Team Leader Praising GOD",
+        "span": "lg:row-span-2"
+      },
+      {
+        "src": "/chichewa.jpeg",
+        "alt": "Ministry activity 2",
+        "height": 200,
+        "title": "Outreach Program",
+        "description": "Serving our local communities with love."
+      },
+      {
+        "src": "/praise1.jpeg",
+        "alt": "Ministry activity 3",
+        "height": 350,
+        "title": "Praise Night",
+        "description": "An evening of music, worship, and testimony.",
+        "span": "lg:col-span-2"
+      },
 
-      "/placeholder.svg?height=300&width=400"
+      {
+        "src": "/celebration4.jpeg",
+        "alt": "Ministry activity 5",
+        "height": 200,
+        "title": "Bible Study",
+        "description": "Growing in knowledge and understanding."
+      },
+      {
+        "src": "/youth4.jpeg",
+        "alt": "Ministry activity 6",
+        "height": 300,
+        "title": "Community Service",
+        "description": "Hands-on projects that make a difference."
+      },
+
+      {
+        "src": "/womens.jpeg",
+        "alt": "Ministry activity 4",
+        "height": 350,
+        "title": "Youth Camp",
+        "description": "Deepening faith through retreats and fun"
+      }
     ],
 
     "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
@@ -185,25 +224,18 @@
         "participants": "Full congregation"
       },
       {
-        "title": "Choir Ministry",
-        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
+        "title": "Sunday Morning Worship",
+        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
 
-        "schedule": "Wednesdays 7:00 PM",
-        "participants": "25 choir members"
+        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
+        "participants": "Full congregation"
       },
       {
-        "title": "Instrumental Training",
-        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
+        "title": "Sunday Morning Worship",
+        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
 
-        "schedule": "Various times throughout the week",
-        "participants": "15 musicians"
-      },
-      {
-        "title": "Worship Team Development",
-        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
-
-        "schedule": "Monthly workshops",
-        "participants": "20 team members"
+        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
+        "participants": "Full congregation"
       }
     ],
 
@@ -217,18 +249,10 @@
 
         "cost": "Free",
         "registration": "No registration required"
-      },
-      {
-        "title": "Choir Auditions",
-        "date": "June 1, 2024",
-        "time": "2:00 PM - 5:00 PM",
-        "location": "Music Room",
-        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
-
-        "cost": "Free",
-        "registration": "Contact Sarah Johnson"
       }
-    ]
+    ],
+    "experience": "Our worship praise team is a dedicated group of talented musicians and vocalists committed to leading the congregation in authentic worship. We blend contemporary and traditional styles to create meaningful worship experiences that draw people closer to God. Through careful song selection, musical excellence, and spiritual preparation, we strive to facilitate an atmosphere where people can encounter God's presence and respond in genuine praise and worship. Team members receive regular training and participate in weekly rehearsals to ensure we serve with excellence and unity."
+
   },
   "Mens-ministry": {
     "title": "Mens Ministry",

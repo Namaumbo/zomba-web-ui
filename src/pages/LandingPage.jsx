@@ -72,7 +72,7 @@ export default function LandingPage() {
             Join Us
           </motion.div>
           <motion.h2
-            className="text-3xl mb-8 font-bold tracking-tighter sm:text-4xl md:text-5xl"
+            className=" text-[#1D3557] text-3xl mb-8 font-bold tracking-tighter sm:text-4xl md:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}

@@ -103,7 +103,7 @@ export default function Expectations({ isServiceTimesInView }) {
             >
               For Visitors
             </motion.div>
-            <motion.h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-slate-100">
+            <motion.h2 className=" text-[#1D3557] text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-slate-100">
               What to Expect
             </motion.h2>
             <motion.div

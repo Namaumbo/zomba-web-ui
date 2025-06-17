@@ -85,7 +85,7 @@ export default function ServiceLocation() {
           >
             Join Our Community
           </motion.div>
-          <motion.h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+          <motion.h2 className="text-3xl font-bold tracking-tight text-[#1D3557] dark:text-white">
             Service Times & Location
           </motion.h2>
           <motion.div
