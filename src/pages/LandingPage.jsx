@@ -80,7 +80,7 @@ export default function LandingPage() {
           >
             Join Us for Worship
           </motion.h2>
-          <div className="px-4 md:px-6">
+          <div className="px-4 md:px-6 3xl:max-w-5xl">
             <div className="grid gap-5 lg:grid-cols-2 items-center">
               <motion.div
                 className="space-y-4"
@@ -121,13 +121,8 @@ export default function LandingPage() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-lg text-gray-700 mb-8 leading-relaxed"
                   >
-                    We invite you to join us in worship and fellowship.
-                    Experience the warmth of our community as we gather together
-                    to praise God and grow in faith. "For where two or three
-                    gather in my name, there am I with them."
-                    <span className="italic text-purple-500 ">
-                      - Matthew 18:20.
-                    </span>
+                    Worship the Lord your God and serve him Only.
+                    <span className="italic text-purple-500 ">- Luke 4.8</span>
                   </motion.p>
 
                   <motion.div
@@ -394,20 +389,24 @@ export default function LandingPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="transition-transform hover:scale-105"
-                >
-                  Plan Your Visit
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10 transition-transform hover:scale-105"
-                >
-                  Contact Us
-                </Button>
+                <Link to="services" asChild>
+                  <Button
+                    variant="secondary"
+                    size="lg"
+                    className="transition-transform hover:scale-105"
+                  >
+                    Plan Your Visit
+                  </Button>
+                </Link>
+                <Link to="contact" asChild>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10 transition-transform hover:scale-105"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>

@@ -1,11 +1,18 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
-import { cn } from "@/lib/utils"
-import Autoplay from "embla-carousel-autoplay"
-import { useMediaQuery } from "../hooks/use-media-querry"
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+import Autoplay from "embla-carousel-autoplay";
+import { useMediaQuery } from "../hooks/use-media-querry";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -31,46 +38,46 @@ const slides = [
     verses:
       "Go and make disciples of all nations, baptizing them in the name of the Father, Son and Holy Spirit - Matthew 28:18-20",
   },
-]
+];
 
 export default function HeroCarousel() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [carouselApi, setCarouselApi] = useState(null)
-  const autoplayRef = useRef(null)
-  const isMobile = useMediaQuery("(max-width: 768px)")
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [carouselApi, setCarouselApi] = useState(null);
+  const autoplayRef = useRef(null);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   // Create autoplay plugin with reset capability
   useEffect(() => {
-    const plugin = Autoplay({ delay: 7000, stopOnInteraction: false })
-    autoplayRef.current = plugin
+    const plugin = Autoplay({ delay: 7000, stopOnInteraction: false });
+    autoplayRef.current = plugin;
     return () => {
-      if (plugin) plugin.stop()
-    }
-  }, [])
+      if (plugin) plugin.stop();
+    };
+  }, []);
 
   useEffect(() => {
-    if (!carouselApi) return
+    if (!carouselApi) return;
 
     const onSelect = () => {
-      setCurrentSlide(carouselApi.selectedScrollSnap())
-    }
+      setCurrentSlide(carouselApi.selectedScrollSnap());
+    };
 
-    carouselApi.on("select", onSelect)
+    carouselApi.on("select", onSelect);
     return () => {
-      carouselApi.off("select", onSelect)
-    }
-  }, [carouselApi])
+      carouselApi.off("select", onSelect);
+    };
+  }, [carouselApi]);
 
   // Function to navigate to a specific slide
   const goToSlide = (index) => {
-    if (!carouselApi) return
-    carouselApi.scrollTo(index)
+    if (!carouselApi) return;
+    carouselApi.scrollTo(index);
 
     // Reset autoplay timer
     if (autoplayRef.current) {
-      autoplayRef.current.reset()
+      autoplayRef.current.reset();
     }
-  }
+  };
 
   // Optimize animations for mobile
   const getAnimationSettings = () => {
@@ -107,10 +114,10 @@ export default function HeroCarousel() {
           delay: isMobile ? 0.8 : 1.2,
         },
       },
-    }
-  }
+    };
+  };
 
-  const animations = getAnimationSettings()
+  const animations = getAnimationSettings();
 
   return (
     <section className="relative">
@@ -125,7 +132,10 @@ export default function HeroCarousel() {
         <CarouselContent>
           <AnimatePresence mode="wait">
             {slides.map((slide, index) => (
-              <CarouselItem key={index} className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[85vh]">
+              <CarouselItem
+                key={index}
+                className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[85vh]"
+              >
                 <div className="relative h-[60vh] sm:h-[70vh] md:h-[85vh] w-full overflow-hidden">
                   <motion.div
                     className="absolute inset-0"
@@ -155,7 +165,10 @@ export default function HeroCarousel() {
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: isMobile ? "50%" : "40%" }}
-                              transition={{ duration: isMobile ? 1 : 1.2, ease: "easeInOut" }}
+                              transition={{
+                                duration: isMobile ? 1 : 1.2,
+                                ease: "easeInOut",
+                              }}
                               className="h-1 bg-white mb-4 md:mb-6"
                             />
 
@@ -179,15 +192,20 @@ export default function HeroCarousel() {
                               </p>
                             </motion.div>
 
-                            <motion.div {...animations.button} className="mt-4 sm:mt-6 md:mt-8">
-                              <button className="bg-primary hover:bg-primary/90 active:bg-primary/80 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium transition-all transform hover:scale-105 shadow-lg w-[50%] sm:w-auto">
-                                Learn More
-                              </button>
+                            <motion.div
+                              {...animations.button}
+                              className="mt-4 sm:mt-6 md:mt-8"
+                            >
+                              <Link to="/about">
+                                <button className="bg-primary hover:bg-primary/90 active:bg-primary/80 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium transition-all transform hover:scale-105 shadow-lg w-[50%] sm:w-auto">
+                                  Learn More
+                                </button>
+                              </Link>
                             </motion.div>
                           </div>
 
                           <div className="hidden md:block md:col-span-2">
-                                          <motion.div
+                            <motion.div
                               initial={{ opacity: 0, scale: 0.8 }}
                               animate={{ opacity: 0.15, scale: 1 }}
                               transition={{ duration: 1.5, delay: 0.6 }}
@@ -211,7 +229,9 @@ export default function HeroCarousel() {
               onClick={() => goToSlide(index)}
               className={cn(
                 "relative h-2 sm:h-3 transition-all duration-500 overflow-hidden rounded-full",
-                currentSlide === index ? "w-8 sm:w-12 bg-white" : "w-2 sm:w-3 bg-white/40",
+                currentSlide === index
+                  ? "w-8 sm:w-12 bg-white"
+                  : "w-2 sm:w-3 bg-white/40"
               )}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
@@ -234,5 +254,5 @@ export default function HeroCarousel() {
         <CarouselNext className="right-2 sm:right-4 md:right-6 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full bg-black/30 backdrop-blur-sm text-white border-white/20 hover:bg-black/50 transition-all" />
       </Carousel>
     </section>
-  )
+  );
 }

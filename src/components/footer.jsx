@@ -19,10 +19,10 @@ const FooterComponent = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Heart className="h-5 w-5 text-primary" />
-                <h3 className="font-bold">Zomba Baptist church Church</h3>
+                <h3 className="font-bold">Zomba Baptist church</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                A welcoming community of faith, hope, and love since 1990.
+                To serve and to Give
               </p>
             </div>
             <div className="space-y-3">
@@ -112,11 +112,6 @@ const FooterComponent = () => {
                   <Youtube className="h-5 w-5" />
                   <span className="sr-only">YouTube</span>
                 </a>
-              </div>
-              <div className="pt-2">
-                <Button variant="outline" size="sm">
-                  Subscribe to Newsletter
-                </Button>
               </div>
             </div>
           </div>

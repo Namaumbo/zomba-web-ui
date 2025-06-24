@@ -153,19 +153,6 @@ export default function MissionSection() {
                   Zomba, and beyond, fulfilling our calling as described in
                   Matthew 20:28, Matthew 28:18-20, and Acts 1:8.
                 </p>
-
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <Button
-                    variant="link"
-                    className="p-0 h-auto mt-4 text-primary"
-                  >
-                    Read Our Full Mission Statement
-                    <ChevronRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </motion.div>
               </CardContent>
             </Card>
           </motion.div>
@@ -224,50 +211,20 @@ export default function MissionSection() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Button
-                    variant="link"
-                    className="p-0 h-auto mt-2 text-primary"
-                  >
-                    Explore Our Ministries
-                    <ChevronRight className="ml-1 h-4 w-4" />
-                  </Button>
+                  <Link to="ministries">
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto mt-2 text-primary"
+                    >
+                      Explore Our Ministries
+                      <ChevronRight className="ml-1 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </motion.div>
               </CardContent>
             </Card>
           </motion.div>
         </div>
-
-        {/* CTA Button */}
-        <motion.div
-          className="flex justify-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-        >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            <Button
-              size="lg"
-              className="px-6 py-6 text-base font-medium flex items-center gap-2 bg-primary hover:bg-primary/90"
-            >
-              Get Involved
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "loop",
-                  duration: 1.5,
-                  repeatDelay: 1,
-                }}
-              >
-                <ArrowRight className="ml-1 h-5 w-5" />
-              </motion.div>
-            </Button>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

@@ -42,8 +42,7 @@ const styles = {
     "absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-40",
   glow: "absolute -top-3 -z-10 h-72 w-72 bg-primary/17 blur-3xl lg:top-[-10%] lg:right-[20%]",
   spotlight: "absolute right-0 top-0 -z-10 h-96 w-96 bg-primary/5 blur-3xl",
-  headerTitle:
-    "mt-4 text-3xl font-bold tracking-tight  sm:text-4xl ",
+  headerTitle: "mt-4 text-3xl font-bold tracking-tight  sm:text-4xl ",
 };
 
 function AboutPage() {
@@ -247,17 +246,11 @@ function AboutPage() {
               variants={staggerChildren}
               className="text-center mb-16"
             >
-              <motion.p
-                variants={fadeIn}
-                className="text-primary uppercase tracking-widest font-medium mb-2"
-              >
-                ALL ABOUT US
-              </motion.p>
               <motion.h1
                 variants={scaleIn}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1D3557] mb-6"
               >
-                About Zomba baptist Church
+                About Zomba Baptist Church
               </motion.h1>
               <motion.p
                 variants={fadeIn}
@@ -265,8 +258,8 @@ function AboutPage() {
               >
                 We are a Jesus-centered church committed to sharing God's love
                 and grace. Founded in 1979, we have grown into a vibrant
-                community of believers dedicated to worship, fellowship, and
-                serving our community in Zomba.
+                community of believers dedicated to faith, hope, and love in
+                Jesus Christ.
               </motion.p>
             </motion.div>
 
@@ -305,7 +298,7 @@ function AboutPage() {
               <motion.div variants={staggerChildren}>
                 <motion.div variants={fadeIn} className="mb-4">
                   <p className="text-primary font-semibold">
-                    1979 TIL INFINITY
+                    1979 TILL INFINITY
                   </p>
                   <h2 className="text-3xl font-bold text-[#1D3557] mb-4">
                     The ZBC Story
@@ -530,8 +523,9 @@ function AboutPage() {
                 <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                   Our Values
                 </div>
-                <h2 className=
-                {`${styles.headerTitle} text-[#1D3557]`}>What We Stand For</h2>
+                <h2 className={`${styles.headerTitle} text-[#1D3557]`}>
+                  What We Stand For
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
                   These core values guide everything we do as a church
                   community.
@@ -732,25 +726,7 @@ function AboutPage() {
                       className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
                       variants={itemVariants}
                       whileHover={{ x: 5 }}
-                    >
-                      <motion.div
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/90 shadow-md shadow-primary/20"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        variants={pulseVariants}
-                        animate="animate"
-                        transition={{ delay: 0.2 }}
-                      >
-                        <Clock className="h-6 w-6 text-white" />
-                      </motion.div>
-                      <div className="space-y-1">
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                          Wednesday Night
-                        </h3>
-                        <p className="text-slate-600 dark:text-slate-300">
-                          6:30 PM - Bible Study & Youth Groups
-                        </p>
-                      </div>
-                    </motion.div>
+                    ></motion.div>
 
                     <motion.div
                       className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
@@ -841,9 +817,8 @@ function AboutPage() {
                   Come Grow With Us
                 </h2>
                 <p className="text-primary-foreground/90 md:text-lg">
-                  We invite you to join us this Sunday and experience the warmth
-                  and welcome of our church family. No matter where you are on
-                  your spiritual journey, there&apos;s a place for you here.
+                  Join us here and physically and let us be together in Christ,
+                  no matter where yo are in your spiritual journey.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 pt-4">
                   <Link to={"/gallery"}>
