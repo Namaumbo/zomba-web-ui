@@ -314,20 +314,34 @@ function AboutPage() {
                     of Christ with our community and beyond. Over 500 active
                     members in our vibrant community.
                   </p>
-                  <br />
                   <p>
                     Diverse congregation united in faith and worship, Led by
                     dedicated pastoral leadership, Inclusive membership
-                    structure comprising: Senior Pastor-{">"} Full Members -
-                    {">"}Associate Members
+                    structure comprising:
+                  </p>
+                  <br />
+
+                  <p>
+                    Regenerate Church Membership: We hold that to become a
+                    Christian requires a personal acknowledgment of Jesus Christ
+                    as Saviour and Lord, which results in the person being
+                    born-again.
+                  </p>
+                  <br />
+                  <p>
+                    Baptism: We further hold that the Christian’s act of faith
+                    is followed by the believer's baptism by immersion, which
+                    must precede full membership in the local Church, as first
+                    significant act through which the believer proclaims
+                    personal faith in Christ and is initiated into Church life
+                    and ministry.
                   </p>
 
                   <br />
                   <p>
-                    Diverse congregation united in faith and worship, Led by
-                    dedicated pastoral leadership, Inclusive membership
-                    structure comprising: Senior Pastor-{">"} Full Members -
-                    {">"}Associate Members
+                    Members of Zomba Baptist Church: The Pastor or Pastors of
+                    Zomba Baptist Church; All full members of Zomba Baptist
+                    Church; and All associate members of Zomba Baptist Church
                   </p>
                 </motion.div>
               </motion.div>
@@ -516,20 +530,13 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16 flex flex-col items-center justify-center mx-auto max-w-7xl">
+        <section className="py-10 md:py-16 flex flex-col items-center justify-center mx-auto max-w-7xl">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
-                  Our Values
-                </div>
+            <div className="flex flex-col items-center justify-center  text-center">
+              <div className="">
                 <h2 className={`${styles.headerTitle} text-[#1D3557]`}>
                   What We Stand For
                 </h2>
-                <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  These core values guide everything we do as a church
-                  community.
-                </p>
               </div>
             </div>
             <main className="flex-grow py-12 md:py-20">
@@ -722,11 +729,11 @@ function AboutPage() {
                       </div>
                     </motion.div>
 
-                    <motion.div
+                    {/* <motion.div
                       className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
                       variants={itemVariants}
                       whileHover={{ x: 5 }}
-                    ></motion.div>
+                    ></motion.div> */}
 
                     <motion.div
                       className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
@@ -747,11 +754,9 @@ function AboutPage() {
                           Our Location
                         </h3>
                         <p className="text-slate-600 dark:text-slate-300">
-                          Along M1 Road
+                          Standard Bank, which is along M3 Road
                         </p>
-                        <p className="text-slate-600 dark:text-slate-300">
-                          Anytown, ST 12345
-                        </p>
+                        <p className="text-slate-600 dark:text-slate-300"></p>
                       </div>
                     </motion.div>
                   </div>
@@ -766,21 +771,16 @@ function AboutPage() {
                     }
                     transition={{ delay: 1, duration: 0.5 }}
                   >
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Button className="group relative overflow-hidden rounded-full px-6 py-6 text-base font-medium transition-all hover:shadow-lg">
-                        <span className="relative z-10">Contact Us</span>
-                        <span className="absolute inset-0  opacity-100 transition-opacity"></span>
-                        <motion.span
-                          initial={{ x: 0 }}
-                          whileHover={{ x: 5 }}
-                          transition={{ type: "spring", stiffness: 400 }}
-                        >
-                          <ChevronRight className="relative z-10 ml-2 h-4 w-4 inline-block" />
-                        </motion.span>
-                      </Button>
+                    <motion.div>
+                      <Link to={"/contact"}>
+                        <Button className="group relative overflow-hidden rounded-full px-6 py-6 text-base font-medium ">
+                          <span className="relative z-10">Contact Us</span>
+                          <span className="absolute inset-0  opacity-100 transition-opacity"></span>
+                          <motion.span initial={{ x: 0 }}>
+                            <ChevronRight className="relative z-10 ml-2 h-4 w-4 inline-block" />
+                          </motion.span>
+                        </Button>
+                      </Link>
                     </motion.div>
                   </motion.div>
                 </div>

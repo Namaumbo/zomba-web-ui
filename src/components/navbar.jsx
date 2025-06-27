@@ -16,12 +16,13 @@ function NavBarComponent() {
   }, [location]);
 
   const navLinks = [
-    { path: "/", label: "Home", Icon: <Home size={18}/> },
-    { path: "/about", label: "About", Icon: <Info size={18}/> },
-    { path: "/services", label: "Services", Icon: <Settings size={18}/> },
-    { path: "/events", label: "Events", Icon: <Calendar size={18}/> },
-    { path: "/ministries", label: "Ministries", Icon: <Users size={18}/> },
-    { path: "/contact", label: "Contact", Icon: <Phone size={18}/> },
+    { path: "/", label: "Home", Icon: <Home size={18} /> },
+    { path: "/about", label: "About", Icon: <Info size={18} /> },
+    { path: "/services", label: "Services", Icon: <Settings size={18} /> },
+    { path: "/ministries", label: "Ministries", Icon: <Users size={18} /> },
+
+    { path: "/events", label: "Events", Icon: <Calendar size={18} /> },
+    { path: "/contact", label: "Contact", Icon: <Phone size={18} /> },
   ];
 
   const toggleMobileMenu = () => {
@@ -192,7 +193,7 @@ function NavBarComponent() {
                 to={"/donate"}
                 className="h-12 px-6 bg-primary text-white py-3 rounded-md transition-colors inline-block w-fit"
               >
-               DONATE
+                DONATE
               </Link>
             </div>
           </motion.nav>

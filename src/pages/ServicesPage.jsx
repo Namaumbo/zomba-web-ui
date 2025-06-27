@@ -233,14 +233,13 @@ export default function ServicePage() {
                   transition={{ delay: 0.3, duration: 0.8 }}
                 />
                 <motion.p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  We offer multiple services to accommodate different schedules
-                  and worship preferences.
+                  International, Chichewa, and Joint Services.
                 </motion.p>
               </motion.div>
             </motion.div>
 
             <motion.div
-              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+              className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
               initial="hidden"
               animate={isServiceTimesInView ? "visible" : "hidden"}
               variants={staggerContainer}
@@ -248,23 +247,39 @@ export default function ServicePage() {
               <ServiceCard
                 image="/inchurch.jpg"
                 service="International Service"
-                time="Sunday, 9:00"
+                time="Sunday, 8:30"
                 location="Main Church"
-                description="A modern worship experience with our praise band and International music"
+                description="A modern worship experience 
+with our Praise Team, International music, prayer, and Bible-based 
+sermons in English."
               />
               <ServiceCard
                 image="/chichewa.jpeg"
                 service="Chichewa Service"
-                time="Sunday, 10:30"
+                time="Sunday, 10:00"
                 location="Main Church"
-                description="Join us for a traditional worship service with hymns and a sermon."
+                description="A modern worship, prayer, and Bible-based 
+sermons in Chichewa."
               />
               <ServiceCard
                 image="/bg-3.jpg"
-                service="Midweek Service"
+                service="Joint Service"
                 time="Wednesday, 6:30"
                 location="Main Church"
-                description="A casual midweek gathering with Bible study, prayer, and fellowship. ."
+                description="A modern 
+worship, prayer, and Bible-based sermons in combined Chichewa and 
+English."
+              />
+
+              <ServiceCard
+                image="/bg-3.jpg"
+                service="Special Services"
+                time="Wednesday, 6:30"
+                location="Main Church"
+                description="Communion Service in Both 
+International and Chichewa Services: Sharing of Holy Communion during 
+the second Sunday of each month; Baptismal Service: Baptism in the third 
+month of each quarter."
               />
             </motion.div>
 

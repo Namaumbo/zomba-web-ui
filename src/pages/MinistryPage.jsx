@@ -77,6 +77,8 @@ export default function MinistryPage() {
         <h1 className="text-4xl font-bold mb-4 text-gray-800">
           Our Ministries
         </h1>
+        <div className="w-20 h-1.5 bg-primary rounded-full mx-auto"></div>
+
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Discover the various ways you can connect, serve, and grow through our
           church ministries.

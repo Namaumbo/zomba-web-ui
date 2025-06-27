@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Timeline() {
   const timelineData = [
@@ -34,16 +35,21 @@ export default function Timeline() {
   ];
 
   return (
-    <div className="min-h-screen 4 p-4 md:p-8">
+    <div className="min-h-screen ">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 bg-primary text-primary hover:bg-primary/30">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-6"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6  bg-clip-text  text-white">
             Our Journey
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Where We're Coming From
-          </h1>
-        </div>
+          </h2>
+          <p className="text-lg text-white">
+            Brief history of Zomba Baptist Church
+          </p>
+        </motion.div>
 
         <div className="relative">
           {/* Central timeline line */}

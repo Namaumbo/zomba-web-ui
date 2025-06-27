@@ -58,25 +58,43 @@ export default function Expectations({ isServiceTimesInView }) {
   const expectationItems = [
     {
       icon: <Users className="h-5 w-5" />,
-      title: "Warm Welcome",
+      title: "Prayer",
       description:
         "Our greeters will welcome you at the door and help you find your way around. Stop by our Welcome Center for more information.",
     },
     {
       icon: <Music className="h-5 w-5" />,
-      title: "Worship",
+      title: "Children’s Time,",
       description:
         "We begin with about 20 minutes of music led by our worship team. The words are projected on screens so you can sing along.",
     },
     {
       icon: <BookOpen className="h-5 w-5" />,
-      title: "Message",
+      title: "Praise and Worship",
       description:
         "Our pastor delivers a relevant, Bible-based message that applies to everyday life. Messages typically last 30-35 minutes.",
     },
     {
       icon: <Heart className="h-5 w-5" />,
-      title: "Community",
+      title: "Prayer",
+      description:
+        "We value connection. After the service, join us for coffee and conversation in our Fellowship Hall.",
+    },
+    {
+      icon: <Heart className="h-5 w-5" />,
+      title: "Sermon",
+      description:
+        "We value connection. After the service, join us for coffee and conversation in our Fellowship Hall.",
+    },
+    {
+      icon: <Heart className="h-5 w-5" />,
+      title: "Offering",
+      description:
+        "We value connection. After the service, join us for coffee and conversation in our Fellowship Hall.",
+    },
+    {
+      icon: <Heart className="h-5 w-5" />,
+      title: "Benediction",
       description:
         "We value connection. After the service, join us for coffee and conversation in our Fellowship Hall.",
     },
@@ -104,7 +122,7 @@ export default function Expectations({ isServiceTimesInView }) {
               For Visitors
             </motion.div>
             <motion.h2 className=" text-[#1D3557] text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-slate-100">
-              What to Expect
+              Regular Order of Service
             </motion.h2>
             <motion.div
               className="h-1 w-20 rounded-full bg-primary/50 mx-auto"
@@ -112,10 +130,6 @@ export default function Expectations({ isServiceTimesInView }) {
               animate={isServiceTimesInView ? { width: 80 } : { width: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             />
-            <motion.p className="max-w-[600px] text-slate-600 dark:text-slate-400 md:text-lg mt-4 mx-auto">
-              New to Zomba Baptist Church? Here's what you can expect during
-              your visit with us.
-            </motion.p>
           </motion.div>
           <div className="absolute -top-3 -z-10 h-72 w-72 bg-primary/17 blur-3xl lg:top-[-10%] lg:right-[20%]"></div>
         </motion.div>
@@ -151,7 +165,6 @@ export default function Expectations({ isServiceTimesInView }) {
                 repeatType: "reverse",
                 ease: "easeInOut",
               }}
-
             />
             {/* Image caption */}
             <motion.div
@@ -193,9 +206,6 @@ export default function Expectations({ isServiceTimesInView }) {
                     <h3 className="text-lg font-medium text-slate-900 dark:text-slate-100">
                       {item.title}
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">
-                      {item.description}
-                    </p>
                   </div>
                 </div>
               </motion.div>
