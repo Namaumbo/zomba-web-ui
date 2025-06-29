@@ -35,7 +35,6 @@ export default function ServicePage() {
   const serviceTimesRef = useRef(null);
   const serviceElementsRef = useRef(null);
   const sermonsRef = useRef(null);
-  const faqRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
   // Check if sections are in view
@@ -48,7 +47,6 @@ export default function ServicePage() {
     amount: 0.2,
   });
   const isSermonsInView = useInView(sermonsRef, { once: true, amount: 0.2 });
-  const isFaqInView = useInView(faqRef, { once: true, amount: 0.2 });
 
   // Parallax effect for hero section
   const { scrollYProgress: heroScrollProgress } = useScroll({
@@ -123,36 +121,8 @@ export default function ServicePage() {
     },
   ];
 
-  const faqItems = [
-    {
-      question: "What should I wear?",
-      answer:
-        "We have no dress code. Some people dress up, others come casual. We want you to feel comfortable, so come as you are!",
-    },
-    {
-      question: "What about my kids?",
-      answer:
-        "We offer age-appropriate children's programs during both Sunday services. Our children's area is safe, fun, and educational. First-time visitors can check in at our Welcome Center.",
-    },
-    {
-      question: "How long are the services?",
-      answer:
-        "Our services typically last about 75 minutes. They include worship through music, prayer, and a relevant message from the Bible.",
-    },
-    {
-      question: "Do I need to bring a Bible?",
-      answer:
-        "While we encourage everyone to bring their Bible, we also provide scripture on screen during the service. We also have Bibles available for you to use or take home.",
-    },
-    {
-      question: "Will I be singled out as a visitor?",
-      answer:
-        "No, we won't ask you to stand or identify yourself as a visitor. We want you to feel welcome without any pressure or embarrassment.",
-    },
-  ];
-
   // State for active tab
-  const [activeTab, setActiveTab] = useState("Chichewa");
+  // const [activeTab, setActiveTab] = useState("Chichewa");
 
   useEffect(() => {
     document.title = "Service | Zomba Baptist Church";
@@ -258,7 +228,8 @@ sermons in English."
                 service="Chichewa Service"
                 time="Sunday, 10:00"
                 location="Main Church"
-                description="A modern worship, prayer, and Bible-based 
+                description="Join us for a traditional worship service with 
+hymns and a sermon” with “A modern worship, prayer, and Bible-based 
 sermons in Chichewa."
               />
               <ServiceCard
@@ -300,7 +271,7 @@ month of each quarter."
         <Expectations isServiceTimesInView={isServiceTimesInView} />
 
         {/* Service Elements */}
-        <section className="py-12 md:py-16 bg-white" ref={serviceElementsRef}>
+        {/* <section className="py-12 md:py-16 bg-white" ref={serviceElementsRef}>
           <div className="mx-auto container px-4 md:px-6">
             <motion.div
               className="flex flex-col items-center justify-center space-y-4 text-center mb-8"
@@ -656,7 +627,7 @@ month of each quarter."
               </AnimatePresence>
             </Tabs>
           </div>
-        </section>
+        </section> */}
 
         {/* Upcoming Sermons */}
         <section className="py-12 md:py-16 bg-muted" ref={sermonsRef}>
@@ -740,7 +711,7 @@ month of each quarter."
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to={"/sermons"}>
+                {/* <Link to={"/sermons"}>
                   <Button variant="outline">
                     View Sermons
                     <motion.span
@@ -751,87 +722,8 @@ month of each quarter."
                       <ChevronRight className="ml-2 h-4 w-4" />
                     </motion.span>
                   </Button>
-                </Link>
+                </Link> */}
               </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-12 md:py-16" ref={faqRef}>
-          <div className="mx-auto container px-4 md:px-6">
-            <motion.div
-              className="flex flex-col items-center justify-center space-y-4 text-center mb-8"
-              initial="hidden"
-              animate={isFaqInView ? "visible" : "hidden"}
-              variants={staggerContainer}
-            >
-              <motion.div className="space-y-2" variants={fadeInUp}>
-                <motion.div
-                  className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Questions
-                </motion.div>
-                <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Frequently Asked Questions
-                </motion.h2>
-                <motion.div
-                  className="h-1 w-20 rounded-full bg-primary/50 mx-auto"
-                  initial={{ width: 0 }}
-                  animate={isFaqInView ? { width: 80 } : { width: 0 }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
-                />
-                <motion.p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  Find answers to common questions about our worship services.
-                </motion.p>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              className="mx-auto max-w-3xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={
-                isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-              }
-              transition={{ delay: 0.4, duration: 0.5 }}
-            >
-              <Accordion type="single" collapsible className="w-full">
-                {faqItems.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={
-                      isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
-                    }
-                    transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
-                  >
-                    <AccordionItem value={`item-${index}`}>
-                      <AccordionTrigger className="text-left">
-                        <div className="flex items-center gap-2">
-                          <motion.div
-                            whileHover={{ rotate: 15, scale: 1.1 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                          >
-                            <HelpCircle className="h-5 w-5 text-primary" />
-                          </motion.div>
-                          <span>{item.question}</span>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
-                        <motion.div
-                          initial={{ opacity: 0, y: 5 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {item.answer}
-                        </motion.div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </motion.div>
-                ))}
-              </Accordion>
             </motion.div>
           </div>
         </section>

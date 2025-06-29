@@ -195,14 +195,14 @@ export default function Expectations({ isServiceTimesInView }) {
                 whileHover={{ x: 2 }}
                 className="bg-white dark:bg-slate-800/50 rounded-lg p-5 shadow-sm border border-slate-100 dark:border-slate-700/50"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-4">
                   <motion.div
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
                     whileHover={{ scale: 1.05 }}
                   >
                     {item.icon}
                   </motion.div>
-                  <div className="space-y-1">
+                  <div>
                     <h3 className="text-lg font-medium text-slate-900 dark:text-slate-100">
                       {item.title}
                     </h3>

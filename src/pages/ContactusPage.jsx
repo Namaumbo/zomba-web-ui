@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,6 +25,12 @@ import {
 } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import ContactMap from "../components/contact-map";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -36,6 +42,38 @@ export default function ContactPage() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const faqItems = [
+    {
+      question: "What should I wear?",
+      answer:
+        "We have no dress code. Some people dress up, others come casual. We want you to feel comfortable, so come as you are!",
+    },
+    {
+      question: "What about my kids?",
+      answer:
+        "We offer age-appropriate children's programs during both Sunday services. Our children's area is safe, fun, and educational. First-time visitors can check in at our Welcome Center.",
+    },
+    {
+      question: "How long are the services?",
+      answer:
+        "Our services typically last about 75 minutes. They include worship through music, prayer, and a relevant message from the Bible.",
+    },
+    {
+      question: "Do I need to bring a Bible?",
+      answer:
+        "While we encourage everyone to bring their Bible, we also provide scripture on screen during the service. We also have Bibles available for you to use or take home.",
+    },
+    {
+      question: "Will I be singled out as a visitor?",
+      answer:
+        "No, we won't ask you to stand or identify yourself as a visitor. We want you to feel welcome without any pressure or embarrassment.",
+    },
+  ];
+
+  const faqRef = useRef(null);
+
+  const isFaqInView = useInView(faqRef, { once: true, amount: 0.2 });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -102,6 +140,30 @@ export default function ContactPage() {
   ];
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 50,
+        damping: 15,
+      },
+    },
+  };
 
   React.useEffect(() => {
     document.title = "Contact | Zomba Baptist Church";
@@ -196,9 +258,12 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
             </div>
-            From M1 road, turn at Zomba Clock Tower into Zomba City. Drive straight through town passing Zomba Police Station. Continue up the hill and turn right at Zomba Baptist Church sign. The church is located on the right side.
-
-Public Transportation: Bus routes 10 and 15 stop directly in front of the church.       </div>
+            From M1 road, turn at Zomba Clock Tower into Zomba City. Drive
+            straight through town passing Zomba Police Station. Continue up the
+            hill and turn right at Zomba Baptist Church sign. The church is
+            located on the right side. Public Transportation: Bus routes 10 and
+            15 stop directly in front of the church.{" "}
+          </div>
         </section>
 
         <ContactMap />
@@ -251,10 +316,85 @@ Public Transportation: Bus routes 10 and 15 stop directly in front of the church
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
 
-            <div className="text-center mt-8">
-              <Button variant="outline">View All Staff</Button>
-            </div>
+        {/* FAQ Section */}
+        <section className="py-12 md:py-16" ref={faqRef}>
+          <div className="mx-auto container px-4 md:px-6">
+            <motion.div
+              className="flex flex-col items-center justify-center space-y-4 text-center mb-8"
+              initial="hidden"
+              animate={isFaqInView ? "visible" : "hidden"}
+              variants={staggerContainer}
+            >
+              <motion.div className="space-y-2" variants={fadeInUp}>
+                <motion.div
+                  className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Questions
+                </motion.div>
+                <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Frequently Asked Questions
+                </motion.h2>
+                <motion.div
+                  className="h-1 w-20 rounded-full bg-primary/50 mx-auto"
+                  initial={{ width: 0 }}
+                  animate={isFaqInView ? { width: 80 } : { width: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                />
+                <motion.p className="max-w-[700px] text-muted-foreground md:text-lg">
+                  Find answers to common questions about our worship services.
+                </motion.p>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="mx-auto max-w-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={
+                isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <Accordion type="single" collapsible className="w-full">
+                {faqItems.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={
+                      isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
+                    }
+                    transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
+                  >
+                    <AccordionItem value={`item-${index}`}>
+                      <AccordionTrigger className="text-left">
+                        <div className="flex items-center gap-2">
+                          <motion.div
+                            whileHover={{ rotate: 15, scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                          >
+                            <HelpCircle className="h-5 w-5 text-primary" />
+                          </motion.div>
+                          <span>{item.question}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground">
+                        <motion.div
+                          initial={{ opacity: 0, y: 5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {item.answer}
+                        </motion.div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </motion.div>
+                ))}
+              </Accordion>
+            </motion.div>
           </div>
         </section>
       </main>
