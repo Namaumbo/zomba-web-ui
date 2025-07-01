@@ -255,12 +255,12 @@
 
   },
   "Mens-ministry": {
-    "title": "Mens Ministry",
+    "title": "Men's Ministry",
     "slug": "Mens-ministry",
-    "subtitle": "Leading Hearts in Worship and Praise",
-    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
-    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
-    "verseReference": "Psalm 100:2",
+    "subtitle": "Empowering Men of Faith",
+    "description": "Our Men's Ministry exists to empower Christian men to grow spiritually, develop as leaders, and serve their families, churches, and communities.",
+    "verse": "As iron sharpens iron, so one person sharpens another.",
+    "verseReference": "Proverbs 27:17",
     "category": "Worship",
     "slogan": "Building Strong Men of Faith and Character",
 
@@ -281,7 +281,14 @@
     "yearsActive": "8",
     "heroImage": "/evangelism.jpg",
     "images": [
-      "/placeholder.svg?height=400&width=600",
+      {
+        "src": "/praise2.jpeg",
+        "alt": "Ministry activity 1",
+        "height": 300,
+        "title": "Men's Ministry Member",
+        "description": "Praise Team Leader Praising GOD",
+        "span": "lg:row-span-2"
+      },
       "/placeholder.svg?height=300&width=400",
       "/placeholder.svg?height=300&width=400",
       "/placeholder.svg?height=300&width=400",
@@ -290,36 +297,32 @@
       "/placeholder.svg?height=300&width=400"
     ],
 
-    "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
+    "mission": "The Men's Ministry exists to empower Christian men to grow spiritually, develop as leaders, and serve their families, churches, and communities.",
 
     "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
-
+    "experience": "Our Men's Ministry has been serving and empowering men in our community for over two decades. Through regular Bible studies, prayer meetings, and fellowship events, we create opportunities for men to grow in their faith and leadership abilities. Our ministry focuses on practical application of Biblical principles, addressing real-life challenges that men face in their roles as husbands, fathers, and community leaders. We organize monthly breakfast meetings, annual retreats, and service projects that allow men to build meaningful relationships while serving others. Our mentorship program pairs experienced Christian men with younger members, fostering spiritual growth and accountability. Whether through our weekly small groups, outdoor adventures, or community outreach initiatives, we strive to help men become godly leaders who positively impact their families and communities.",
     "activities": [
       {
-        "title": "Sunday Morning Worship",
-        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
-
+        "title": "Faith-Centred",
+        "description": "Grounding all activities and relationships in Biblical principles and prayer.",
         "schedule": "Every Sunday 9:00 AM & 11:00 AM",
         "participants": "Full congregation"
       },
       {
-        "title": "Choir Ministry",
-        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
-
+        "title": "Brotherhood",
+        "description": "Creating a supportive community where men encourage and challenge each other.",
         "schedule": "Wednesdays 7:00 PM",
         "participants": "25 choir members"
       },
       {
-        "title": "Instrumental Training",
-        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
-
+        "title": "Service",
+        "description": "Demonstrating Christ's love through action in our families and communities.",
         "schedule": "Various times throughout the week",
         "participants": "15 musicians"
       },
       {
-        "title": "Worship Team Development",
-        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
-
+        "title": "Discipleship",
+        "description": "rowing as disciples of Christ and making new disciples through mentoring.",
         "schedule": "Monthly workshops",
         "participants": "20 team members"
       }
@@ -348,6 +351,7 @@
       }
     ]
   },
+
   "Womens-ministry": {
     "title": "Women Ministry",
     "slug": "Womens-ministry",
