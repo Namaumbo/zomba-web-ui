@@ -66,13 +66,13 @@ export default function MinistryDetailPage() {
           <div className=" px-4 md:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <span className="inline-block px-3 py-1 text-sm font-bold text-white bg-primary/30  rounded-full mb-4">
+                <span className="inline-block px-3 py-1 text-sm font-bold text-white bg-primary  rounded-full mb-4">
                   Our Ministry
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                   {ministry.slogan}
                 </h2>
-                <div className="w-16 h-1 bg-primary rounded-full mx-auto mb-6"></div>
+                <div className="w-16 h-1 bg-primary/80  rounded-full mx-auto mb-6"></div>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -107,58 +107,7 @@ export default function MinistryDetailPage() {
                 </div>
 
                 <div className="relative">
-                  <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-2xl p-8 border border-slate-200">
-                    <div className="space-y-6">
-                      <div className="text-center">
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">
-                          Our Mission
-                        </h3>
-                        <p className="text-slate-600 italic">
-                          {ministry.mission}
-                        </p>
-                      </div>
-
-                      <div className="border-t border-slate-200 pt-6">
-                        <h4 className="font-semibold text-slate-900 mb-3">
-                          Ministry Focus Areas
-                        </h4>
-                        <div className="space-y-2">
-                          <div className="flex justify-between items-center">
-                            <span className="text-slate-600">
-                              Spiritual Formation
-                            </span>
-                            <span className="text-rose-600 font-medium">
-                              Core
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <span className="text-slate-600">
-                              Community Building
-                            </span>
-                            <span className="text-amber-600 font-medium">
-                              Essential
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <span className="text-slate-600">
-                              Service & Outreach
-                            </span>
-                            <span className="text-blue-600 font-medium">
-                              Active
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <span className="text-slate-600">
-                              Leadership Training
-                            </span>
-                            <span className="text-green-600 font-medium">
-                              Ongoing
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {/* <img src={ministry?.image[1]} alt="" className="rounded-lg" /> */}
                 </div>
               </div>
             </div>
@@ -169,13 +118,11 @@ export default function MinistryDetailPage() {
         <section className="w-full py-20 md:py-28 bg-slate-50">
           <div className="container mx-auto max-w-7xl px-4 md:px-6">
             <div className="flex flex-col items-center text-center mb-12">
-              <span className="inline-block px-3 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
-                Our Community
-              </span>
+            
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">
                 Ministry Gallery
               </h2>
-              <div className="w-20 h-1.5 bg-gradient-to-r from-rose-600 to-amber-600 rounded-full mb-6"></div>
+              <div className="w-16 h-1 bg-primary rounded-full mx-auto mb-6"></div>
               <p className="max-w-3xl text-slate-600 text-lg">
                 {` Moments captured from our various ${ministry.title}, service
                 projects, and gatherings.`}

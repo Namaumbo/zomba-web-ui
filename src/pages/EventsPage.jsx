@@ -113,7 +113,7 @@ export default function EventsPage() {
             <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
               <div className="text-center text-white p-4">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                  Events & Activities
+                  Events & Features
                 </h1>
                 <p className="text-lg md:text-xl max-w-2xl mx-auto">
                   Connect, grow, and serve through our various events and
@@ -128,7 +128,7 @@ export default function EventsPage() {
           <div className="mx-auto container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                <div className="inline-block px-3 py-1 text-sm font-bold text-white bg-primary/80  rounded-full mb-4">
                   Highlights
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -288,8 +288,6 @@ export default function EventsPage() {
             </div>
           </div>
         </section>
-
-        
         {/* Regular Events */}
         <section className="py-12 md:py-16 ">
           <div className="mx-auto container px-4 md:px-6 ">
@@ -307,7 +305,7 @@ export default function EventsPage() {
                 </p>
               </div>
             </div>
-            <div  className="bg-slate-50 ">
+            <div className="bg-slate-50 ">
               <div className="flex items-center justify-center min-h-screen p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
                   {/* Communion Sunday Card */}
@@ -479,9 +477,6 @@ export default function EventsPage() {
             </div>
           </div>
         </section>
-
-
-
         {/* Past Events */}
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="mx-auto container px-4 md:px-6">

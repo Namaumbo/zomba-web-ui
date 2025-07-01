@@ -74,7 +74,7 @@ export default function MinistryComponent({}) {
                 <div className="flex items-start gap-2 mb-6 bg-teal-50 p-4 rounded-lg">
                   <Quote className="text-teal-500 h-5 w-5 mt-1 flex-shrink-0" />
                   <p className="text-sm italic text-gray-700">
-                    {ministry.verse}
+                    {ministry.verse} - {ministry.verseReference}
                   </p>
                 </div>
               </div>
