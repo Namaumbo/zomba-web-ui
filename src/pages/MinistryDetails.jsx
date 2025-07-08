@@ -24,7 +24,7 @@ export default function MinistryDetailPage() {
     <main className="flex-1">
       <div className="min-h-screen bg-white">
         {/* Hero Section with Overlay */}
-        <section className="relative h-[90vh]  overflow-hidden">
+        <section className="relative h-[70vh]  overflow-hidden">
           <img
             src={ministry.heroImage || "/placeholder.svg"}
             alt={ministry.title}
@@ -52,7 +52,7 @@ export default function MinistryDetailPage() {
                   {ministry.subtitle}
                 </p>
                 <p
-                  className="text-xl mb-8 text-white/90 animate-slide-in-left"
+                  className="text-xl mb-8 text-white/90 animate-slide-in-left "
                   style={{ animationDelay: "400ms" }}
                 >
                   {ministry.description}
@@ -66,9 +66,9 @@ export default function MinistryDetailPage() {
           <div className=" px-4 md:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <span className="inline-block px-3 py-1 text-sm font-bold text-white bg-primary  rounded-full mb-4">
+                {/* <span className="inline-block px-3 py-1 text-sm font-bold text-white bg-primary  rounded-full mb-4">
                   Our Ministry
-                </span>
+                </span> */}
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                   {ministry.slogan}
                 </h2>
@@ -77,7 +77,7 @@ export default function MinistryDetailPage() {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
-                  <p className="text-lg text-slate-700 leading-relaxed">
+                  <p className="text-lg text-slate-700 leading-relaxed text-justify">
                     {ministry.experience}
                   </p>
 
@@ -155,33 +155,6 @@ export default function MinistryDetailPage() {
                 </div>
               ))}
             </div>
-
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-              {ministry?.images?.map((item, index) => (
-                <div
-                  key={index}
-                  className={`group relative overflow-hidden rounded-xl ${
-                    item.span || ""
-                  }`}
-                >
-                  <img
-                    src={`/bg-5.jpg?height=${
-                      item.height
-                    }&width=500&text=Ministry+Photo+${index + 1}`}
-                    alt={`Ministry activity ${index + 1}`}
-                    width={500}
-                    height={item.height}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="font-bold text-xl">{item.title}</h3>
-                      <p className="text-white/80 mt-2">{item.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div> */}
           </div>
         </section>
       </div>
