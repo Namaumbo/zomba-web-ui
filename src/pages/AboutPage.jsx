@@ -480,7 +480,7 @@ function AboutPage() {
                       imageUrl="/kambalame-1.jpg"
                     />
                     <LeadershipCard
-                      name="Mr Me Mopiha"
+                      name="Mr Kelvin Mopiha"
                       role="Church Secretary"
                       description="Leading with grace and wisdom"
                       imageUrl="/mopiha.jpeg"

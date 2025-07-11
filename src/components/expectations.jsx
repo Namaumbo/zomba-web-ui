@@ -176,7 +176,7 @@ export default function Expectations({ isServiceTimesInView }) {
               transition={{ delay: 0.4, duration: 0.5 }}
             >
               <h3 className="text-white text-xl font-medium">
-                Join Us This Sunday
+                Join Us.
               </h3>
               <p className="text-white/80 text-sm mt-1">
                 Experience the warmth of our community

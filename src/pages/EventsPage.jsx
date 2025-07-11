@@ -146,8 +146,8 @@ export default function EventsPage() {
                   Recent events
                 </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  Mark your calendar for these special upcoming events at Zomba
-                  Baptist Church.
+                  Find an event that interests you and get involved in our
+                  church community.
                 </p>
               </div>
             </div>
@@ -220,8 +220,8 @@ export default function EventsPage() {
                   Upcoming Events
                 </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                  Find an event that interests you and get involved in our
-                  church community.
+                  Mark your calendar for these special upcoming events at Zomba
+                  Baptist Church.
                 </p>
               </div>
             </div>
