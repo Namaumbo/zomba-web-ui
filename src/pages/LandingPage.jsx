@@ -3,7 +3,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, HeartHandshakeIcon } from "lucide-react";
 import HeroCarousel from "../components/hero-carousel";
 import PastorSection from "../components/pastor-message";
 import MissionSection from "../components/mission-section";
@@ -62,14 +62,16 @@ export default function LandingPage() {
         {/* Service Times & Location */}
         <section className="container mx-auto py-12 md:py-16 bg-white flex flex-col justify-center items-center">
           <motion.div
-            className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
+            className=" flex gap-2 justify-center items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.03 }}
           >
-            Join Us
+            <HeartHandshakeIcon/>
+
+           <span className=" text-md">Join Us</span> 
           </motion.div>
           <motion.h2
             className=" text-[#1D3557] text-3xl mb-8 font-bold tracking-tighter sm:text-4xl md:text-5xl"

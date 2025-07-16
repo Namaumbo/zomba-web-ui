@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Check, ChevronRight, ArrowRight } from "lucide-react";
+import { Check, ChevronRight, ArrowRight, BadgeInfo } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
@@ -54,10 +54,11 @@ export default function MissionSection() {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <motion.div
-              className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
+              className=" flex justify-center items-center gap-1 w-fit m-auto mb-5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
+              <BadgeInfo/>
               Our Identity & Purpose
             </motion.div>
 

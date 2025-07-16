@@ -17,6 +17,7 @@ import {
   HelpCircle,
   MapPin,
   ChevronRight,
+  HeartHandshakeIcon,
 } from "lucide-react";
 import Expectations from "../components/expectations";
 import {
@@ -187,10 +188,11 @@ export default function ServicePage() {
             >
               <motion.div className="space-y-2" variants={fadeInUp}>
                 <motion.div
-                  className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
+                  className=" flex gap-2 justify-center m-auto mb-5 max-w-fit items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
+                  <HeartHandshakeIcon />
                   Join Us
                 </motion.div>
                 <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">

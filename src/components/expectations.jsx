@@ -2,7 +2,14 @@
 
 import React from "react";
 import { motion, useInView } from "framer-motion";
-import { Users, Music, BookOpen, Heart, ChevronRight } from "lucide-react";
+import {
+  Users,
+  Music,
+  BookOpen,
+  Heart,
+  ChevronRight,
+  UserRound,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Expectations({ isServiceTimesInView }) {
@@ -115,10 +122,11 @@ export default function Expectations({ isServiceTimesInView }) {
         >
           <motion.div className="space-y-3" variants={itemVariants}>
             <motion.div
-              className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
+              className=" flex gap-2 justify-center items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
+              <UserRound />
               For Visitors
             </motion.div>
             <motion.h2 className=" text-[#1D3557] text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-slate-100">
@@ -175,9 +183,7 @@ export default function Expectations({ isServiceTimesInView }) {
               }
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              <h3 className="text-white text-xl font-medium">
-                Join Us.
-              </h3>
+              <h3 className="text-white text-xl font-medium">Join Us.</h3>
               <p className="text-white/80 text-sm mt-1">
                 Experience the warmth of our community
               </p>
