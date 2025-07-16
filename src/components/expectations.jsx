@@ -122,14 +122,14 @@ export default function Expectations({ isServiceTimesInView }) {
         >
           <motion.div className="space-y-3" variants={itemVariants}>
             <motion.div
-              className=" flex gap-2 justify-center items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
+              className=" flex gap-2 justify-center items-center max-w-fit m-auto mb-5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
               <UserRound />
               For Visitors
             </motion.div>
-            <motion.h2 className=" text-[#1D3557] text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-slate-100">
+            <motion.h2 className=" text-[#1D3557] text-3xl font-bold tracking-tight sm:text-4xl dark:text-slate-100">
               Regular Order of Service
             </motion.h2>
             <motion.div

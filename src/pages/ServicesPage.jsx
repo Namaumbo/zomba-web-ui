@@ -18,6 +18,7 @@ import {
   MapPin,
   ChevronRight,
   HeartHandshakeIcon,
+  CalendarHeartIcon,
 } from "lucide-react";
 import Expectations from "../components/expectations";
 import {
@@ -642,10 +643,11 @@ month of each quarter."
             >
               <motion.div className="space-y-2" variants={fadeInUp}>
                 <motion.div
-                  className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
+                  className=" flex gap-2 justify-center max-w-fit m-auto mb-5 items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
+                  <CalendarHeartIcon />
                   Coming Up
                 </motion.div>
                 <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
