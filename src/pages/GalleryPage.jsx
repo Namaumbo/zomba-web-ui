@@ -1,312 +1,210 @@
-"use client"
-
-import { useState, useRef, useEffect } from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { X, ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+"use client";
 
 const galleryImages = [
   {
-    id: 1,
-    src: "/chidrenMinistry.jpg",
-    alt: "Artistic portrait",
-    width: 700,
-    height: 800,
-    parallaxSpeed: 0.2,
-    position: "left",
-    size: "large",
+    src: "/youthMinistry.jpg",
+    alt: "Ministry activity 1",
+    height: 300,
+    title: "Youth Gathering",
+    description: "Building community through faith and fellowship",
+    span: "lg:row-span-2",
   },
   {
-    id: 1,
-    src: "/congregation1.jpg",
-    alt: "Artistic portrait",
-    width: 700,
-    height: 800,
-    parallaxSpeed: 0.2,
-    position: "left",
-    size: "large",
+    src: "/WhatsApp Image 2025-01-27 at 17.21.17.jpeg",
+    alt: "Ministry activity 2",
+    height: 200,
+    title: "Outreach Program",
+    description: "Serving our local communities with love.",
   },
   {
-    id: 2,
-    src: "/kidssandpaster.jpg",
-    alt: "Artistic portrait",
-    width: 700,
-    height: 800,
-    parallaxSpeed: 0.2,
-    position: "center",
-    size: "large",
+    src: "/celebration2.jpeg",
+    alt: "Ministry activity 3",
+    height: 350,
+    title: "Praise Night",
+    description: "An evening of music, worship, and testimony.",
+    span: "lg:col-span-2",
   },
-  {
-    id: 3,
-    src: "/chichewa.jpeg",
-    alt: "Artistic portrait",
-    width: 700,
-    height: 800,
-    parallaxSpeed: 0.2,
-    position: "right",
-    size: "large",
-  },
-  {
-    id: 4,
-    src: "/chidrenMinistry.jpg",
-    alt: "Artistic portrait",
-    width: 700,
-    height: 800,
-    parallaxSpeed: 0.2,
-    position: "left",
-    size: "large",
-  },
-  {
-    id: 5,
-    src: "/kidssandpaster.jpg",
-    alt: "Artistic portrait",
-    width: 700,
-    height: 800,
-    parallaxSpeed: 0.2,
-    position: "left",
-    size: "large",
-  },
-  {
-    id: 6,
-    src: "/chichewa.jpeg",
-    alt: "Artistic portrait",
-    width: 700,
-    height: 800,
-    parallaxSpeed: 0.2,
-    position: "left",
-    size: "large",
-  },
-  {
-    id: 9,
-    src: "/evangelism.jpg",
-    alt: "Street photography",
-    width: 700,
-    height: 700,
-    parallaxSpeed: 0.3,
-    position: "center",
-    size: "medium",
-  },
-]
 
+  {
+    src: "/GA.jpg",
+    alt: "Ministry activity 5",
+    height: 200,
+    title: "Bible Study",
+    description: "Growing in knowledge and understanding.",
+  },
+  {
+    src: "/youth4.jpeg",
+    alt: "Ministry activity 6",
+    height: 300,
+    title: "Community Service",
+    description: "Hands-on projects that make a difference.",
+  },
+
+  {
+    src: "/WhatsApp Image 2025-01-27 at 17.21.17.jpeg",
+    alt: "Ministry activity 4",
+    height: 350,
+    title: "Youth Camp",
+    description: "Deepening faith through retreats and fun",
+  },
+  {
+    src: "/womens.jpeg",
+    alt: "Ministry activity 4",
+    height: 200,
+    title: "Youth Camp",
+    description: "Deepening faith through retreats and fun",
+  },
+  {
+    src: "/womens1.jpeg",
+    alt: "Ministry activity 4",
+    height: 200,
+    title: "Youth Camp",
+    description: "Deepening faith through retreats and fun",
+  },
+  {
+    src: "/uploads/WhatsApp Image 2025-07-18 at 10.36.28.jpeg",
+    alt: "Ministry activity 4",
+    height: 200,
+    title: "Youth Camp",
+    description: "Deepening faith through retreats and fun",
+  },
+];
+
+const galleryImages2 = [
+  {
+    src: "/uploads/WhatsApp Image 2025-07-18 at 10.36.27.jpeg",
+    alt: "Ministry activity 1",
+    height: 300,
+    title: "Youth Gathering",
+    description: "Building community through faith and fellowship",
+    span: "lg:row-span-2",
+  },
+  {
+    src: "/uploads/WhatsApp Image 2025-07-18 at 15.06.00.jpeg",
+    alt: "Ministry activity 2",
+    height: 200,
+    title: "Outreach Program",
+    description: "Serving our local communities with love.",
+  },
+  {
+    src: "/youngLady1.jpeg",
+    alt: "Ministry activity 3",
+    height: 350,
+    title: "Praise Night",
+    description: "An evening of music, worship, and testimony.",
+    span: "lg:col-span-2",
+  },
+
+  {
+    src: "/GA.jpg",
+    alt: "Ministry activity 5",
+    height: 200,
+    title: "Bible Study",
+    description: "Growing in knowledge and understanding.",
+  },
+  {
+    src: "/uploads/WhatsApp Image 2025-07-18 at 11.44.37.jpeg",
+    alt: "Ministry activity 6",
+    height: 300,
+    title: "Community Service",
+    description: "Hands-on projects that make a difference.",
+  },
+
+  {
+    src: "/uploads/WhatsApp Image 2025-07-18 at 15.06.10.jpeg",
+    alt: "Ministry activity 4",
+    height: 350,
+    title: "Youth Camp",
+    description: "Deepening faith through retreats and fun",
+  },
+  {
+    src: "/uploads/WhatsApp Image 2025-07-18 at 11.44.35.jpeg",
+    alt: "Ministry activity 4",
+    height: 200,
+    title: "Youth Camp",
+    description: "Deepening faith through retreats and fun",
+  },
+  {
+    src: "/uploads/WhatsApp Image 2025-07-18 at 11.44.36.jpeg",
+    alt: "Ministry activity 4",
+    height: 200,
+    title: "Youth Camp",
+    description: "Deepening faith through retreats and fun",
+  },
+  {
+    src: "/womens1.jpeg",
+    alt: "Ministry activity 4",
+    height: 200,
+    title: "Youth Camp",
+    description: "Deepening faith through retreats and fun",
+  },
+];
 export default function GalleryPage() {
-  const [selectedImage, setSelectedImage] = useState(null)
-  const containerRef = useRef(null)
-  const { scrollY } = useScroll()
-
-  const [floatingElements, setFloatingElements] = useState([])
-
-  useEffect(() => {
-    const elements = Array.from({ length: 15 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 40 + 10,
-      speed: Math.random() * 0.2 + 0.05,
-    }))
-    setFloatingElements(elements)
-  }, [])
-
-  const navigateImage = (direction) => {
-    if (!selectedImage) return
-    const currentIndex = galleryImages.findIndex((img) => img.id === selectedImage.id)
-    let newIndex = direction === "next"
-      ? (currentIndex + 1) % galleryImages.length
-      : (currentIndex - 1 + galleryImages.length) % galleryImages.length
-    setSelectedImage(galleryImages[newIndex])
-  }
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (selectedImage) {
-        if (e.key === "ArrowRight") navigateImage("next")
-        if (e.key === "ArrowLeft") navigateImage("prev")
-        if (e.key === "Escape") setSelectedImage(null)
-      }
-    }
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [selectedImage])
-
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {floatingElements.map((element) => (
-          <motion.div
-            key={element.id}
-            className="absolute rounded-full bg-white/5"
-            style={{
-              left: `${element.x}%`,
-              top: `${element.y}%`,
-              width: element.size,
-              height: element.size,
-            }}
-            animate={{
-              y: [0, element.speed * 100, 0],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 10 / element.speed,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+    <div className="relative min-h-screen overflow-hidden">
+      <section className="w-full md:py-8 bg-slate-50">
+        <div className="container mx-auto max-w-8xl px-4 md:px-6">
+          <div className="flex flex-col items-center text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">
+              Church Gallery
+            </h2>
+            <div className="w-16 h-1 bg-primary rounded-full mx-auto mb-6"></div>
+            <p className="max-w-3xl text-slate-600 text-lg">
+              {` Moments captured from our various service
+                projects, and gatherings.`}
+            </p>
+          </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="fixed top-0 left-0 right-0 z-10 p-6 md:p-10 bg-gradient-to-b from-black/80 to-transparent pointer-events-none"
-      >
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          Gallery <span className="text-rose-400">Experience</span>
-        </h1>
-        <p className="mt-2 max-w-xl text-gray-300">
-          Scroll to explore our unique collection of visual artistry
-        </p>
-      </motion.div>
-
-      <div ref={containerRef} className="relative pt-32 pb-40 min-h-screen">
-        <div className="relative max-w-7xl mx-auto px-4">
-          {galleryImages.map((image, index) => {
-            const positionClass = {
-              left: "ml-0 md:ml-10",
-              center: "mx-auto",
-              right: "ml-auto mr-0 md:mr-10",
-            }[image.position]
-
-            const sizeClass = {
-              small: "w-[250px] md:w-[300px]",
-              medium: "w-[300px] md:w-[400px]",
-              large: "w-[350px] md:w-[500px]",
-            }[image.size]
-
-            return (
-              <GalleryItem
-                key={image.id}
-                image={image}
-                index={index}
-                positionClass={positionClass}
-                sizeClass={sizeClass}
-                scrollY={scrollY}
-                setSelectedImage={setSelectedImage}
-              />
-            )
-          })}
-        </div>
-      </div>
-
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="relative max-w-5xl w-full h-[80vh] flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-2 right-2 z-10 text-white bg-black/50 hover:bg-black/70"
-                onClick={() => setSelectedImage(null)}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+            {galleryImages?.map((item, index) => (
+              <div
+                key={index}
+                className={`group relative overflow-hidden rounded-xl ${
+                  item.span || ""
+                }`}
               >
-                <X className="h-5 w-5" />
-              </Button>
-
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 text-white bg-black/50 hover:bg-black/70"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  navigateImage("prev")
-                }}
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </Button>
-
-              <div className="relative w-full h-full">
-                <Image
-                  src={selectedImage.src}
-                  alt={selectedImage.alt}
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
+                <img
+                  src={`${item.src}?height=${
+                    item.height
+                  }&width=500&text=Ministry+Photo+${index + 1}`}
+                  alt={`Ministry activity ${index + 1}`}
+                  width={400}
+                  height={item.height}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 text-white bg-black/50 hover:bg-black/70"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  navigateImage("next")
-                }}
-              >
-                <ChevronRight className="h-6 w-6" />
-              </Button>
-
-              <div className="absolute bottom-4 left-0 right-0 text-center text-white">
-                <p className="text-lg font-medium">{selectedImage.alt}</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+          </div>
+        </div>
+      </section>
+      <div className="container mx-auto max-w-8xl px-4 md:px-6">
+        <PicRack galleryImages={galleryImages2} />
+      </div>
     </div>
-  )
+  );
 }
 
-function GalleryItem({ image, index, positionClass, sizeClass, scrollY, setSelectedImage }) {
-  const y = useTransform(scrollY, [index * 300, (index + 1) * 800], [0, -200 * image.parallaxSpeed])
-  const scale = useTransform(scrollY, [index * 300, (index + 1) * 800], [0.8, 1.05])
-  const opacity = useTransform(scrollY, [index * 300 - 300, index * 300, index * 300 + 600], [0, 1, 0.8])
-
+function PicRack({ galleryImages }) {
   return (
-    <motion.div
-      style={{ y, scale, opacity }}
-      className={cn("relative mb-40 md:mb-60 cursor-pointer", positionClass, sizeClass)}
-      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-      onClick={() => setSelectedImage(image)}
-    >
-      <div className="relative overflow-hidden rounded-lg shadow-2xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+      {galleryImages?.map((item, index) => (
         <div
-          className="relative"
-          style={{ paddingBottom: `${(image.height / image.width) * 100}%` }}
+          key={index}
+          className={`group relative overflow-hidden rounded-xl ${
+            item.span || ""
+          }`}
         >
           <img
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-            sizes={`(max-width: 768px) 80vw, ${
-              image.size === "large" ? "500px" : image.size === "medium" ? "400px" : "300px"
-            }`}
+            src={`${item.src}?height=${
+              item.height
+            }&width=500&text=Ministry+Photo+${index + 1}`}
+            alt={`Ministry activity ${index + 1}`}
+            width={400}
+            height={item.height}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end"
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="p-4 w-full">
-            <p className="text-white font-medium">{image.alt}</p>
-          </div>
-        </motion.div>
-      </div>
-    </motion.div>
-  )
+      ))}
+    </div>
+  );
 }

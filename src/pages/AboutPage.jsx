@@ -371,8 +371,8 @@ function AboutPage() {
                   custom: 2,
                 },
                 {
-                  number: "3",
-                  text: "children churches",
+                  number: "9",
+                  text: "Satellite Churches",
                   custom: 3,
                 },
               ].map((stat, index) => (

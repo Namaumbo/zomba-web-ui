@@ -1,4 +1,77 @@
 {
+    "children-ministry": {
+    "title": " Children Ministry ",
+    "slug": "children-ministry",
+    "subtitle": "Leading Hearts in Worship and Praise",
+    "description": "Our children's ministry nurtures young hearts in faith through engaging activities, Bible stories, and creative learning experiences that help children grow in their relationship with Jesus.",
+    "verse": "Train up a child in the way he should go; even when he is old he will not depart from it.",
+    "verseReference": "Proverbs 22:6",
+    "category": "Worship",
+    "slogan": "Bringing Hope Behind Bars",
+
+    "coverPage": "/uploads/WhatsApp Image 2025-07-18 at 11.44.36 (1).jpeg",
+    "leader": {
+      "name": "Sarah Johnson",
+      "title": "Worship Pastor",
+      "bio": "Sarah is a gifted worship leader with over 15 years of experience in leading congregational worship and training musicians. She has a Bachelor's in Music Ministry and a heart for creating authentic worship experiences.",
+      "email": "sarah.johnson@zombabaptist.org",
+      "phone": "(265) 123-4568",
+      "image": "/placeholder.svg?height=300&width=300"
+    },
+
+    "meetingTime": "Sundays 9:00 AM & 11:00 AM",
+    "location": "Main Sanctuary",
+    "ageGroup": "All ages",
+    "memberCount": "45",
+    "yearsActive": "8",
+    "heroImage": "/uploads/WhatsApp Image 2025-07-18 at 11.44.36 (1).jpeg",
+    "images": [
+     {
+        "src": "/uploads/WhatsApp Image 2025-07-18 at 11.44.36 (1).jpeg",
+        "alt": "Ministry activity 1",
+        "height": 300,
+        "title": "Youth Gathering",
+        "description": "Building community through faith and fellowship",
+        "span": "lg:row-span-2"
+      },
+      {
+        "src": "/uploads/WhatsApp Image 2025-07-18 at 11.44.37.jpeg",
+        "alt": "Ministry activity 2",
+        "height": 200,
+        "title": "Outreach Program",
+        "description": "Serving our local communities with love."
+      },
+      {
+        "src": "/uploads/WhatsApp Image 2025-07-18 at 11.44.36 (1).jpeg",
+        "alt": "Ministry activity 3",
+        "height": 350,
+        "title": "Praise Night",
+        "description": "An evening of music, worship, and testimony.",
+        "span": "lg:col-span-2"
+      },
+
+      {
+        "src": "/public/uploads/WhatsApp Image 2025-07-18 at 11.44.36.jpeg",
+        "alt": "Ministry activity 5",
+        "height": 200,
+        "title": "Bible Study",
+        "description": "Growing in knowledge and understanding."
+      },
+      {
+        "src": "/youth4.jpeg",
+        "alt": "Ministry activity 6",
+        "height": 300,
+        "title": "Community Service",
+        "description": "Hands-on projects that make a difference."
+      }
+    ],
+
+    "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
+
+    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
+    
+    "experience": "The Zomba Baptist Kids Youth Department is a vibrant and dynamic ministry dedicated to nurturing children in their faith journey. We provide a supportive and fun environment where kids can grow spiritually, develop good values, and build lasting friendships through engaging activities, Bible study, games, and learning about Jesus. Our programs are designed to help children understand God's love while having fun and making new friends in a safe and caring Christian environment."
+  },
   "youth-ministry": {
     "title": "Youth Ministry",
     "slug": "youth-ministry",
@@ -71,70 +144,7 @@
 
     "vision": "To see every young person in our community equipped with the tools and confidence to live out their faith boldly in their daily lives.",
 
-    "activities": [
-      {
-        "title": "Weekly Bible Study",
-        "description": "Interactive Bible studies that help young people understand scripture and apply it to their daily lives through discussion, multimedia, and practical exercises.",
-
-        "schedule": "Every Friday 7:00 PM",
-        "participants": "25-30 youth"
-      },
-      {
-        "title": "Community Projects",
-        "description": "Monthly service projects that allow youth to make a tangible difference in their community while learning the importance of serving others.",
-
-        "schedule": "First Saturday of each month",
-        "participants": "40-50 volunteers"
-      },
-      {
-        "title": "Youth Camps & Retreats",
-        "description": "Annual camps and quarterly retreats designed for spiritual growth, team building, and creating lasting friendships in a fun, engaging environment.",
-
-        "schedule": "Summer camp + 4 retreats yearly",
-        "participants": "60-70 campers"
-      },
-      {
-        "title": "Mentorship Program",
-        "description": "One-on-one mentoring relationships between adult leaders and youth, providing guidance, accountability, and support for personal and spiritual growth.",
-
-        "schedule": "Ongoing relationships",
-        "participants": "30 mentor pairs"
-      }
-    ],
-
-    "upcomingEvents": [
-      {
-        "title": "Summer Youth Camp 2024",
-        "date": "July 15-20, 2024",
-        "time": "All Week",
-        "location": "Mountain View Retreat Center",
-        "description": "A week-long camp focused on spiritual growth, outdoor activities, and building lasting friendships.",
-
-        "cost": "$150 per person",
-        "registration": "Open until June 30th"
-      },
-      {
-        "title": "Community Service Day",
-        "date": "June 8, 2024",
-        "time": "9:00 AM - 3:00 PM",
-        "location": "Various Community Locations",
-        "description": "Join us as we serve our local community through various volunteer projects and outreach initiatives.",
-
-        "cost": "Free",
-        "registration": "Open"
-      },
-      {
-        "title": "Youth Leadership Training",
-        "date": "June 22, 2024",
-        "time": "10:00 AM - 4:00 PM",
-        "location": "Church Conference Room",
-        "description": "Special training session for youth interested in developing their leadership skills and taking on ministry roles.",
-
-        "cost": "Free",
-        "registration": "Contact Pastor John"
-      }
-    ],
-
+    
     "experience": "The Zomba Baptist Youth Department is a vibrant and dynamic ministry dedicated to nurturing young people in their faith journey. We provide a supportive environment where youth can grow spiritually, develop leadership skills, and build lasting friendships through engaging activities, Bible study, mentorship, and community service. Our programs are designed to empower young people to live out their faith confidently while making a positive impact in their community."
   },
   "worship-ministry": {
@@ -146,7 +156,7 @@
     "verseReference": "Psalm 100:2",
     "slogan": "Lifting Hearts in Worship and Praise",
     "category": "Worship",
-    "coverPage": "/evangelism.jpg",
+    "coverPage": "/uploads/praise3.jpg",
     "leader": {
       "name": "Sarah Johnson",
       "title": "Worship Pastor",
@@ -161,7 +171,7 @@
     "ageGroup": "All ages",
     "memberCount": "45",
     "yearsActive": "8",
-    "heroImage": "/evangelism.jpg",
+    "heroImage": "/uploads/praise3.jpg",
     "images": [
       {
         "src": "/praise2.jpeg",
@@ -172,18 +182,18 @@
         "span": "lg:row-span-2"
       },
       {
-        "src": "/chichewa.jpeg",
+        "src": "/uploads/praise3.jpg",
         "alt": "Ministry activity 2",
         "height": 200,
-        "title": "Outreach Program",
-        "description": "Serving our local communities with love."
+        "title": "Praise team",
+        "description": "Serving our local communities with songs."
       },
       {
         "src": "/praise1.jpeg",
         "alt": "Ministry activity 3",
         "height": 350,
-        "title": "Praise Night",
-        "description": "An evening of music, worship, and testimony.",
+        "title": "Praise",
+        "description": "A Moment of music, worship, and testimony.",
         "span": "lg:col-span-2"
       },
 
@@ -191,8 +201,8 @@
         "src": "/celebration4.jpeg",
         "alt": "Ministry activity 5",
         "height": 200,
-        "title": "Bible Study",
-        "description": "Growing in knowledge and understanding."
+        "title": "Praise",
+        "description": "Praises go to Jesus."
       },
       {
         "src": "/youth4.jpeg",
@@ -252,7 +262,6 @@
       }
     ],
     "experience": "Our worship praise team is a dedicated group of talented musicians and vocalists committed to leading the congregation in authentic worship. We blend contemporary and traditional styles to create meaningful worship experiences that draw people closer to God. Through careful song selection, musical excellence, and spiritual preparation, we strive to facilitate an atmosphere where people can encounter God's presence and respond in genuine praise and worship. Team members receive regular training and participate in weekly rehearsals to ensure we serve with excellence and unity."
-
   },
   "Mens-ministry": {
     "title": "Men's Ministry",
@@ -289,6 +298,15 @@
         "description": "Praise Team Leader Praising GOD",
         "span": "lg:row-span-2"
       },
+      {
+        "src": "/uploads/WhatsApp Image 2025-07-18 at 10.36.28.jpeg",
+        "alt": "Ministry activity 1",
+        "height": 300,
+        "title": "Men ",
+        "description": "Mens Ministry",
+        "span": "lg:row-span-2"
+      },
+
       "/placeholder.svg?height=300&width=400",
       "/placeholder.svg?height=300&width=400",
       "/placeholder.svg?height=300&width=400",
@@ -300,69 +318,19 @@
     "mission": "The Men's Ministry exists to empower Christian men to grow spiritually, develop as leaders, and serve their families, churches, and communities.",
 
     "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
-    "experience": "Our Men's Ministry has been serving and empowering men in our community for over two decades. Through regular Bible studies, prayer meetings, and fellowship events, we create opportunities for men to grow in their faith and leadership abilities. Our ministry focuses on practical application of Biblical principles, addressing real-life challenges that men face in their roles as husbands, fathers, and community leaders. We organize monthly breakfast meetings, annual retreats, and service projects that allow men to build meaningful relationships while serving others. Our mentorship program pairs experienced Christian men with younger members, fostering spiritual growth and accountability. Whether through our weekly small groups, outdoor adventures, or community outreach initiatives, we strive to help men become godly leaders who positively impact their families and communities.",
-    "activities": [
-      {
-        "title": "Faith-Centred",
-        "description": "Grounding all activities and relationships in Biblical principles and prayer.",
-        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
-        "participants": "Full congregation"
-      },
-      {
-        "title": "Brotherhood",
-        "description": "Creating a supportive community where men encourage and challenge each other.",
-        "schedule": "Wednesdays 7:00 PM",
-        "participants": "25 choir members"
-      },
-      {
-        "title": "Service",
-        "description": "Demonstrating Christ's love through action in our families and communities.",
-        "schedule": "Various times throughout the week",
-        "participants": "15 musicians"
-      },
-      {
-        "title": "Discipleship",
-        "description": "rowing as disciples of Christ and making new disciples through mentoring.",
-        "schedule": "Monthly workshops",
-        "participants": "20 team members"
-      }
-    ],
-
-    "upcomingEvents": [
-      {
-        "title": "Worship Night",
-        "date": "June 15, 2024",
-        "time": "7:00 PM - 9:00 PM",
-        "location": "Main Sanctuary",
-        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
-
-        "cost": "Free",
-        "registration": "No registration required"
-      },
-      {
-        "title": "Choir Auditions",
-        "date": "June 1, 2024",
-        "time": "2:00 PM - 5:00 PM",
-        "location": "Music Room",
-        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
-
-        "cost": "Free",
-        "registration": "Contact Sarah Johnson"
-      }
-    ]
+    "experience": "Our Men's Ministry has been serving and empowering men in our community for over two decades. Through regular Bible studies, prayer meetings, and fellowship events, we create opportunities for men to grow in their faith and leadership abilities. Our ministry focuses on practical application of Biblical principles, addressing real-life challenges that men face in their roles as husbands, fathers, and community leaders. We organize monthly breakfast meetings, annual retreats, and service projects that allow men to build meaningful relationships while serving others. Our mentorship program pairs experienced Christian men with younger members, fostering spiritual growth and accountability. Whether through our weekly small groups, outdoor adventures, or community outreach initiatives, we strive to help men become godly leaders who positively impact their families and communities."
   },
-
   "Womens-ministry": {
     "title": "Women Ministry",
     "slug": "Womens-ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
-    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
-    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
-    "verseReference": "Psalm 100:2",
+    "description": "Our Women’s Ministry is vibrant in nurturing Christian growth, spreading the gospel, and encouraging women to be active participants in the church and community.",
+    "verse": "We are labourers together with God.",
+    "verseReference": "1 Corinthians 3:9",
     "category": "Worship",
     "slogan": "Empowering Women Through Faith and Fellowship",
 
-    "coverPage": "/evangelism.jpg",
+    "coverPage": "/womens1.jpeg",
     "leader": {
       "name": "Sarah Johnson",
       "title": "Worship Pastor",
@@ -377,9 +345,16 @@
     "ageGroup": "All ages",
     "memberCount": "45",
     "yearsActive": "8",
-    "heroImage": "/celebration4.jpeg",
+    "heroImage": "/womens1.jpeg",
     "images": [
-      "/placeholder.svg?height=400&width=600",
+      {
+        "src": "/celebration4.jpeg",
+        "alt": "Ministry activity 3",
+        "height": 350,
+        "title": "Women Ministry",
+        "description": "Womens ministry.",
+        "span": "lg:col-span-2"
+      },
       "/placeholder.svg?height=300&width=400",
       "/placeholder.svg?height=300&width=400",
       "/placeholder.svg?height=300&width=400",
@@ -392,67 +367,15 @@
 
     "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
 
-    "activities": [
-      {
-        "title": "Sunday Morning Worship",
-        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
-
-        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
-        "participants": "Full congregation"
-      },
-      {
-        "title": "Choir Ministry",
-        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
-
-        "schedule": "Wednesdays 7:00 PM",
-        "participants": "25 choir members"
-      },
-      {
-        "title": "Instrumental Training",
-        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
-
-        "schedule": "Various times throughout the week",
-        "participants": "15 musicians"
-      },
-      {
-        "title": "Worship Team Development",
-        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
-
-        "schedule": "Monthly workshops",
-        "participants": "20 team members"
-      }
-    ],
-
-    "upcomingEvents": [
-      {
-        "title": "Worship Night",
-        "date": "June 15, 2024",
-        "time": "7:00 PM - 9:00 PM",
-        "location": "Main Sanctuary",
-        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
-
-        "cost": "Free",
-        "registration": "No registration required"
-      },
-      {
-        "title": "Choir Auditions",
-        "date": "June 1, 2024",
-        "time": "2:00 PM - 5:00 PM",
-        "location": "Music Room",
-        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
-
-        "cost": "Free",
-        "registration": "Contact Sarah Johnson"
-      }
-    ]
+    "experience": "Fellowship - To encourage a sense of community among women through building of healthy relationships/friendships by the transforming power of Christ, Discipleship - To encourage the study of God’s Word and to inspire women to follow Christ through the empowerment of the Holy Spirit, Outreach - To equip women to share God’s love and the message of the Gospel with family, friends and neighbours, Prayer - To encourage corporate and individual worship and intercession for local, national, and worldwide needs, Service - To encourage women use their gifts in advancing God’s Kingdom"
   },
   "evangelism-ministry": {
     "title": "  Evangelism, Outreach, and Discipleship Ministry ",
     "slug": "evangelism-ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
-    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
-    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
-    "verseReference": "Psalm 100:2",
+    "description": "Our Evangelism, Outreach, and Discipleship Ministry is our direct response to Jesus’ Great Commission to go and make disciples for Jesus.",
+    "verse": "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you.",
+    "verseReference": "Mathew 28:19-20",
     "category": "Worship",
     "slogan": "Reaching Hearts, Transforming Lives, Making Disciples",
 
@@ -473,74 +396,31 @@
     "yearsActive": "8",
     "heroImage": "/evangelism.jpg",
     "images": [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-
-      "/placeholder.svg?height=300&width=400"
+      {
+        "src": "/uploads/WhatsApp Image 2025-07-18 at 15.05.51.jpeg",
+        "alt": "Ministry activity 1",
+        "height": 300,
+        "title": "Youth Gathering",
+        "description": "Building community through faith and fellowship",
+        "span": "lg:row-span-2"
+      },
+      {
+        "src": "/uploads/WhatsApp Image 2025-07-18 at 15.06.00.jpeg",
+        "alt": "Ministry activity 3",
+        "height": 350,
+        "title": "Evangerism",
+        "description": "Evangelism.",
+        "span": "lg:col-span-2"
+      }
     ],
 
     "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
 
     "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
 
-    "activities": [
-      {
-        "title": "Sunday Morning Worship",
-        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
-
-        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
-        "participants": "Full congregation"
-      },
-      {
-        "title": "Choir Ministry",
-        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
-
-        "schedule": "Wednesdays 7:00 PM",
-        "participants": "25 choir members"
-      },
-      {
-        "title": "Instrumental Training",
-        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
-
-        "schedule": "Various times throughout the week",
-        "participants": "15 musicians"
-      },
-      {
-        "title": "Worship Team Development",
-        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
-
-        "schedule": "Monthly workshops",
-        "participants": "20 team members"
-      }
-    ],
-
-    "upcomingEvents": [
-      {
-        "title": "Worship Night",
-        "date": "June 15, 2024",
-        "time": "7:00 PM - 9:00 PM",
-        "location": "Main Sanctuary",
-        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
-
-        "cost": "Free",
-        "registration": "No registration required"
-      },
-      {
-        "title": "Choir Auditions",
-        "date": "June 1, 2024",
-        "time": "2:00 PM - 5:00 PM",
-        "location": "Music Room",
-        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
-
-        "cost": "Free",
-        "registration": "Contact Sarah Johnson"
-      }
-    ]
+    "experience": "To share the message of salvation with other people through preaching, personal witnessing, and other established and modern means."
   },
-  "Prison Ministry": {
+  "prison-ministry": {
     "title": " Prison Ministry ",
     "slug": "prison-ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
@@ -634,17 +514,18 @@
       }
     ]
   },
-  "  Social Welfare Ministry": {
-    "title": "   Social Welfare Ministry",
-    "slug": "Social-Welfare-Ministry",
+
+  "soial-welfare-ministry": {
+    "title": "Social Welfare Ministry",
+    "slug": "soial-welfare-ministry",
     "subtitle": "Leading Hearts in Worship and Praise",
-    "description": "Our worship ministry creates an atmosphere of reverence and celebration, leading our congregation in meaningful worship experiences that honor God and inspire hearts.",
-    "verse": "Worship the LORD with gladness; come before him with joyful songs.",
-    "verseReference": "Psalm 100:2",
+    "description": "our Social Welfare Ministry exists to carry out acts of kindness to all kinds of people in the Church and Zomba, and beyond.",
+    "verse": "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.",
+    "verseReference": " Galatians 6:9",
     "slogan": "Serving Others, Sharing God's Love",
 
     "category": "Worship",
-    "coverPage": "/evangelism.jpg",
+    "coverPage": "/uploads/WhatsApp Image 2025-07-18 at 15.06.00.jpeg",
     "leader": {
       "name": "Sarah Johnson",
       "title": "Worship Pastor",
@@ -659,73 +540,29 @@
     "ageGroup": "All ages",
     "memberCount": "45",
     "yearsActive": "8",
-    "heroImage": "/evangelism.jpg",
+    "heroImage": "/uploads/WhatsApp Image 2025-07-18 at 15.06.00.jpeg",
     "images": [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-
-      "/placeholder.svg?height=300&width=400"
+      {
+        "src": "/uploads/WhatsApp Image 2025-07-18 at 15.05.51.jpeg",
+        "alt": "Ministry activity 1",
+        "height": 300,
+        "title": "Sharing is Giving",
+        "description": "Sharing is Giving",
+        "span": "lg:row-span-2"
+      },
+      {
+        "src": "/uploads/WhatsApp Image 2025-07-18 at 15.06.00.jpeg",
+        "alt": "Ministry activity 3",
+        "height": 350,
+        "title": "Sharing",
+        "description": "Sharing is Giving",
+        "span": "lg:col-span-2"
+      }
     ],
 
     "mission": "To create authentic worship experiences that draw people into God's presence and inspire them to live lives of worship beyond Sunday morning.",
 
-    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community.",
-
-    "activities": [
-      {
-        "title": "Sunday Morning Worship",
-        "description": "Leading our congregation in contemporary and traditional worship through carefully selected music that enhances the worship experience and supports the message.",
-
-        "schedule": "Every Sunday 9:00 AM & 11:00 AM",
-        "participants": "Full congregation"
-      },
-      {
-        "title": "Choir Ministry",
-        "description": "Our choir provides special music for services and events, welcoming singers of all skill levels and providing training to help everyone contribute their best.",
-
-        "schedule": "Wednesdays 7:00 PM",
-        "participants": "25 choir members"
-      },
-      {
-        "title": "Instrumental Training",
-        "description": "Music lessons and training for various instruments including piano, guitar, drums, and more, equipping musicians to serve in worship and develop their talents.",
-
-        "schedule": "Various times throughout the week",
-        "participants": "15 musicians"
-      },
-      {
-        "title": "Worship Team Development",
-        "description": "Regular training sessions for worship team members focusing on both musical excellence and the heart of worship, including spiritual preparation and team building.",
-
-        "schedule": "Monthly workshops",
-        "participants": "20 team members"
-      }
-    ],
-
-    "upcomingEvents": [
-      {
-        "title": "Worship Night",
-        "date": "June 15, 2024",
-        "time": "7:00 PM - 9:00 PM",
-        "location": "Main Sanctuary",
-        "description": "An evening dedicated to praise and worship with special guest musicians and extended worship time.",
-
-        "cost": "Free",
-        "registration": "No registration required"
-      },
-      {
-        "title": "Choir Auditions",
-        "date": "June 1, 2024",
-        "time": "2:00 PM - 5:00 PM",
-        "location": "Music Room",
-        "description": "Open auditions for new choir members. All skill levels welcome. Come prepared with a song of your choice.",
-
-        "cost": "Free",
-        "registration": "Contact Sarah Johnson"
-      }
-    ]
+    "vision": "To see our entire congregation engaged in heartfelt worship that transforms lives and glorifies God in every aspect of our church community."
   }
+
 }

@@ -18,6 +18,7 @@ import data from "../lib/data.json";
 import { useParams } from "react-router-dom";
 
 export default function MinistryDetailPage() {
+  
   const { slug } = useParams();
   const ministry = data[slug];
   return (

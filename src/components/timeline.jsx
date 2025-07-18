@@ -5,21 +5,21 @@ import { motion, useAnimation } from "framer-motion";
 export default function Timeline() {
   const timelineData = [
     {
-      year: "1978",
-      title: "Foundation",
-      description: "Zomba Baptist Church was founded ih 1978 ",
+      year: "1979",
+      title: "Pastor Kachaso",
+      description: "Started with a few families meeting in a garage at Mulunguzi and at Old Naisi ",
       icon: "🏛️",
     },
     {
       year: "2010",
-      title: "Rebranding",
+      title: "Reverend Rayndall Day",
       description:
         "Zomba Baptist Church was founded by a small group of families committed to establishing a welcoming place of worship in our community.",
       icon: "🔄",
     },
     {
       year: "2011",
-      title: "Outreach",
+      title: "Pastor Oscar Matupi",
       description:
         "We launched several new outreach programs to better serve our local community and expanded our global missions work..",
       icon: "📜",
@@ -27,9 +27,31 @@ export default function Timeline() {
 
     {
       year: "2024",
-      title: "Digital Expansion",
+      title: "Pastor Ackim Chirwa",
       description:
         "As our congregation grew, we expanded our facilities to include a larger sanctuary, educational wing, and community center.",
+      icon: "🏆",
+    },
+
+  {
+      year: "2024",
+      title: "Pastor Bell",
+      description:
+        "As our congregation grew, we expanded our facilities to include a larger sanctuary, educational wing, and community center.",
+      icon: "🏆",
+    },
+    {
+      year: "2024",
+      title: "Pastor Funwayo Mafuleka",
+      description:
+        "As our congregation grew, we expanded our facilities to include a larger sanctuary, educational wing, and community center.",
+      icon: "🏆",
+    },
+    {
+      year: "2024",
+      title: "Pastor Richard Makhenjera",
+      description:
+        ".",
       icon: "🏆",
     },
   ];
