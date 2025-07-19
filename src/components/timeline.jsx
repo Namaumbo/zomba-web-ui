@@ -6,53 +6,57 @@ export default function Timeline() {
   const timelineData = [
     {
       year: "1979",
-      title: "Pastor Kachaso",
-      description: "Started with a few families meeting in a garage at Mulunguzi and at Old Naisi ",
+      title: "Foundation",
+      description:
+        "Started with a few families meeting in a garage at Mulunguzi and at Old Naisi ",
       icon: "🏛️",
     },
     {
-      year: "2010",
-      title: "Reverend Rayndall Day",
-      description:
-        "Zomba Baptist Church was founded by a small group of families committed to establishing a welcoming place of worship in our community.",
+      year: "Late 1980s",
+      title: "The movement",
+      description: "Moved to church premises behind Standard Bank.",
       icon: "🔄",
     },
     {
-      year: "2011",
-      title: "Pastor Oscar Matupi",
+      year: "1990s – 2000s  ",
+      title: "Education",
+      description: " Opening a nursery school and the primary school.",
+      icon: "👨🏾‍🎓",
+    },
+    {
+      year: "2000 +",
+      title: "Reaching out to the vulnerable",
       description:
         "We launched several new outreach programs to better serve our local community and expanded our global missions work..",
       icon: "📜",
     },
 
     {
-      year: "2024",
-      title: "Pastor Ackim Chirwa",
-      description:
-        "As our congregation grew, we expanded our facilities to include a larger sanctuary, educational wing, and community center.",
-      icon: "🏆",
-    },
-
-  {
-      year: "2024",
-      title: "Pastor Bell",
+      year: "2000 +",
+      title: "Expansion in ministries.",
       description:
         "As our congregation grew, we expanded our facilities to include a larger sanctuary, educational wing, and community center.",
       icon: "🏆",
     },
     {
-      year: "2024",
-      title: "Pastor Funwayo Mafuleka",
+      year: "2021 +",
+      title: "Successful school ministry.",
       description:
         "As our congregation grew, we expanded our facilities to include a larger sanctuary, educational wing, and community center.",
-      icon: "🏆",
+      icon: "👨🏾‍🎓",
     },
     {
-      year: "2024",
-      title: "Pastor Richard Makhenjera",
-      description:
-        ".",
-      icon: "🏆",
+      year: "2021 + ",
+      title: "Membership reached over 800",
+      description: "expansion of the church members.",
+      icon: "🧑🏼‍🤝‍🧑🏻",
+    },
+    {
+      year: "Present day",
+      title:
+        "Zomba Baptist celebrates a vibrant history of worship, community service, and ministry growth—all by the grace of God",
+      description: ".",
+      icon: "🧑🏼‍🤝‍🧑🏻",
     },
   ];
 

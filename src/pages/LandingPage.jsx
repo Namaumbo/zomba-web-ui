@@ -35,19 +35,6 @@ export default function LandingPage() {
     show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  // Create refs and hooks for scroll animations
-  const useScrollAnimation = () => {
-    const ref = React.useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    return { ref, isInView };
-  };
-
   return (
     <div>
       {/* Main Content */}
@@ -62,17 +49,14 @@ export default function LandingPage() {
         {/* Service Times & Location */}
         <section className="container mx-auto py-12 md:py-16 bg-white flex flex-col justify-center items-center">
           <motion.div
-            className=" flex gap-2 justify-center items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
+            className="inline-flex items-center  rounded-full border border-purple-200 bg-purple-100 px-5 py-2 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-200"
             whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <HeartHandshakeIcon/>
-
-           <span className=" text-md">Join Us</span> 
+            <HeartHandshakeIcon className="w-4 h-4 mr-1" />
+            Join us
           </motion.div>
+
           <motion.h2
             className=" text-[#1D3557] text-3xl mb-8 mt-6 font-bold tracking-tighter sm:text-4xl md:text-5xl"
             initial={{ opacity: 0, y: 20 }}
@@ -80,7 +64,7 @@ export default function LandingPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Join Us for Worship
+            Join us For Worship
           </motion.h2>
           <div className="px-4 md:px-6 3xl:max-w-5xl">
             <div className="grid gap-5 lg:grid-cols-2 items-center">
@@ -160,7 +144,7 @@ export default function LandingPage() {
                     whileInView={{ opacity: 0.15 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 0.6 }}
-                    className="absolute -bottom-32  w-96 h-96 bg-purple-600 rounded-full blur-2xl -z-10"
+                    className="absolute -bottom-32  w-76 h-66 bg-purple-500 rounded-full blur-2xl "
                   />
                 </motion.div>
               </motion.div>
@@ -280,7 +264,14 @@ export default function LandingPage() {
                     Corporate <span className="text-purple-500">Prayer</span>{" "}
                     Sessions{" "}
                   </h2>
-
+                  {/* Purple gradient blob */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 0.15 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                    className="absolute -bottom-5  w-76 h-66 bg-purple-500 rounded-full blur-2xl z-[-1]"
+                  />
                   <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -338,13 +329,20 @@ export default function LandingPage() {
                       </p>
                     </motion.div>
                   </motion.div>
-                  <Link
-                    to="/services"
-                    className="mb-6 bg-primary flex items-center justify-center text-white px-8 py-3 text-lg font-medium rounded-full w-40 group transition-all duration-200"
+
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
                   >
-                    Join Us
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                    <Link
+                      to="/services"
+                      className="mb-6 bg-primary flex items-center justify-center text-white px-8 py-3 text-lg font-medium rounded-full w-40 group transition-all duration-200"
+                    >
+                      Join Us
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </motion.div>
                 </div>
 
                 {/* Decorative Element */}

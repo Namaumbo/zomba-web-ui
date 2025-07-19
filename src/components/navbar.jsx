@@ -21,7 +21,9 @@ function NavBarComponent() {
     { path: "/services", label: "Services", Icon: <Settings size={18} /> },
     { path: "/ministries", label: "Ministries", Icon: <Users size={18} /> },
 
-    { path: "/events", label: "Events", Icon: <Calendar size={18} /> },
+    // { path: "/events", label: "Events", Icon: <Calendar size={18} /> },
+    { path: "/articles", label: "Articles", Icon: <Calendar size={18} /> },
+
     { path: "/contact", label: "Contact", Icon: <Phone size={18} /> },
   ];
 
@@ -51,18 +53,6 @@ function NavBarComponent() {
     },
   };
 
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    show: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 80,
-        damping: 10,
-      },
-    },
-  };
 
   return (
     <>

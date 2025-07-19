@@ -17,6 +17,8 @@ import {
   Calendar,
   Clock,
   MapPin,
+  HeartHandshake,
+  InfoIcon,
 } from "lucide-react";
 
 import { useEffect, useRef } from "react";
@@ -246,11 +248,23 @@ function AboutPage() {
               variants={staggerChildren}
               className="text-center mb-16"
             >
+              <motion.div
+                className=" mb-5 inline-flex items-center  rounded-full border border-purple-200 bg-purple-100 px-5 py-2 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-200"
+                whileHover={{ scale: 1.03 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                }}
+              > 
+                <InfoIcon className="w-4 h-4 mr-1" />
+                About us
+              </motion.div>
               <motion.h1
                 variants={scaleIn}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1D3557] mb-6"
               >
-                About Zomba Baptist Church
+                About <span className="text-primary">Zomba </span>Baptist Church
               </motion.h1>
               <motion.p
                 variants={fadeIn}
@@ -304,10 +318,16 @@ function AboutPage() {
                     The ZBC Story
                   </h2>
                 </motion.div>
-
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 0.15 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                  className="absolute -top-[-40]  w-76 h-66 bg-purple-300 rounded-full blur-2xl !z-[-1]"
+                />
                 <motion.div
                   variants={fadeIn}
-                  className="prose prose-lg text-[#1D3557]/80"
+                  className="prose prose-lg text-[#1D3557]/90  !z-1"
                 >
                   <p>
                     Zomba Baptist Church exists to share the transformative love
@@ -684,11 +704,16 @@ function AboutPage() {
                   {/* Header */}
                   <motion.div className="space-y-3" variants={itemVariants}>
                     <motion.div
-                      className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center  rounded-full border border-purple-200 bg-purple-100 px-5 py-2 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-200"
+                      whileHover={{ scale: 1.03 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
                     >
-                      Join Our Community
+                      <HeartHandshake className="w-4 h-4 mr-1" />
+                      Our Identity & Purpose
                     </motion.div>
                     <motion.h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
                       Service Times & Location
@@ -729,12 +754,13 @@ function AboutPage() {
                       </div>
                     </motion.div>
 
-                    {/* <motion.div
-                      className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
-                      variants={itemVariants}
-                      whileHover={{ x: 5 }}
-                    ></motion.div> */}
-
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 0.15 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.6 }}
+                      className="absolute -bottom-5  w-76 h-66 bg-purple-500 rounded-full blur-2xl z-[-1]"
+                    />
                     <motion.div
                       className="group flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50"
                       variants={itemVariants}

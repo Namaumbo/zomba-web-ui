@@ -7,13 +7,26 @@ import {
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CalendarIcon, Clock, User } from "lucide-react";
+import { CalendarIcon, Clock, InfoIcon, User } from "lucide-react";
 import { getAllArticles } from "../lib/api";
+import {
+  Heart,
+  Users,
+  BookOpen,
+  Home,
+  Shield,
+  CreditCard,
+  Smartphone,
+  Building,
+  Star,
+  Check,
+  ArrowRight,
+} from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion, useInView } from "framer-motion";
 
 export default function ArticlesPage() {
   const [articles, setArticles] = useState([]);
@@ -34,17 +47,32 @@ export default function ArticlesPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
-
       <div className="relative flex flex-col items-center mb-12 text-center">
-        <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-200 via-purple-500 to-purple-200 rounded-full"></div>
-        <h1 className="text-4xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-purple-500">
-          Church Articles
-        </h1>
-        <p className="text-muted-foreground max-w-2xl relative">
-          Explore our collection of articles on faith, community, and spiritual
-          growth to help you on your journey.
-        </p>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          className="text-center mb-16  mt-5"
+        >
+          <motion.div
+            className=" mb-5 inline-flex items-center  rounded-full border border-purple-200 bg-purple-100 px-5 py-2 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-200"
+            whileHover={{ scale: 1.03 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 10,
+            }}
+          >
+            <InfoIcon className="w-4 h-4 mr-1" />
+            Our Stories
+          </motion.div>
+          <motion.h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1D3557] mb-6">
+            Zomba<span className="text-primary"> Baptist </span> Church Stories
+          </motion.h1>
+          <motion.p className="max-w-3xl mx-auto text-lg text-[#1D3557]/80">
+            Explore our collection of articles on faith, community, and
+            spiritual growth to help you on your journey.
+          </motion.p>
+        </motion.div>
       </div>
 
       {/* Featured Article */}
@@ -52,43 +80,42 @@ export default function ArticlesPage() {
         <h2 className="text-2xl font-semibold mb-6">Featured Article</h2>
         <div className="relative overflow-hidden rounded-xl">
           <div className="grid md:grid-cols-2 gap-6 bg-muted/50 p-6 rounded-xl">
-            <div className="relative h-[300px] md:h-auto rounded-lg overflow-hidden">
+            <div className="relative h-[400px] md:h-auto rounded-lg overflow-hidden">
               <img
-                src="/bg-3.jpg"
+                src="/uploads/articles/article.png"
                 alt="Finding Peace in Prayer"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="flex flex-col justify-center">
-              <Badge className="w-fit mb-4" variant="secondary">
-                Faith
-              </Badge>
               <h3 className="text-3xl font-bold mb-2">
-                Finding Peace in Prayer: A Guide for Modern Christians
+                Healing the Heart: Christianity and Emotional Well-being Series:
+                Christianity and Mental Health - Part 1
               </h3>
               <p className="text-muted-foreground mb-4">
-                In today's fast-paced world, finding moments of peace through
-                prayer can transform your spiritual journey and daily life.
+                Mental health is not just about what we think or how we act. It
+                also includes how we feel inside — deep in our hearts. The heart
+                is the center of our emotions. It holds joy, sadness, fear,
+                love, anger, and peace. When our hearts are hurting, our whole
+                lives can feel heavy..
               </p>
               <div className="flex items-center gap-6 mb-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <User size={16} />
-                  <span>Pastor Michael Johnson</span>
+                  <span>Julie T. Soko</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CalendarIcon size={16} />
-                  <span>May 15, 2023</span>
+                  <span>July 19, 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock size={16} />
-                  <span>8 min read</span>
+                  <span>5 min read</span>
                 </div>
               </div>
               <Button asChild>
-                <Link href="/articles/finding-peace-in-prayer">
-                  Read Article
-                </Link>
+                <Link to="/articles/finding-peace-in-prayer">Read Article</Link>
               </Button>
             </div>
           </div>
@@ -96,19 +123,18 @@ export default function ArticlesPage() {
       </div>
 
       {/* Article Categories */}
-      <div className="flex justify-between items-center mb-6">
+      {/* <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold">All Articles</h2>
-      </div>
+      </div> */}
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.map((article) => (
           <ArticleCard key={article.id} article={article} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
-
 
 function ArticleCard({ article }) {
   const STRAPI_URL = import.meta.env.VITE_STRAPI_URL;

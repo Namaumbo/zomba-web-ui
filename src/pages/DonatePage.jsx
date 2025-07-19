@@ -59,10 +59,10 @@ const DonatePage = () => {
         <div className="absolute inset-0 " />
         <div className="container mx-auto px-4 relative">
           <div className="text-center max-w-4xl mx-auto">
-            <Badge className="mb-6 bg-purple-100 text-purple-700 hover:bg-purple-200 text-lg px-4 py-2">
-              <Heart className="w-4 h-4 mr-2" />
+            <div className="inline-flex items-center  rounded-full border border-purple-200 bg-purple-100 px-5 py-2 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-200">
+              <Heart className="w-4 h-4 mr-1" />
               Make a Difference
-            </Badge>
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
               Your <span className="text-primary">Generosity</span> Changes
               Lives

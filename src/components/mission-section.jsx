@@ -54,12 +54,14 @@ export default function MissionSection() {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <motion.div
-              className=" flex justify-center items-center gap-1 w-fit m-auto mb-5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
+              className="inline-flex items-center  rounded-full border border-purple-200 bg-purple-100 px-5 py-2 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-200"
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <BadgeInfo/>
-              Our Identity & Purpose
+             
+                <BadgeInfo className="w-4 h-4 mr-1" />
+                Our Identity & Purpose
+           
             </motion.div>
 
             <h2 className="text-3xl font-bold text-[#1D3557] tracking-tighter sm:text-4xl md:text-5xl">
