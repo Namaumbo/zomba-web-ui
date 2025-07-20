@@ -263,7 +263,7 @@ export default function ArticleDetailPage() {
                 <div>
                   <p className="font-semibold text-gray-900">Julie T. Soko</p>
                   <p className="text-sm text-gray-600">
-                    sychotherapist and faith-based counsellor based in Zomba,
+                    Psychotherapist and faith-based counsellor based in Zomba,
                     Malawi.
                   </p>
                 </div>
