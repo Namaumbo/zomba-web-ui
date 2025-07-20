@@ -376,7 +376,7 @@ function AboutPage() {
             >
               {[
                 {
-                  number: "590",
+                  number: "800+",
                   text: "members",
                   custom: 0,
                 },

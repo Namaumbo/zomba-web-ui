@@ -1,15 +1,26 @@
-"use client"
+"use client";
 
-import  React from "react"
+import React from "react";
 
-import { useState, useRef, useEffect } from "react"
-import { motion, useInView, useAnimation, AnimatePresence } from "framer-motion"
-import { Check, MapPin, Phone, Mail, Clock, Send, Loader2 } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { cn } from "@/lib/utils"
+import { useState, useRef, useEffect } from "react";
+import {
+  motion,
+  useInView,
+  useAnimation,
+  AnimatePresence,
+} from "framer-motion";
+import { Check, MapPin, Phone, Mail, Clock, Send, Loader2 } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 export default function ContactMap() {
   // Form state
@@ -19,47 +30,47 @@ export default function ContactMap() {
     phone: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [focusedField, setFocusedField] = useState(null)
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [focusedField, setFocusedField] = useState(null);
 
   // Animation controls
-  const controls = useAnimation()
-  const formRef = useRef(null)
-  const mapRef = useRef(null)
-  const isFormInView = useInView(formRef, { once: true, amount: 0.3 })
-  const isMapInView = useInView(mapRef, { once: true, amount: 0.3 })
+  const controls = useAnimation();
+  const formRef = useRef(null);
+  const mapRef = useRef(null);
+  const isFormInView = useInView(formRef, { once: true, amount: 0.3 });
+  const isMapInView = useInView(mapRef, { once: true, amount: 0.3 });
 
   useEffect(() => {
     if (isFormInView) {
-      controls.start("formVisible")
+      controls.start("formVisible");
     }
     if (isMapInView) {
-      controls.start("mapVisible")
+      controls.start("mapVisible");
     }
-  }, [controls, isFormInView, isMapInView])
+  }, [controls, isFormInView, isMapInView]);
 
   // Form handlers
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormState((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSelectChange = (value) => {
-    setFormState((prev) => ({ ...prev, subject: value }))
-  }
+    setFormState((prev) => ({ ...prev, subject: value }));
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-  }
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+  };
 
   // Animation variants
   const containerVariants = {
@@ -75,7 +86,7 @@ export default function ContactMap() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -95,7 +106,7 @@ export default function ContactMap() {
         ease: [0.22, 1, 0.36, 1],
       },
     },
-  }
+  };
 
   const successVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -114,14 +125,20 @@ export default function ContactMap() {
         duration: 0.3,
       },
     },
-  }
+  };
 
   const contactInfo = [
-    { icon: <MapPin className="h-5 w-5" />, text: "123 Church Street, Zomba, Malawi" },
-    { icon: <Phone className="h-5 w-5" />, text: "+265 1 234 5678" },
+    {
+      icon: <MapPin className="h-5 w-5" />,
+      text: "Zomba, Malawi",
+    },
+    { icon: <Phone className="h-5 w-5" />, text: "(+265) 993 740 261" },
     { icon: <Mail className="h-5 w-5" />, text: "info@zombabaptist.org" },
-    { icon: <Clock className="h-5 w-5" />, text: "Sunday Services: 8:00 AM & 10:30 AM" },
-  ]
+    {
+      icon: <Clock className="h-5 w-5" />,
+      text: "Sunday Services: 8:00 AM & 10:30 AM",
+    },
+  ];
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-muted/30 to-background overflow-hidden">
@@ -132,9 +149,12 @@ export default function ContactMap() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-[#1D3557]text-4xl md:text-5xl font-bold tracking-tight mb-4">Get In Touch</h2>
+          <h2 className="text-[#1D3557] text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Get In Touch
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We'd love to hear from you. Whether you have a question, prayer request, or want to join our community.
+            We'd love to hear from you. Whether you have a question, prayer
+            request, or want to join our community.
           </p>
         </motion.div>
 
@@ -153,9 +173,12 @@ export default function ContactMap() {
             />
 
             <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="text-2xl font-bold tracking-tight mb-2">Send Us a Message</h3>
+              <h3 className="text-2xl font-bold tracking-tight mb-2">
+                Send Us a Message
+              </h3>
               <p className="text-muted-foreground">
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and we'll get back to you as soon as
+                possible.
               </p>
             </motion.div>
 
@@ -177,21 +200,24 @@ export default function ContactMap() {
                   >
                     <Check className="h-8 w-8 text-green-600" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-3">Message Sent Successfully!</h3>
+                  <h3 className="text-2xl font-bold text-green-800 mb-3">
+                    Message Sent Successfully!
+                  </h3>
                   <p className="text-green-700 mb-6">
-                    Thank you for contacting Zomba Baptist Church. We'll respond to your message as soon as possible.
+                    Thank you for contacting Zomba Baptist Church. We'll respond
+                    to your message as soon as possible.
                   </p>
                   <Button
                     variant="outline"
                     onClick={() => {
-                      setIsSubmitted(false)
+                      setIsSubmitted(false);
                       setFormState({
                         name: "",
                         email: "",
                         phone: "",
                         subject: "",
                         message: "",
-                      })
+                      });
                     }}
                   >
                     Send Another Message
@@ -203,7 +229,10 @@ export default function ContactMap() {
                   onSubmit={handleSubmit}
                   className="space-y-6 bg-card rounded-xl p-6 md:p-8 shadow-sm border"
                 >
-                  <motion.div variants={itemVariants} className="grid gap-6 sm:grid-cols-2">
+                  <motion.div
+                    variants={itemVariants}
+                    className="grid gap-6 sm:grid-cols-2"
+                  >
                     <div className="space-y-2">
                       <label
                         htmlFor="name"
@@ -213,7 +242,11 @@ export default function ContactMap() {
                       </label>
                       <motion.div
                         whileFocus={{ scale: 1.01 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        }}
                       >
                         <Input
                           id="name"
@@ -225,7 +258,8 @@ export default function ContactMap() {
                           placeholder="Your name"
                           className={cn(
                             "transition-all duration-300",
-                            focusedField === "name" && "border-primary shadow-sm",
+                            focusedField === "name" &&
+                              "border-primary shadow-sm"
                           )}
                           required
                         />
@@ -240,7 +274,11 @@ export default function ContactMap() {
                       </label>
                       <motion.div
                         whileFocus={{ scale: 1.01 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        }}
                       >
                         <Input
                           id="email"
@@ -253,7 +291,8 @@ export default function ContactMap() {
                           placeholder="Your email"
                           className={cn(
                             "transition-all duration-300",
-                            focusedField === "email" && "border-primary shadow-sm",
+                            focusedField === "email" &&
+                              "border-primary shadow-sm"
                           )}
                           required
                         />
@@ -270,7 +309,11 @@ export default function ContactMap() {
                     </label>
                     <motion.div
                       whileFocus={{ scale: 1.01 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
                     >
                       <Input
                         id="phone"
@@ -283,7 +326,7 @@ export default function ContactMap() {
                         placeholder="Your phone number"
                         className={cn(
                           "transition-all duration-300",
-                          focusedField === "phone" && "border-primary shadow-sm",
+                          focusedField === "phone" && "border-primary shadow-sm"
                         )}
                       />
                     </motion.div>
@@ -296,12 +339,16 @@ export default function ContactMap() {
                     >
                       Subject
                     </label>
-                    <Select value={formState.subject} onValueChange={handleSelectChange}>
+                    <Select
+                      value={formState.subject}
+                      onValueChange={handleSelectChange}
+                    >
                       <SelectTrigger
                         id="subject"
                         className={cn(
                           "transition-all duration-300",
-                          focusedField === "subject" && "border-primary shadow-sm",
+                          focusedField === "subject" &&
+                            "border-primary shadow-sm"
                         )}
                         onFocus={() => setFocusedField("subject")}
                         onBlur={() => setFocusedField(null)}
@@ -311,8 +358,12 @@ export default function ContactMap() {
                       <SelectContent>
                         <SelectItem value="general">General Inquiry</SelectItem>
                         <SelectItem value="prayer">Prayer Request</SelectItem>
-                        <SelectItem value="membership">Membership Information</SelectItem>
-                        <SelectItem value="volunteer">Volunteer Opportunities</SelectItem>
+                        <SelectItem value="membership">
+                          Membership Information
+                        </SelectItem>
+                        <SelectItem value="volunteer">
+                          Volunteer Opportunities
+                        </SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
@@ -327,7 +378,11 @@ export default function ContactMap() {
                     </label>
                     <motion.div
                       whileFocus={{ scale: 1.01 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
                     >
                       <Textarea
                         id="message"
@@ -340,18 +395,28 @@ export default function ContactMap() {
                         rows={5}
                         className={cn(
                           "transition-all duration-300",
-                          focusedField === "message" && "border-primary shadow-sm",
+                          focusedField === "message" &&
+                            "border-primary shadow-sm"
                         )}
                         required
                       />
                     </motion.div>
                   </motion.div>
 
-                  <motion.div variants={itemVariants} whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}>
-                    <Button type="submit" className="w-full py-6 text-base font-medium" disabled={isSubmitting}>
+                  <motion.div
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Button
+                      type="submit"
+                      className="w-full py-6 text-base font-medium"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />{" "}
+                          Sending...
                         </>
                       ) : (
                         <>
@@ -374,9 +439,12 @@ export default function ContactMap() {
             className="space-y-8"
           >
             <motion.div variants={itemVariants} className="mb-6">
-              <h3 className="text-2xl font-bold tracking-tight mb-2">Find Us</h3>
+              <h3 className="text-2xl font-bold tracking-tight mb-2">
+                Find Us
+              </h3>
               <p className="text-muted-foreground">
-                We're conveniently located in the heart of Zomba, just a few blocks from downtown.
+                We're conveniently located in the heart of Zomba, just a few
+                blocks from downtown.
               </p>
             </motion.div>
 
@@ -407,7 +475,10 @@ export default function ContactMap() {
               </motion.div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="space-y-6 bg-card rounded-xl p-6 border shadow-sm">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-6 bg-card rounded-xl p-6 border shadow-sm"
+            >
               <h3 className="text-xl font-bold">Contact Information</h3>
               <div className="space-y-4">
                 {contactInfo.map((item, index) => (
@@ -428,17 +499,16 @@ export default function ContactMap() {
             <motion.div variants={itemVariants} className="space-y-2">
               <h3 className="text-xl font-bold">Directions</h3>
               <p className="text-muted-foreground">
-                From M1 road, turn at Zomba Clock Tower into Zomba City. Drive straight through town passing Zomba
-                Police Station. Continue up the hill and turn right at Zomba Baptist Church sign. The church is located
-                on the right side.
+                Behind Standard Bank, in town just after Southen water board..
               </p>
               <p className="text-muted-foreground">
-                Public Transportation: Bus routes 10 and 15 stop directly in front of the church.
+                Public Transportation: Bus routes 10 and 15 stop directly in
+                front of the church.
               </p>
             </motion.div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -15,8 +15,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from "react-router-dom";
 
 const DonatePage = () => {
   const impactAreas = [
@@ -46,8 +44,6 @@ const DonatePage = () => {
       color: "from-pink-500 to-pink-600",
     },
   ];
-
-  const donationAmounts = [25, 50, 100, 250, 500, 1000];
 
   React.useEffect(() => {
     document.title = "Donate | Zomba Baptist Church";
@@ -110,7 +106,7 @@ const DonatePage = () => {
                             Bank Name:
                           </p>
                           <p className="text-gray-900 font-semibold">
-                            Standard Bank Malawi
+                            National Bank - Mo626
                           </p>
                         </div>
                         <div className="space-y-2">
@@ -126,14 +122,14 @@ const DonatePage = () => {
                             Account Number:
                           </p>
                           <p className="text-gray-900 font-semibold">
-                            9100004567890
+                            270121
                           </p>
                         </div>
                         <div className="space-y-2">
                           <p className="text-sm font-medium text-gray-700">
-                            Branch Code:
+                            Branch Name:
                           </p>
-                          <p className="text-gray-900 font-semibold">001234</p>
+                          <p className="text-gray-900 font-semibold">Zomba Branch</p>
                         </div>
                       </div>
                       <div className="mt-4 p-3 bg-blue-100 rounded-lg">
@@ -145,7 +141,7 @@ const DonatePage = () => {
                     </div>
 
                     {/* Mobile Money */}
-                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+                    {/* <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
                           <Smartphone className="w-6 h-6 text-white" />
@@ -199,7 +195,7 @@ const DonatePage = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* In-Person Giving */}
                     <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200">
@@ -246,7 +242,7 @@ const DonatePage = () => {
                     </div>
 
                     {/* Designation Options */}
-                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                    {/* <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                       <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                         <BookOpen className="w-5 h-5 text-gray-700" />
                         Designation Options
@@ -295,7 +291,7 @@ const DonatePage = () => {
                           please specify which area you'd like to support
                         </p>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Contact for Donations */}
                     <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border border-indigo-200">
@@ -323,7 +319,7 @@ const DonatePage = () => {
                             Pastor's Office
                           </p>
                           <p className="text-gray-900 font-semibold">
-                            +265 888 123 456
+                            +265 991 761 130
                           </p>
                           <p className="text-gray-900">
                             pastor@zombabaptist.org

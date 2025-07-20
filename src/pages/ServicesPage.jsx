@@ -238,7 +238,7 @@ sermons in Chichewa."
               <ServiceCard
                 image="/bg-3.jpg"
                 service="Joint Service"
-                time="Wednesday, 6:30"
+                time="Sunday, 9:00"
                 location="Main Church"
                 description="A modern 
 worship, prayer, and Bible-based sermons in combined Chichewa and 

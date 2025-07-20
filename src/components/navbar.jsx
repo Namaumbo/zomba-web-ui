@@ -53,7 +53,6 @@ function NavBarComponent() {
     },
   };
 
-
   return (
     <>
       <div className="bg-purple-900 text-white py-2 px-4 md:px-8">
@@ -150,7 +149,7 @@ function NavBarComponent() {
               ))}
               <Link to={"/donate"} className="mb-2">
                 <Button className="h-12 px-4">
-                  <span className="6 font-extrabold p-4">Donate</span>
+                  <span className="6 font-extrabold p-4">Give</span>
                 </Button>
               </Link>
             </nav>
@@ -183,7 +182,7 @@ function NavBarComponent() {
                 to={"/donate"}
                 className="h-12 px-6 bg-primary text-white py-3 rounded-md transition-colors inline-block w-fit"
               >
-                DONATE
+                Give{" "}
               </Link>
             </div>
           </motion.nav>

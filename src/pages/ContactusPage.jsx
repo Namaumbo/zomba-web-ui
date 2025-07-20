@@ -6,13 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import {
   Heart,
   MapPin,
@@ -20,8 +14,7 @@ import {
   Mail,
   Clock,
   HelpCircle,
-  Send,
-  Check,
+  UsersRound,
 } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import ContactMap from "../components/contact-map";
@@ -113,7 +106,7 @@ export default function ContactPage() {
       name: "Pastor Richard Makhenjera",
       position: "Resident Pastor",
       email: "example@example.com",
-      phone: "(+256) 987654321 ",
+      phone: "(+256) 991 7611 130 ",
       img: "",
     },
     {
@@ -124,17 +117,10 @@ export default function ContactPage() {
       img: "/placeholder.svg?height=200&width=200",
     },
     {
-      name: "Michael Chen",
-      position: "Youth Pastor",
-      email: "example@example@gmail.com",
-      phone: "(+265) 987654321 ",
-      img: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      name: "Jennifer Martinez",
-      position: "Children's Ministry Director",
-      email: "example@example@gmail.com",
-      phone: "(+265) 987654321",
+      name: "Prof. G. Kamchedzera",
+      position: "Elder",
+      email: "gkamchedzera@unima.ac.mw",
+      phone: "(+265) 992 58 0959 ",
       img: "/placeholder.svg?height=200&width=200",
     },
   ];
@@ -206,11 +192,12 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Our Location</h3>
-                  <p className="text-muted-foreground">123 Faith Avenue</p>
-                  <p className="text-muted-foreground">Anytown, ST 12345</p>
-                  <Button variant="link" className="mt-2">
-                    Get Directions
-                  </Button>
+                  <p className="text-muted-foreground">
+                    Zomba, easten region of Malawi
+                  </p>
+                  <p className="text-muted-foreground">
+                    In the old capital city of Malawi
+                  </p>
                 </CardContent>
               </Card>
 
@@ -220,11 +207,7 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Phone</h3>
-                  <p className="text-muted-foreground">(123) 456-7890</p>
-                  <p className="text-muted-foreground">Fax: (123) 456-7891</p>
-                  <Button variant="link" className="mt-2">
-                    Call Now
-                  </Button>
+                  <p className="text-muted-foreground">(+265) 993 740 261</p>
                 </CardContent>
               </Card>
 
@@ -234,13 +217,12 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Email</h3>
-                  <p className="text-muted-foreground">info@gracechurch.org</p>
                   <p className="text-muted-foreground">
-                    prayer@gracechurch.org
+                    info@zombabaptistchurch.org
                   </p>
-                  <Button variant="link" className="mt-2">
-                    Send Email
-                  </Button>
+                  <p className="text-muted-foreground">
+                    prayer@zombabaptistchurch.org
+                  </p>
                 </CardContent>
               </Card>
 
@@ -252,17 +234,9 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold mb-2">Office Hours</h3>
                   <p className="text-muted-foreground">Monday - Friday</p>
                   <p className="text-muted-foreground">9:00 AM - 5:00 PM</p>
-                  <Button variant="link" className="mt-2">
-                    View Schedule
-                  </Button>
                 </CardContent>
               </Card>
             </div>
-            From M1 road, turn at Zomba Clock Tower into Zomba City. Drive
-            straight through town passing Zomba Police Station. Continue up the
-            hill and turn right at Zomba Baptist Church sign. The church is
-            located on the right side. Public Transportation: Bus routes 10 and
-            15 stop directly in front of the church.{" "}
           </div>
         </section>
 
@@ -272,10 +246,19 @@ export default function ContactPage() {
           <div className="mx-auto container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                <motion.div
+                  className=" mb-5 inline-flex items-center  rounded-full border border-purple-200 bg-purple-100 px-5 py-2 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-200"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 10,
+                  }}
+                >
+                  <UsersRound className="w-4 h-4 mr-1" />
                   Our Team
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                </motion.div>
+                <h2 className=" text-[#1D3557]  text-3xl font-bold tracking-tighter sm:text-4xl">
                   Staff Directory & Feed back
                 </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-lg">
@@ -336,7 +319,7 @@ export default function ContactPage() {
                 >
                   Questions
                 </motion.div>
-                <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                <motion.h2 className=" text-[#1D3557] text-3xl font-bold tracking-tighter sm:text-4xl">
                   Frequently Asked Questions
                 </motion.h2>
                 <motion.div
