@@ -288,12 +288,12 @@ export default function LandingPage() {
                     whileInView={{ width: "60%" }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, delay: 0.2 }}
-                    className="h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"
+                    className="h-1 bg-gradient-to-r from-purple-600  rounded-full"
                   />
 
                   <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                     Corporate{" "}
-                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    <span className=" text-purple-600 bg-clip-text ">
                       Prayer
                     </span>{" "}
                     Sessions
@@ -305,7 +305,7 @@ export default function LandingPage() {
                     whileInView={{ opacity: 0.08 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5, delay: 0.6 }}
-                    className="absolute -bottom-10 -right-10 w-96 h-96 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl z-[-1]"
+                    className="absolute -bottom-10 -right-10 w-96 h-96  from-purple-500 rounded-full blur-3xl z-[-1]"
                   />
 
                   <motion.p
@@ -372,10 +372,11 @@ export default function LandingPage() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
+                    className="lg:mb-5 md:mb-5 mb-10"
                   >
                     <Link
                       to="/services"
-                      className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 text-lg font-semibold rounded-full w-fit group transition-all duration-300 hover:shadow-xl hover:scale-105"
+                      className="inline-flex items-center justify-center bg-purple-600  text-white px-8 py-4 text-lg font-semibold rounded-full w-fit group transition-all duration-300 hover:shadow-xl hover:scale-105"
                     >
                       Join Us
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

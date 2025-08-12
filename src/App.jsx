@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, Suspense } from "react";
 
 import "./App.css";
 import {
@@ -8,12 +8,6 @@ import {
   Outlet,
 } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
-import LandingPage from "./pages/LandingPage";
-import AboutPage from "./pages/AboutPage";
-import ServicePage from "./pages/ServicesPage";
-import EventsPage from "./pages/EventsPage";
-import ContactPage from "./pages/ContactusPage";
-import MinistryPage from "./pages/MinistryPage";
 import "@fontsource/inter";
 import ScrollToTop from "./components/scroll-top";
 import GalleryPage from "./pages/GalleryPage";
@@ -23,34 +17,126 @@ import AssociationPage from "./pages/AssociationPage";
 import DonatePage from "./pages/DonatePage";
 import SermonsPage from "./pages/SermonsPage";
 import MinistryDetailPage from "./pages/MinistryDetails";
+
 function App() {
+  const LandingPage = lazy(() => import("./pages/LandingPage"));
+  const AboutPage = lazy(() => import("./pages/AboutPage"));
+  const ServicePage = lazy(() => import("./pages/ServicesPage"));
+  const EventsPage = lazy(() => import("./pages/EventsPage"));
+  const ContactPage = lazy(() => import("./pages/ContactusPage"));
+  const MinistryPage = lazy(() => import("./pages/MinistryPage"));
+  const GalleryPage = lazy(() => import("./pages/GalleryPage"));
+
   return (
     <>
       <Router>
         <ScrollToTop />
         <Routes>
           <Route element={<MainLayout />}>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicePage />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/ministries" element={<MinistryPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/articles" element={<ArticlesPage />} />
-            <Route path="/articles/:slug" element={<ArticleDetailPage />} />
-            <Route path="/about/association" element={<AssociationPage />} />
-            <Route path="/donate" element={<DonatePage />} />
-            <Route path="/sermons" element={<SermonsPage />} />
-            <Route path="/ministries/:slug" element={<MinistryDetailPage />} />
-
-            {/* 
-            
-           
             <Route
-              path="ministries/ministry-details"
-              element={<MinistryExplaination />}
-            /> */}
+              path="/"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <LandingPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <AboutPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/services"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ServicePage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/events"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <EventsPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ContactPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/ministries"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <MinistryPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/gallery"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <GalleryPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/articles"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ArticlesPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/articles/:slug"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ArticleDetailPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/about/association"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <AssociationPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/donate"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <DonatePage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/sermons"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <SermonsPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/ministries/:slug"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <MinistryDetailPage />
+                </Suspense>
+              }
+            />
           </Route>
         </Routes>
       </Router>
