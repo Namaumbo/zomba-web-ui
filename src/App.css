@@ -1,16 +1,9 @@
-#root {
-  /* margin: auto; */
-}
-
-*{
+* {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  text-decoration-color: #1D3557;
   font-style: normal;
-  p{
-    font-weight: 300;
-  }
-  #link{
-    font-weight: 400;
-  }
+}
+
+p {
+  font-weight: 300;
 }

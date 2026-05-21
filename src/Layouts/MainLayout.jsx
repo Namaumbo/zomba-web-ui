@@ -8,13 +8,9 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <>
-      <div className="sticky top-0 z-50">
-        <NavBarComponent />
-      </div>
+      <NavBarComponent />
       <Outlet />
-      <div className="mt-10">
-        <FooterComponent />
-      </div>
+      <FooterComponent />
     </>
   );
 };

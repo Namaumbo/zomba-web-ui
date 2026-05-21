@@ -85,7 +85,7 @@ export default function MissionSection() {
             animate={isInView ? "visible" : "hidden"}
           >
             <Card className="overflow-hidden h-full border-none shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-60 mt-[-1.5rem]">
+              <div className="relative h-60">
                 <img
                   src="/WhatsApp Image 2025-01-27 at 17.21.17.jpeg"
                   alt="Church congregation"
@@ -109,7 +109,7 @@ export default function MissionSection() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Link to="about" asChild>
+                  <Link to="/about">
                     <Button
                       variant="link"
                       className="p-0 h-auto mt-4 text-primary"
@@ -131,7 +131,7 @@ export default function MissionSection() {
             animate={isInView ? "visible" : "hidden"}
           >
             <Card className="overflow-hidden h-full border-none shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-60 mt-[-1.5rem]">
+              <div className="relative h-60">
                 <img
                   src="/mgonero.jpg"
                   alt="Church mission"
@@ -168,11 +168,11 @@ export default function MissionSection() {
             animate={isInView ? "visible" : "hidden"}
           >
             <Card className="overflow-hidden h-full border-none shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-60 mt-[-1.5rem]">
+              <div className="relative h-60">
                 <img
                   src="/evanjelism.jpg"
                   alt="Church outreach"
-                  className="object-cover w-full h-full rounde-lg"
+                  className="object-cover w-full h-full rounded-t-lg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 flex items-end">
                   <div className="p-5">
@@ -214,7 +214,7 @@ export default function MissionSection() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Link to="ministries">
+                  <Link to="/ministries">
                     <Button
                       variant="link"
                       className="p-0 h-auto mt-2 text-primary"
